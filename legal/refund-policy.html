@@ -4,12 +4,22 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Recordly - Refund Policy</title>
+  <script>
+    (function () {
+      var savedTheme = localStorage.getItem('recordly-theme');
+      var prefersLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
+      document.documentElement.setAttribute('data-theme', savedTheme || (prefersLight ? 'light' : 'dark'));
+    }());
+  </script>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <nav>
     <a class="logo" href="https://recordly.ailoveu.art">Recordly</a>
     <a class="cta-btn" href="https://recordly.ailoveu.art/pricing.html">Get Started Free</a>
+    <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch theme" title="Switch theme">
+      <span class="theme-toggle-icon" aria-hidden="true">☾</span>
+    </button>
   </nav>
 
   <section class="legal">
@@ -47,12 +57,34 @@
   </section>
 
   <footer>
-    <div>© 2026 Recordly, All rights reserved.</div>
+    <span>© 2026 Recordly. Made in Israel.</span>
     <div>
-      <a href="./privacy-policy.html">Privacy</a>
-      <a href="./terms-of-service.html">Terms</a>
-      <a href="./refund-policy.html">Refunds</a>
+      <a href="./privacy-policy.html">Privacy Policy</a>
+      <a href="./terms-of-service.html">Terms of Service</a>
+      <a href="./refund-policy.html">Refund Policy</a>
+      <a href="mailto:contact@recordly.ailoveu.art">Contact</a>
     </div>
   </footer>
+
+  <script>
+    (function () {
+      var button = document.querySelector('[data-theme-toggle]');
+      if (!button) return;
+
+      function applyTheme(theme) {
+        document.documentElement.setAttribute('data-theme', theme);
+        localStorage.setItem('recordly-theme', theme);
+        button.setAttribute('aria-label', theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme');
+        button.setAttribute('title', theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme');
+        button.querySelector('.theme-toggle-icon').textContent = theme === 'dark' ? '☾' : '☀';
+      }
+
+      applyTheme(document.documentElement.getAttribute('data-theme') || 'dark');
+      button.addEventListener('click', function () {
+        var currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
+        applyTheme(currentTheme === 'dark' ? 'light' : 'dark');
+      });
+    }());
+  </script>
 </body>
 </html>

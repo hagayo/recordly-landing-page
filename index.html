@@ -5,133 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Recordly — Professional Screen Recorder for Mac & Windows</title>
   <meta name="description" content="Record your screen, webcam, and audio. Edit with the built-in timeline. Export instantly. Free to start." />
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-           background: #0f0f14; color: #eaeaea; }
-
-    /* NAV */
-    nav { display: flex; justify-content: space-between; align-items: center;
-          padding: 20px 40px; border-bottom: 1px solid #1e1e2e; }
-    nav .logo { font-size: 22px; font-weight: 700; color: #fff; text-decoration: none; }
-    nav .cta-btn { background: #e94560; color: #fff; padding: 10px 22px;
-                   border-radius: 8px; text-decoration: none; font-weight: 600;
-                   font-size: 14px; }
-    nav .cta-btn:hover { background: #c73652; }
-
-    /* HERO */
-    .hero { text-align: center; padding: 90px 20px 60px; max-width: 760px; margin: 0 auto; }
-    .hero h1 { font-size: 52px; font-weight: 800; line-height: 1.15;
-               color: #fff; margin-bottom: 20px; }
-    .hero h1 span { color: #e94560; }
-    .hero p { font-size: 19px; color: #8892a4; line-height: 1.6; margin-bottom: 36px; }
-    .hero-buttons { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
-    .btn-primary { background: #e94560; color: #fff; padding: 14px 32px;
-                   border-radius: 10px; text-decoration: none; font-weight: 700;
-                   font-size: 16px; }
-    .btn-secondary { background: transparent; color: #eaeaea; padding: 14px 32px;
-                     border-radius: 10px; text-decoration: none; font-weight: 600;
-                     font-size: 16px; border: 1px solid #2e2e3e; }
-    .btn-primary:hover { background: #c73652; }
-    .btn-secondary:hover { border-color: #e94560; color: #e94560; }
-    .hero-note { margin-top: 14px; font-size: 13px; color: #555; }
-
-    /* FEATURES */
-    .features { padding: 80px 40px; max-width: 1000px; margin: 0 auto; }
-    .features h2 { text-align: center; font-size: 34px; font-weight: 700;
-                   margin-bottom: 50px; }
-    .feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-                    gap: 28px; }
-    .feature-card { background: #16213e; padding: 32px; border-radius: 14px;
-                    border: 1px solid #1e2d4a; }
-    .feature-card .icon { font-size: 32px; margin-bottom: 14px; }
-    .feature-card h3 { font-size: 18px; font-weight: 700; margin-bottom: 10px; }
-    .feature-card p { color: #8892a4; line-height: 1.6; font-size: 15px; }
-
-    /* PRICING */
-    .pricing { padding: 80px 40px; max-width: 800px; margin: 0 auto;
-               text-align: center; }
-    .pricing h2 { font-size: 34px; font-weight: 700; margin-bottom: 12px; }
-    .pricing .sub { color: #8892a4; margin-bottom: 50px; font-size: 16px; }
-    .pricing-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
-    .plan { background: #16213e; padding: 36px 28px; border-radius: 16px;
-            border: 1px solid #1e2d4a; text-align: left; }
-    .plan.highlighted { border-color: #e94560; position: relative; }
-    .plan-badge { position: absolute; top: -12px; left: 50%; transform: translateX(-50%);
-                  background: #e94560; color: #fff; padding: 4px 16px;
-                  border-radius: 20px; font-size: 12px; font-weight: 700;
-                  white-space: nowrap; }
-    .plan-name { font-size: 15px; font-weight: 600; color: #8892a4;
-                 text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; }
-    .plan-price { font-size: 42px; font-weight: 800; color: #fff; margin-bottom: 4px; }
-    .plan-price span { font-size: 16px; color: #8892a4; font-weight: 400; }
-    .plan-annual { font-size: 13px; color: #4ecca3; margin-bottom: 24px; }
-    .plan ul { list-style: none; margin-bottom: 28px; }
-    .plan ul li { padding: 7px 0; color: #ccc; font-size: 15px; }
-    .plan ul li::before { content: "✓ "; color: #4ecca3; font-weight: 700; }
-    .plan ul li.no::before { content: "✕ "; color: #555; }
-    .plan ul li.no { color: #555; }
-    .plan-btn { display: block; text-align: center; padding: 13px;
-                border-radius: 10px; font-weight: 700; font-size: 15px;
-                text-decoration: none; }
-    .plan-btn.outline { border: 1px solid #2e2e3e; color: #eaeaea; }
-    .plan-btn.filled { background: #e94560; color: #fff; }
-    .plan-btn:hover { opacity: 0.85; }
-    .guarantee { margin-top: 20px; font-size: 13px; color: #555; }
-
-    /* FOOTER */
-    footer { border-top: 1px solid #1e1e2e; padding: 36px 40px;
-             display: flex; justify-content: space-between; align-items: center;
-             flex-wrap: wrap; gap: 16px; font-size: 14px; color: #555; }
-    footer a { color: #8892a4; text-decoration: none; margin: 0 10px; }
-    footer a:hover { color: #e94560; }
-
-    @media (max-width: 600px) {
-      .hero h1 { font-size: 34px; }
-      .pricing-grid { grid-template-columns: 1fr; }
-      nav { padding: 16px 20px; }
-      footer { flex-direction: column; text-align: center; }
-    }
-    <!-- img { -->
-      <!-- width: 200px; -->
-      <!-- height: 200px; -->
-      <!-- border-radius: 50%; -->
-      <!-- object-fit: cover;   /* Prevents stretching if the original is not square */ -->
-    <!-- } -->
-    .circle-container {
-      position: relative;
-      width: 200px;
-      height: 200px;
-      border-radius: 50%;
-      overflow: hidden;
-    }
-    .circle-container img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-    .overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
-      color: white;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      opacity: 0; /* Hidden by default */
-      transition: opacity 0.3s ease;
-    }
-    .circle-container:hover .overlay { opacity: 1; }
-  </style>
+  <script>
+    (function () {
+      var savedTheme = localStorage.getItem('recordly-theme');
+      var prefersLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
+      document.documentElement.setAttribute('data-theme', savedTheme || (prefersLight ? 'light' : 'dark'));
+    }());
+  </script>
+  <link rel="stylesheet" href="./legal/styles.css" />
 </head>
 <body>
-
   <nav>
-    <a class="logo" href="/">Recordly</a>
-    <a class="cta-btn" href="#pricing">Get Started Free</a>
+    <a class="logo" href="https://recordly.ailoveu.art">Recordly</a>
+    <a class="cta-btn" href="https://recordly.ailoveu.art/pricing.html">Get Started Free</a>
+    <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch theme" title="Switch theme">
+      <span class="theme-toggle-icon" aria-hidden="true">☾</span>
+    </button>
   </nav>
 
   <section class="hero">
@@ -255,6 +144,26 @@
     </div>
   </footer>
 
+  <script>
+    (function () {
+      var button = document.querySelector('[data-theme-toggle]');
+      if (!button) return;
+
+      function applyTheme(theme) {
+        document.documentElement.setAttribute('data-theme', theme);
+        localStorage.setItem('recordly-theme', theme);
+        button.setAttribute('aria-label', theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme');
+        button.setAttribute('title', theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme');
+        button.querySelector('.theme-toggle-icon').textContent = theme === 'dark' ? '☾' : '☀';
+      }
+
+      applyTheme(document.documentElement.getAttribute('data-theme') || 'dark');
+      button.addEventListener('click', function () {
+        var currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
+        applyTheme(currentTheme === 'dark' ? 'light' : 'dark');
+      });
+    }());
+  </script>
 </body>
 </html>
 <!-- We literally don’t touch your data at all -->
