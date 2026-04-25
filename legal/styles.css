@@ -1,0 +1,38 @@
+.legal {
+  padding: 80px 20px;
+}
+
+.legal-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.legal h1 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.legal h2 {
+  font-size: 22px;
+  margin-top: 40px;
+  margin-bottom: 12px;
+}
+
+.legal p {
+  color: #8892a4;
+  line-height: 1.7;
+  margin-bottom: 14px;
+}
+
+.legal ul {
+  margin: 10px 0 20px 20px;
+}
+
+.legal li {
+  margin-bottom: 8px;
+  color: #8892a4;
+}
+
+.legal strong {
+  color: #fff;
+}
