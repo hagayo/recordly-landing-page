@@ -1,169 +1,297 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="he" dir="rtl" data-theme="light">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Recordly — Professional Screen Recorder for Mac & Windows</title>
-  <meta name="description" content="Record your screen, webcam, and audio. Edit with the built-in timeline. Export instantly. Free to start." />
+  <title>Recordly - מקליטים מדריכים מקומית, בלי ענן ובלי כאב ראש</title>
+  <meta name="description" content="Recordly היא אפליקציית דסקטופ למורים, יוצרים ומפתחים שרוצים להקליט ולערוך סרטוני הדרכה מקומית. 5 הקלטות בחינם, Pro ללא הגבלה." />
   <script>
     (function () {
-      var savedTheme = localStorage.getItem('recordly-theme');
-      var prefersLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
-      document.documentElement.setAttribute('data-theme', savedTheme || (prefersLight ? 'light' : 'dark'));
+      const savedTheme = localStorage.getItem("recordly-theme");
+      const prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+      const savedLang = localStorage.getItem("recordly-lang");
+      const browserLang = (navigator.language || navigator.userLanguage || "he").toLowerCase();
+      const initialLang = savedLang || (browserLang.startsWith("he") ? "he" : "en");
+      document.documentElement.setAttribute("data-theme", savedTheme || (prefersDark ? "dark" : "light"));
+      document.documentElement.setAttribute("lang", initialLang);
+      document.documentElement.setAttribute("dir", initialLang === "he" ? "rtl" : "ltr");
+      document.documentElement.setAttribute("data-lang", initialLang);
     }());
   </script>
-  <link rel="stylesheet" href="./legal/styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700;800;900&family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css" />
 </head>
 <body>
-  <nav>
-    <a class="logo" href="https://recordly.ailoveu.art">Recordly</a>
-    <a class="cta-btn" href="https://recordly.ailoveu.art/#pricing">Get Started Free</a>
-    <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch theme" title="Switch theme">
-      <span class="theme-toggle-icon" aria-hidden="true">☾</span>
-    </button>
-  </nav>
+  <div class="noise" aria-hidden="true"></div>
+  <div class="pointer-light" aria-hidden="true"></div>
 
-  <section class="hero">
-    <h1>Record your screen.<br /><span>Share your work.</span></h1>
-    <p>Professional screen recorder for macOS and Windows. Capture anything —
-       with webcam overlay, audio, annotations, and a built-in timeline editor.</p>
-    <div class="hero-buttons">
-      <a class="btn-primary" href="#pricing">Download Free</a>
-      <a class="btn-secondary" href="#features">See features</a>
+  <header class="topbar">
+    <a class="brand" href="#top" aria-label="Recordly">
+      <span class="brand-mark">R</span>
+      <span class="brand-name">Recordly</span>
+      <span class="privacy-pill" data-i18n="brand_badge">Local-first</span>
+    </a>
+
+    <nav class="nav" aria-label="Main navigation">
+      <a href="#problem" data-i18n="nav_problem">למה זה שונה</a>
+      <a href="#features" data-i18n="nav_features">יכולות</a>
+      <a href="#proof" data-i18n="nav_proof">הוכחה</a>
+      <a href="#plans" data-i18n="nav_price">מחיר</a>
+      <a href="#faq" data-i18n="nav_faq">שאלות</a>
+    </nav>
+
+    <div class="top-actions">
+      <button class="language-toggle" type="button" data-lang-toggle aria-label="Switch language" title="Switch language">
+        <span data-lang-short>EN</span>
+      </button>
+      <button class="theme-toggle" type="button" data-theme-toggle aria-label="Toggle theme">
+        <span aria-hidden="true">☀</span>
+      </button>
+      <a class="top-cta magnetic" href="#plans" data-i18n="nav_download">להתחיל בחינם</a>
     </div>
-    <!-- <p class="hero-note">No credit card required &nbsp;·&nbsp; Works on macOS &amp; Windows</p> -->
-    <p class="hero-note">100% local processing · No cloud · No tracking; Works on macOS &amp; Windows</p>
-  </section>
+  </header>
 
-  <section class="features">
-    <div class="circle-container">
-      <img src="hagayo.jpg" alt="Profile">
-      <div class="overlay">
-        <div class="text">Our Teacher</div>
-      </div>
-    </div>
-  </section>
-    
-  <section class="features" id="features">
-    <h2>Everything you need. Nothing you don't.</h2>
-    <div class="feature-grid">
+  <main id="top">
+    <section class="hero section-shell">
+      <div class="hero-copy reveal">
+        <div class="kicker"><span class="status-dot"></span><span data-i18n="hero_kicker">Privacy Mode: ON</span></div>
+        <h1 data-i18n="hero_title">המקליט שלא מרגל אחרי השיעור שלך.</h1>
+        <p class="lead" data-i18n="hero_lead">Recordly עוזרת למורים, יוצרים ומפתחים להקליט מסך, מצלמה ואודיו, לערוך מהר ולייצא סרטון נקי - כשההקלטות נשארות על המחשב שלך, לא בענן שלנו.</p>
 
-      <div class="feature-card">
-        <div class="icon">🎥</div>
-        <h3>Full recording suite</h3>
-        <p>Capture screen, webcam, system audio, and microphone simultaneously —
-           perfectly synced from the first frame.</p>
+        <div class="hero-actions">
+          <a class="btn primary magnetic" href="#plans" data-i18n="hero_cta">להתחיל עם 5 הקלטות חינם</a>
+          <a class="btn ghost magnetic" href="#proof" data-i18n="hero_secondary">לראות למה זה בטוח</a>
+        </div>
+
+        <div class="trust-row" aria-label="Trust highlights">
+          <span data-i18n="proof_local">100% עריכה מקומית</span>
+          <span data-i18n="proof_upload">0 העלאות הקלטות</span>
+          <span data-i18n="proof_price">Pro ב־$5 לחודש</span>
+        </div>
       </div>
 
-      <div class="feature-card">
-        <div class="icon">✂️</div>
-        <h3>Built-in timeline editor</h3>
-        <p>Trim, cut, and arrange clips directly in the app. No third-party
-           editor needed — everything is in one place.</p>
+      <div class="hero-art reveal delay-1" id="demo">
+        <div class="orbit one"></div>
+        <div class="orbit two"></div>
+        <div class="app-window" data-tilt>
+          <div class="window-bar">
+            <div class="lights"><i></i><i></i><i></i></div>
+            <strong>recordly-session.mp4</strong>
+            <span class="rec-dot">REC</span>
+          </div>
+          <div class="screen-stage">
+            <div class="lesson-card">
+              <span data-i18n="screen_topic">Lesson: Fractions in 4 minutes</span>
+              <b></b><b></b><b></b>
+              <div class="highlight-line"></div>
+            </div>
+            <div class="cursor-ring"></div>
+            <img class="cam" src="./assets/hagayo.jpg" alt="Presenter camera bubble" />
+            <span class="floating-tag tag-a" data-i18n="tag_cut">Cut silence</span>
+            <span class="floating-tag tag-b" data-i18n="tag_private">No cloud</span>
+            <span class="floating-tag tag-c" data-i18n="tag_export">Export clean</span>
+          </div>
+          <div class="timeline">
+            <span class="track video"></span>
+            <span class="track audio"></span>
+            <span class="track camera"></span>
+            <span class="needle"></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="logo-strip reveal">
+      <span data-i18n="strip_1">Teachers</span>
+      <span data-i18n="strip_2">Courses</span>
+      <span data-i18n="strip_3">Product demos</span>
+      <span data-i18n="strip_4">Bug reports</span>
+      <span data-i18n="strip_5">Team tutorials</span>
+    </section>
+
+    <section class="section split problem" id="problem">
+      <div class="section-title reveal">
+        <span class="tiny" data-i18n="problem_label">הבעיה</span>
+        <h2 data-i18n="problem_title">רוב כלי ההקלטה מבקשים ממך לבחור: נוחות או שליטה.</h2>
+      </div>
+      <div class="problem-grid reveal delay-1">
+        <article>
+          <strong>01</strong>
+          <h3 data-i18n="problem_1_title">הענן מקבל את החומר שלך</h3>
+          <p data-i18n="problem_1_text">שיעורים, מסכים פנימיים, קבצים, שמות תלמידים או לקוחות - לא תמיד מתאים להעלות את זה החוצה.</p>
+        </article>
+        <article>
+          <strong>02</strong>
+          <h3 data-i18n="problem_2_title">עריכה הופכת לפרויקט</h3>
+          <p data-i18n="problem_2_text">רצית סרטון הסבר קצר. פתאום אתה בעורך וידאו כאילו אתה מפיק טריילר לנטפליקס.</p>
+        </article>
+        <article>
+          <strong>03</strong>
+          <h3 data-i18n="problem_3_title">הסרטון ארוך מדי</h3>
+          <p data-i18n="problem_3_text">ההתחלה מבולגנת, יש שקטים, טעויות קטנות, וכולם רואים את החיפוש אחר הכפתור הנכון.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section solution" id="features">
+      <div class="section-title center reveal">
+        <span class="tiny" data-i18n="solution_label">הפתרון</span>
+        <h2 data-i18n="solution_title">מקליטים. מתקנים. שולחים. בלי דרמה.</h2>
       </div>
 
-      <div class="feature-card">
-        <div class="icon">⚡</div>
-        <h3>Instant export</h3>
-        <p>Hardware-accelerated encoding produces high-quality MP4 files
-           in seconds, not minutes.</p>
+      <div class="feature-grid">
+        <article class="feature-card big reveal">
+          <div class="icon">🎥</div>
+          <h3 data-i18n="feature_1_title">מסך + מצלמה + קול</h3>
+          <p data-i18n="feature_1_text">הקלטת מדריך מלאה עם presenter bubble, אודיו ברור ומסך חד.</p>
+        </article>
+        <article class="feature-card reveal delay-1">
+          <div class="icon">✂️</div>
+          <h3 data-i18n="feature_2_title">חיתוך מהיר</h3>
+          <p data-i18n="feature_2_text">מורידים שקטים, טעויות ופתיחות מביכות בלי ללמוד תוכנת עריכה.</p>
+        </article>
+        <article class="feature-card reveal delay-2">
+          <div class="icon">🔦</div>
+          <h3 data-i18n="feature_3_title">הדגשות חכמות</h3>
+          <p data-i18n="feature_3_text">מסמנים רגעים חשובים כדי שהצופה יבין מהר איפה להסתכל.</p>
+        </article>
+        <article class="feature-card reveal delay-3">
+          <div class="icon">🔒</div>
+          <h3 data-i18n="feature_4_title">פרטיות כברירת מחדל</h3>
+          <p data-i18n="feature_4_text">ההקלטות נשארות מקומית. אנחנו יודעים רק תוכנית מנוי וכמות הקלטות חודשית.</p>
+        </article>
+        <article class="feature-card wide reveal delay-1">
+          <div class="icon">🚀</div>
+          <h3 data-i18n="feature_5_title">ייצוא נקי לשיתוף</h3>
+          <p data-i18n="feature_5_text">סרטון מסודר שאפשר לשלוח לתלמידים, לקוח, צוות או קהילה.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section proof" id="proof">
+      <div class="proof-card reveal">
+        <div>
+          <span class="tiny" data-i18n="proof_label">הוכחת פרטיות</span>
+          <h2 data-i18n="proof_title">לא מאמינים לנו? נתקו את האינטרנט.</h2>
+          <p data-i18n="proof_text">Recordly נבנתה לעבודה מקומית. ההקלטה והעריכה לא צריכות את הענן שלנו, ולכן תוכן הסרטונים שלך לא נשלח אלינו.</p>
+        </div>
+        <div class="terminal" dir="ltr">
+          <span>$ wifi off</span>
+          <span>$ recordly start</span>
+          <span class="ok">✓ recording locally</span>
+          <span class="ok">✓ no upload detected</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section comparison">
+      <div class="section-title center reveal">
+        <span class="tiny" data-i18n="compare_label">השוואה</span>
+        <h2 data-i18n="compare_title">למה לא פשוט להשתמש בכלי ענן?</h2>
+      </div>
+      <div class="compare-grid reveal delay-1">
+        <article class="compare-card muted-card">
+          <h3 data-i18n="compare_cloud_title">כלי ענן רגילים</h3>
+          <ul>
+            <li data-i18n="compare_cloud_1">מעלים סרטונים לשרת</li>
+            <li data-i18n="compare_cloud_2">דורשים חיבור יציב</li>
+            <li data-i18n="compare_cloud_3">פחות מתאים לחומרים רגישים</li>
+          </ul>
+        </article>
+        <article class="compare-card winner">
+          <h3 data-i18n="compare_recordly_title">Recordly</h3>
+          <ul>
+            <li data-i18n="compare_recordly_1">הקלטות נשמרות אצלך</li>
+            <li data-i18n="compare_recordly_2">עובד בגישה local-first</li>
+            <li data-i18n="compare_recordly_3">קל להסביר, לערוך ולשלוח</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="section audience">
+      <div class="section-title center reveal">
+        <span class="tiny" data-i18n="audience_label">למי זה מתאים</span>
+        <h2 data-i18n="audience_title">כל מי שמסביר משהו על המסך.</h2>
+      </div>
+      <div class="audience-grid">
+        <article class="audience-card reveal"><span>🎓</span><h3 data-i18n="aud_1_title">מורים ומרצים</h3><p data-i18n="aud_1_text">שיעורים מוקלטים, פתרון תרגילים, תגבור והכנה למבחנים.</p></article>
+        <article class="audience-card reveal delay-1"><span>🧑‍💻</span><h3 data-i18n="aud_2_title">מפתחים וצוותי מוצר</h3><p data-i18n="aud_2_text">דמו, דיווח באג, walkthrough ותיעוד תהליכים פנימיים.</p></article>
+        <article class="audience-card reveal delay-2"><span>🎬</span><h3 data-i18n="aud_3_title">יוצרים וקורסים</h3><p data-i18n="aud_3_text">מדריכים, סרטוני מוצר, שיעורי אונליין ותוכן לקהילה.</p></article>
+      </div>
+    </section>
+
+    <section class="section pricing" id="plans">
+      <div class="section-title center reveal">
+        <span class="tiny" data-i18n="pricing_label">מחיר</span>
+        <h2 data-i18n="pricing_title">חינם להתחלה. Pro כשאתה מקליט ברצינות.</h2>
       </div>
 
-      <div class="feature-card">
-        <div class="icon">🎨</div>
-        <h3>Annotations &amp; highlights</h3>
-        <p>Draw, highlight, and add cursor effects while recording.
-           Perfect for tutorials and walkthroughs.</p>
+      <div class="plans">
+        <article class="plan reveal">
+          <h3 data-i18n="free_title">חינם</h3>
+          <div class="price">$0 <span data-i18n="price_month">/ חודש</span></div>
+          <p data-i18n="free_desc">מתאים לניסיון אמיתי, לא רק לדמו.</p>
+          <ul>
+            <li data-i18n="free_li_1">5 הקלטות בחודש</li>
+            <li data-i18n="free_li_2">הקלטה ועריכה מקומית</li>
+            <li data-i18n="free_li_3">ללא העלאת תוכן לשרת</li>
+            <li class="off" data-i18n="free_li_4">הקלטות ללא הגבלה</li>
+          </ul>
+          <a class="plan-btn outline magnetic" href="#" data-i18n="free_cta">להורדה חינם</a>
+        </article>
+
+        <article class="plan pro reveal delay-1">
+          <div class="label" data-i18n="pro_label">Best for active teachers</div>
+          <h3 data-i18n="pro_title">פרו</h3>
+          <div class="price">$5 <span data-i18n="price_month">/ חודש</span></div>
+          <p data-i18n="pro_desc">או $45 לשנה. ביטול בכל זמן.</p>
+          <ul>
+            <li data-i18n="pro_li_1">הקלטות ללא הגבלה</li>
+            <li data-i18n="pro_li_2">שימוש מקומי מלא</li>
+            <li data-i18n="pro_li_3">כל כלי העריכה</li>
+            <li data-i18n="pro_li_4">גישה פעילה עד סוף תקופת החיוב לאחר ביטול</li>
+          </ul>
+          <a class="plan-btn filled magnetic" href="#" data-i18n="pro_cta">לקבל Pro</a>
+        </article>
       </div>
+      <p class="pricing-note reveal delay-2" data-i18n="pricing_note">החזר שנתי מחושב לפי החודשים שנוצלו, כפי שמפורט במדיניות ההחזרים.</p>
+    </section>
 
-      <div class="feature-card">
-        <div class="icon">📅</div>
-        <h3>Scheduled recording</h3>
-        <p>Set a start time and duration — Recordly records automatically,
-           even when you're not at your desk.</p>
+    <section class="section faq" id="faq">
+      <div class="section-title center reveal">
+        <span class="tiny" data-i18n="faq_label">שאלות</span>
+        <h2 data-i18n="faq_title">החששות הנכונים, בלי תשובות מתחמקות.</h2>
       </div>
-
-      <div class="feature-card">
-        <div class="icon">🔒</div>
-        <h3>Fully local</h3>
-        <p>Everything stays on your machine. No uploads, no cloud storage,
-           no privacy surprises.</p>
+      <div class="faq-list">
+        <details class="reveal" open><summary data-i18n="faq_1_q">הסרטונים שלי עולים לשרת?</summary><p data-i18n="faq_1_a">לא. תוכן ההקלטות נשמר מקומית בלבד ולא נשלח לשרתים שלנו.</p></details>
+        <details class="reveal"><summary data-i18n="faq_2_q">איזה מידע אתם כן שומרים?</summary><p data-i18n="faq_2_a">רק את תוכנית התשלום שלך ואת מספר ההקלטות החודשי לצורך מגבלת Free ותפעול Pro.</p></details>
+        <details class="reveal"><summary data-i18n="faq_3_q">אפשר לבטל Pro?</summary><p data-i18n="faq_3_a">כן. אפשר לבטל בכל זמן, והגישה נשארת פעילה עד סוף תקופת החיוב הנוכחית.</p></details>
+        <details class="reveal"><summary data-i18n="faq_4_q">זה מתאים רק למורים?</summary><p data-i18n="faq_4_a">לא. זה נבנה סביב מורים, אבל מתאים גם ליוצרים, מפתחים, צוותי תמיכה וגיימרים.</p></details>
       </div>
+    </section>
 
-    </div>
-  </section>
-
-  <section class="pricing" id="pricing">
-    <h2>Simple, honest pricing</h2>
-    <p class="sub">Start free. Upgrade when you need more.</p>
-    <div class="pricing-grid">
-
-      <div class="plan">
-        <p class="plan-name">Free</p>
-        <p class="plan-price">$0 <span>/ month</span></p>
-        <p class="plan-annual">&nbsp;</p>
-        <ul>
-          <li>10 recordings per month</li>
-          <li>Up to 30 min per recording</li>
-          <li>All core features</li>
-          <li>No watermark</li>
-          <li class="no">Scheduled recording</li>
-          <li class="no">Unlimited recordings</li>
-        </ul>
-        <a class="plan-btn outline" href="#pricing">Download Free</a>
+    <section class="final reveal">
+      <span class="tiny" data-i18n="final_label">Record once. Explain forever.</span>
+      <h2 data-i18n="final_title">המסך שלך כבר מסביר. עכשיו תן לו להיראות מקצועי.</h2>
+      <div class="hero-actions center-actions">
+        <a class="btn primary magnetic" href="#plans" data-i18n="final_cta">להתחיל בחינם</a>
+        <a class="btn ghost magnetic" href="mailto:contact@recordly.ailoveu.art" data-i18n="final_contact">לדבר איתנו</a>
       </div>
+    </section>
+  </main>
 
-      <div class="plan highlighted">
-        <span class="plan-badge">MOST POPULAR</span>
-        <p class="plan-name">Pro</p>
-        <p class="plan-price">$5 <span>/ month</span></p>
-        <p class="plan-annual">or $45/year &nbsp;—&nbsp; save 25%</p>
-        <ul>
-          <li>Unlimited recordings</li>
-          <li>Unlimited recording length</li>
-          <li>All core features</li>
-          <li>No watermark</li>
-          <li>Scheduled recording</li>
-          <li>Priority support</li>
-        </ul>
-        <a class="plan-btn filled" href="#pricing">Get Pro</a>  <!-- ← EDIT: link to Paddle checkout later -->
-      </div>
-
-    </div>
-    <p class="guarantee">14-day money-back guarantee &nbsp;·&nbsp;
-       Cancel anytime &nbsp;·&nbsp; Secure payment by Paddle</p>
-  </section>
-
-  <footer>
-    <span>© 2026 Recordly. Made in Israel.</span>
+  <footer class="footer">
+    <span data-i18n="footer_copyright">© 2026 Recordly. Built for people who care about their data.</span>
     <div>
-      <a href="./legal/privacy-policy.html">Privacy Policy</a>
-      <a href="./legal/terms-of-service.html">Terms of Service</a>
-      <a href="./legal/refund-policy.html">Refund Policy</a>
-      <a href="mailto:contact@recordly.ailoveu.art">Contact</a>
+      <a href="./legal/privacy-policy.html" data-i18n="footer_privacy">מדיניות פרטיות</a>
+      <a href="./legal/terms-of-service.html" data-i18n="footer_terms">תנאי שימוש</a>
+      <a href="./legal/refund-policy.html" data-i18n="footer_refunds">מדיניות החזרים</a>
     </div>
   </footer>
 
-  <script>
-    (function () {
-      var button = document.querySelector('[data-theme-toggle]');
-      if (!button) return;
-
-      function applyTheme(theme) {
-        document.documentElement.setAttribute('data-theme', theme);
-        localStorage.setItem('recordly-theme', theme);
-        button.setAttribute('aria-label', theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme');
-        button.setAttribute('title', theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme');
-        button.querySelector('.theme-toggle-icon').textContent = theme === 'dark' ? '☾' : '☀';
-      }
-
-      applyTheme(document.documentElement.getAttribute('data-theme') || 'dark');
-      button.addEventListener('click', function () {
-        var currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
-        applyTheme(currentTheme === 'dark' ? 'light' : 'dark');
-      });
-    }());
-  </script>
+  <script src="./script.js"></script>
 </body>
 </html>
-<!-- We literally don’t touch your data at all -->
