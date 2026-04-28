@@ -1,153 +1,71 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en" dir="ltr" data-theme="light" data-lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Recordly - Terms and Conditions of Service</title>
-    <script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Recordly - Terms of Service</title>
+  <meta name="description" content="Terms of Service for Recordly, a local-first desktop screen recording app." />
+  <script>
     (function () {
       var savedTheme = localStorage.getItem('recordly-theme');
-      var prefersLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
-      document.documentElement.setAttribute('data-theme', savedTheme || (prefersLight ? 'light' : 'dark'));
+      var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      var savedLang = localStorage.getItem('recordly-lang');
+      var browserLang = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
+      var initialLang = savedLang || (browserLang.startsWith('he') ? 'he' : 'en');
+      document.documentElement.setAttribute('data-theme', savedTheme || (prefersDark ? 'dark' : 'light'));
+      document.documentElement.setAttribute('data-lang', initialLang);
+      document.documentElement.setAttribute('lang', initialLang);
+      document.documentElement.setAttribute('dir', initialLang === 'he' ? 'rtl' : 'ltr');
     }());
   </script>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="./styles.css" />
 </head>
 <body>
-  <nav>
-    <a class="logo" href="https://recordly.ailoveu.art">Recordly</a>
-    <a class="cta-btn" href="https://recordly.ailoveu.art/#pricing">Get Started Free</a>
-    <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch theme" title="Switch theme">
-      <span class="theme-toggle-icon" aria-hidden="true">☾</span>
-    </button>
-  </nav>
+  <div class="noise" aria-hidden="true"></div>
+  <div class="pointer-light" aria-hidden="true"></div>
 
-    <section class="legal">
-      <div class="legal-container">
-        <div>
-        <h1>Terms & Conditions of Service</h1>
-        <h2>Legal Terms Agreement</h2>
-        <p>Please read these terms and conditions carefully before using Our Service.</p>
-        <h3>Definitions</h3>
-        <p>The following definitions shall have the same meaning regardless of whether they appear in singular or in plural. For the purposes of these Terms and Conditions:</p>
-        <p><strong>Account</strong> means a unique account created for a user to access our Service or parts of our Service.</p>
-        <p><strong>Company</strong> (referred to as either "the Company", "We", "Us" or "Our" in this Agreement) refers to AILOVEU.</p>
-        </div>
-        <div>
-        <h3>Acknowledgment</h3>
-        <p>These are the Terms and Conditions governing the use of this Service and the agreement that operates between You and the Company. These Terms and Conditions set out the rights and obligations of all users regarding the use of the Service.</p>
-        <p>Your access to and use of the Service is conditioned on Your acceptance of and compliance with these Terms and Conditions. These Terms and Conditions apply to all visitors, users and others who access or use the Service.</p>
-        <p>By accessing or using the Service You agree to be bound by these Terms and Conditions. If You disagree with any part of these Terms and Conditions then You may not access the Service.</p>
-        <p>Your access to and use of the Service is also conditioned on Your acceptance of and compliance with the Privacy Policy of the Company. Our Privacy Policy describes Our policies and procedures on the collection, use and disclosure of Your personal information when You use the Application or the Website and tells You about Your privacy rights and how the law protects You. Please read Our Privacy Policy carefully before using Our Service.</p>
-        </div>
-        <div>
-        <p>Recordly is a professional screen recorder for macOS and Windows.
-        Capture anything — with your webcam, audio, annotations, and timeline
-        editor built in.
-        </p>
-        <p>Our Service allows You to record Content. You are responsible for the Content that You record with the app Service, including its legality, reliability, and appropriateness.</p>
-        <p>The Company is not responsible for the content of the Service's users. You expressly understand and agree that You are solely responsible for the Content and for all activity that occurs under your account, whether done so by You or any third person using Your account.</p>
-        </div>
-        
-        <h2>License</h2>
-        <p>
-        We grant you a non-exclusive, non-transferable license to use Recordly
-        for personal or professional purposes.
-        </p>
+  <header class="topbar">
+    <a class="brand" href="../index.html" aria-label="Recordly home">
+      <span class="brand-mark">R</span>
+      <span>Recordly</span>
+    </a>
 
-        <h2>User Content</h2>
-        <p>
-        All recordings are created and stored locally on your device.
-        You are solely responsible for:
-        </p>
-        <ul>
-          <li>The content you record</li>
-          <li>Compliance with laws and regulations</li>
-          <li>Backup and storage of your files</li>
-        </ul>
-        <p>Recordly does not access or store your content and cannot recover lost files.</p>
+    <nav class="nav" aria-label="Main navigation">
+      <a href="../index.html#about" data-i18n="nav_about">About</a>
+      <a href="../index.html#demo" data-i18n="nav_demo">Demo</a>
+      <a href="../index.html#plans" data-i18n="nav_price">Pricing</a>
+      <a href="../index.html#faq" data-i18n="nav_faq">FAQ</a>
+      <a href="mailto:contact@recordly.ailoveu.art" data-i18n="nav_contact">Contact</a>
+    </nav>
 
-        <h2>Subscriptions</h2>
-        <p>
-        Free plan is limited to 5 recordings per month.
-        Pro plan removes this limitation.
-        </p>
-        <p>Subscriptions renew automatically unless cancelled.</p>        
-        
-        <h2>Acceptable Use</h2>
-        <p>You agree not to use Recordly for:</p>
-        <ul>
-          <li>Illegal recordings</li>
-          <li>Violating privacy laws</li>
-          <li>Unauthorized surveillance</li>
-        </ul>
-        
-        <h2>Limitation of Liability</h2>
-        <p>Because Recordly operates locally, we are not responsible for:</p>
-        <ul>
-          <li>Loss of recordings</li>
-          <li>Hardware or system failures</li>
-          <li>User misconfiguration</li>
-        </ul>
-        
-        <div>
-        <h3>Termination</h3>
-        <p>We may terminate or suspend Your Account immediately, without prior notice or liability, for any reason whatsoever, including without limitation if You breach these Terms and Conditions.</p>
-        <p>Upon termination, Your right to use the Service will cease immediately. If You wish to terminate Your Account, You may simply discontinue using the Service.</p>
-        </div>
-        <div>
-        <h3>Limitation of Liability</h3>
-        <p>Notwithstanding any damages that You might incur, the entire liability of the Company and any of its suppliers under any provision of this Terms and Your exclusive remedy for all of the foregoing shall be limited to the amount actually paid by You through the Service or 100 USD if You haven't purchased anything through the Service.</p>
-        <p>To the maximum extent permitted by applicable law, in no event shall the Company or its suppliers be liable for any special, incidental, indirect, or consequential damages whatsoever (including, but not limited to, damages for loss of profits, loss of data or other information, for business interruption, for personal injury, loss of privacy arising out of or in any way related to the use of or inability to use the Service, third-party software and/or third-party hardware used with the Service, or otherwise in connection with any provision of this Terms), even if the Company or any supplier has been advised of the possibility of such damages and even if the remedy fails of its essential purpose.</p>
-        
-        </div>
-        <div>
-        <h3>"AS IS" and "AS AVAILABLE" Disclaimer</h3>
-        <p>The Service is provided to You "AS IS" and "AS AVAILABLE" and with all faults and defects without warranty of any kind. To the maximum extent permitted under applicable law, the Company, on its own behalf and on behalf of its Affiliates and its and their respective licensors and service providers, expressly disclaims all warranties, whether express, implied, statutory or otherwise, with respect to the Service, including all implied warranties of merchantability, fitness for a particular purpose, title and non-infringement, and warranties that may arise out of course of dealing, course of performance, usage or trade practice. Without limitation to the foregoing, the Company provides no warranty or undertaking, and makes no representation of any kind that the Service will meet Your requirements, achieve any intended results, be compatible or work with any other software, applications, systems or services, operate without interruption, meet any performance or reliability standards or be error free or that any errors or defects can or will be corrected.</p>
-        <p>Without limiting the foregoing, neither the Company nor any of the company's provider makes any representation or warranty of any kind, express or implied: (i) as to the operation or availability of the Service, or the information, content, and materials or products included thereon; (ii) that the Service will be uninterrupted or error-free; (iii) as to the accuracy, reliability, or currency of any information or content provided through the Service; or (iv) that the Service, its servers, the content, or e-mails sent from or on behalf of the Company are free of viruses, scripts, trojan horses, worms, malware, timebombs or other harmful components.</p>
-        </div>
-        <div>
-        <h4>Legal Note</h4>
-        <p>Some states do not allow the exclusion of implied warranties or limitation of liability for incidental or consequential damages, which means that some of the above limitations may not apply. In these states, each party's liability will be limited to the greatest extent permitted by law.</p>
-        <p></p>
-        </div>
-        <div>
-        <h5>Contact Us</h5>
-        <p>If you have any questions about these Terms and Conditions, You can contact us:</p>
-                <p>By sending us an email to: h2o@ailoveu.art</p>
-        </div>
-      </div>
-    </section>
-    
-  <footer>
-    <span>© 2026 Recordly. Made in Israel.</span>
+    <div class="top-actions">
+      <button class="language-toggle" type="button" data-lang-toggle aria-label="Switch language" title="Switch language">
+        <span data-lang-short>עב</span>
+      </button>
+      <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch theme" title="Switch theme">
+        <span aria-hidden="true">☀</span>
+      </button>
+      <a class="top-cta magnetic" href="../index.html#plans" data-i18n="nav_download">Get started</a>
+    </div>
+  </header>
+
+  <main class="legal-main funnel-main">
+    <section class="legal-hero funnel-hero" data-lang-content="en"><span class="tiny">Legal / Terms</span><h1>Record freely. Keep responsibility clear.</h1><p class="legal-subtitle">These terms explain how you can use Recordly, what stays yours, and how the Free and Pro plans work.</p><p class="legal-updated">Last updated: April 2026</p><div class="hero-actions"><a class="top-cta magnetic" href="../index.html#plans">Choose a plan</a><a class="ghost-link" href="./privacy-policy.html">Read privacy policy</a></div></section>
+    <section class="legal-hero funnel-hero" data-lang-content="he" hidden><span class="tiny">משפטי / תנאים</span><h1>להקליט בחופשיות. להשאיר אחריות ברורה.</h1><p class="legal-subtitle">התנאים מסבירים איך מותר להשתמש ב־Recordly, מה נשאר בבעלותך, ואיך עובדות תוכניות חינם ופרו.</p><p class="legal-updated">עודכן לאחרונה: אפריל 2026</p><div class="hero-actions"><a class="top-cta magnetic" href="../index.html#plans">בחירת תוכנית</a><a class="ghost-link" href="./privacy-policy.html">מדיניות פרטיות</a></div></section>
+    <article class="legal-card funnel-card" data-lang-content="en"><div class="legal-trust-box"><strong>Your content remains yours.</strong><span>Recordly does not claim ownership over recordings, projects, exports, or media files you create locally.</span></div><div class="trust-grid"><div class="trust-item"><span>🎓</span><strong>Built for teachers</strong><p>Create tutorials, lessons, and walkthroughs.</p></div><div class="trust-item"><span>🆓</span><strong>Free plan</strong><p>Up to 5 recordings per month.</p></div><div class="trust-item"><span>🚀</span><strong>Pro plan</strong><p>Unlimited recordings while active.</p></div><div class="trust-item"><span>📦</span><strong>Local files</strong><p>Backups and storage are under your control.</p></div></div><div class="legal-content"><section class="summary-panel"><h2>Plain English summary</h2><p>You can use Recordly to create your own tutorial videos. You own your content. Free is limited to 5 recordings per month. Pro gives unlimited recordings while your subscription is active.</p></section><section><h2>1. Overview</h2><p>Recordly is a desktop application that helps users record and edit tutorial videos locally. By using Recordly, you agree to these Terms of Service.</p></section><section><h2>2. License to use Recordly</h2><p>We grant you a limited, non-exclusive, non-transferable license to install and use Recordly for personal, educational, or professional purposes, subject to these terms.</p></section><section><h2>3. Plans and usage limits</h2><ul><li><strong>Free plan:</strong> up to 5 recordings per month.</li><li><strong>Pro plan:</strong> unlimited recordings while the subscription is active.</li></ul><p>We may enforce plan limits using the minimum usage information required to confirm your plan and monthly recording count.</p></section><section><h2>4. Subscriptions and cancellation</h2><p>Pro subscriptions renew automatically unless canceled. You may cancel at any time. After cancellation, Pro access remains active until the end of the current billing period.</p></section><section><h2>5. Your content</h2><p>You own the recordings, projects, exports, and media files you create with Recordly. Recordly does not claim ownership over your content.</p><p>Because Recordly works locally, your content remains on your computer and is not uploaded to Recordly servers.</p></section><section><h2>6. User responsibility</h2><p>You are responsible for the content you record, the permissions required to record it, and compliance with applicable laws, workplace policies, school policies, copyright rules, and privacy obligations.</p></section><section><h2>7. Local operation and backups</h2><p>Recordly stores recordings locally. We are not responsible for data loss caused by hardware failure, operating-system issues, user actions, insufficient storage, permission problems, or missing backups.</p></section><section><h2>8. Acceptable use</h2><p>You may not use Recordly to violate the rights of others, break the law, bypass technical limits, reverse engineer protected parts of the software, abuse subscriptions, or interfere with the service.</p></section><section><h2>9. Warranty disclaimer</h2><p>Recordly is provided “as is” and “as available.” We do not guarantee that the app will be error-free, uninterrupted, or suitable for every device, operating-system configuration, or recording setup.</p></section><section><h2>10. Limitation of liability</h2><p>To the maximum extent permitted by law, Recordly is not liable for indirect, incidental, special, consequential, or lost-profit damages, including loss of recordings, files, business opportunities, or data.</p></section><section><h2>11. FAQ</h2><div class="faq-stack"><details><summary>Can I use Recordly for paid courses?</summary><p>Yes, as long as you own the rights and permissions for the content you record.</p></details><details><summary>Who owns the exported videos?</summary><p>You do. Recordly does not claim ownership over your recordings or exports.</p></details><details><summary>What happens after cancellation?</summary><p>Your Pro access continues until the end of the current billing period.</p></details></div></section><section><h2>12. Contact</h2><p>Questions about these terms? Email us at <a href="mailto:contact@recordly.ailoveu.art">contact@recordly.ailoveu.art</a>.</p></section><section class="cta-panel"><h2>Build lessons with a local-first recorder.</h2><p>Use the Free plan for light recording or Pro when you need unlimited tutorial creation.</p><a class="top-cta magnetic" href="../index.html#plans">Pick your plan</a></section></div></article>
+    <article class="legal-card funnel-card" data-lang-content="he" hidden><div class="legal-trust-box"><strong>התוכן שלך נשאר שלך.</strong><span>Recordly אינה טוענת לבעלות על הקלטות, פרויקטים, ייצואים או קבצי מדיה שאתה יוצר מקומית.</span></div><div class="trust-grid"><div class="trust-item"><span>🎓</span><strong>נבנה למורים</strong><p>יצירת הדרכות, שיעורים וסרטוני הסבר.</p></div><div class="trust-item"><span>🆓</span><strong>תוכנית חינם</strong><p>עד 5 הקלטות בחודש.</p></div><div class="trust-item"><span>🚀</span><strong>תוכנית פרו</strong><p>הקלטות ללא הגבלה כשהמנוי פעיל.</p></div><div class="trust-item"><span>📦</span><strong>קבצים מקומיים</strong><p>האחסון והגיבויים בשליטתך.</p></div></div><div class="legal-content"><section class="summary-panel"><h2>תקציר פשוט</h2><p>אפשר להשתמש ב־Recordly כדי ליצור סרטוני הדרכה משלך. התוכן נשאר שלך. תוכנית חינם מוגבלת ל־5 הקלטות בחודש. תוכנית פרו מאפשרת הקלטות ללא הגבלה כל עוד המנוי פעיל.</p></section><section><h2>1. סקירה כללית</h2><p>Recordly היא אפליקציית דסקטופ שעוזרת למשתמשים להקליט ולערוך סרטוני הדרכה באופן מקומי. שימוש ב־Recordly מהווה הסכמה לתנאי שימוש אלה.</p></section><section><h2>2. רישיון שימוש ב־Recordly</h2><p>אנחנו מעניקים לך רישיון מוגבל, לא בלעדי ולא ניתן להעברה להתקנה ושימוש ב־Recordly לצרכים אישיים, לימודיים או מקצועיים, בכפוף לתנאים אלה.</p></section><section><h2>3. תוכניות ומגבלות שימוש</h2><ul><li><strong>תוכנית חינם:</strong> עד 5 הקלטות בחודש.</li><li><strong>תוכנית פרו:</strong> הקלטות ללא הגבלה כל עוד המנוי פעיל.</li></ul><p>אנחנו עשויים לאכוף מגבלות תוכנית באמצעות המידע המינימלי הדרוש לאישור התוכנית ומספר ההקלטות החודשי.</p></section><section><h2>4. מנויים וביטול</h2><p>מנויי פרו מתחדשים אוטומטית אלא אם בוטלו. אפשר לבטל בכל זמן. לאחר הביטול, הגישה לפרו נשארת פעילה עד סוף תקופת החיוב הנוכחית.</p></section><section><h2>5. התוכן שלך</h2><p>ההקלטות, הפרויקטים, קבצי הייצוא וקבצי המדיה שאתה יוצר עם Recordly נשארים בבעלותך. Recordly אינה טוענת לבעלות על התוכן שלך.</p><p>מכיוון ש־Recordly פועלת מקומית, התוכן שלך נשאר על המחשב שלך ולא עולה לשרתי Recordly.</p></section><section><h2>6. אחריות המשתמש</h2><p>האחריות על התוכן שאתה מקליט, ההרשאות הנדרשות להקלטתו, ועמידה בחוקים, מדיניות מקום עבודה, מדיניות מוסד לימודי, כללי זכויות יוצרים וחובות פרטיות - היא עליך.</p></section><section><h2>7. פעולה מקומית וגיבויים</h2><p>Recordly שומרת הקלטות מקומית. אנחנו לא אחראים לאובדן מידע שנגרם עקב כשל חומרה, בעיות מערכת הפעלה, פעולות משתמש, חוסר מקום אחסון, בעיות הרשאה או היעדר גיבויים.</p></section><section><h2>8. שימוש מותר</h2><p>אין להשתמש ב־Recordly כדי לפגוע בזכויות אחרים, לעבור על החוק, לעקוף מגבלות טכניות, לבצע הנדסה לאחור לחלקים מוגנים בתוכנה, לנצל מנויים לרעה או להפריע לשירות.</p></section><section><h2>9. היעדר אחריות</h2><p>Recordly מסופקת “כמות שהיא” ו“ככל שזמינה”. איננו מתחייבים שהאפליקציה תהיה נטולת שגיאות, רציפה, או מתאימה לכל מכשיר, תצורת מערכת הפעלה או סביבת הקלטה.</p></section><section><h2>10. הגבלת אחריות</h2><p>במידה המרבית המותרת לפי דין, Recordly אינה אחראית לנזקים עקיפים, מקריים, מיוחדים, תוצאתיים או אובדן רווחים, כולל אובדן הקלטות, קבצים, הזדמנויות עסקיות או מידע.</p></section><section><h2>11. שאלות נפוצות</h2><div class="faq-stack"><details><summary>אפשר להשתמש ב־Recordly לקורסים בתשלום?</summary><p>כן, כל עוד יש לך זכויות והרשאות מתאימות לתוכן שאתה מקליט.</p></details><details><summary>למי שייכים סרטוני הייצוא?</summary><p>לך. Recordly אינה טוענת לבעלות על ההקלטות או הייצואים שלך.</p></details><details><summary>מה קורה אחרי ביטול?</summary><p>הגישה לפרו ממשיכה עד סוף תקופת החיוב הנוכחית.</p></details></div></section><section><h2>12. קשר</h2><p>לשאלות בנושא תנאי השימוש אפשר לפנות אלינו בכתובת <a href="mailto:contact@recordly.ailoveu.art">contact@recordly.ailoveu.art</a>.</p></section><section class="cta-panel"><h2>בונים שיעורים עם כלי הקלטה מקומי.</h2><p>התוכנית החינמית מתאימה להקלטות קלות. פרו מתאים למי שצריך ליצור סרטוני הדרכה ללא הגבלה.</p><a class="top-cta magnetic" href="../index.html#plans">בחירת תוכנית</a></section></div></article>
+  </main>
+
+  <footer class="footer">
+    <span data-i18n="footer_copyright">© 2026 Recordly. Made in Israel.</span>
     <div>
-      <a href="./privacy-policy.html">Privacy Policy</a>
-      <a href="./terms-of-service.html">Terms of Service</a>
-      <a href="./refund-policy.html">Refund Policy</a>
-      <a href="mailto:contact@recordly.ailoveu.art">Contact</a>
+      <a href="./privacy-policy.html" data-i18n="footer_privacy">Privacy Policy</a>
+      <a href="./terms-of-service.html" data-i18n="footer_terms">Terms of Service</a>
+      <a href="./refund-policy.html" data-i18n="footer_refunds">Refund Policy</a>
+      <a href="mailto:contact@recordly.ailoveu.art" data-i18n="footer_contact">Contact</a>
     </div>
   </footer>
 
-  <script>
-    (function () {
-      var button = document.querySelector('[data-theme-toggle]');
-      if (!button) return;
-
-      function applyTheme(theme) {
-        document.documentElement.setAttribute('data-theme', theme);
-        localStorage.setItem('recordly-theme', theme);
-        button.setAttribute('aria-label', theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme');
-        button.setAttribute('title', theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme');
-        button.querySelector('.theme-toggle-icon').textContent = theme === 'dark' ? '☾' : '☀';
-      }
-
-      applyTheme(document.documentElement.getAttribute('data-theme') || 'dark');
-      button.addEventListener('click', function () {
-        var currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
-        applyTheme(currentTheme === 'dark' ? 'light' : 'dark');
-      });
-    }());
-  </script>
+  <script src="./legal.js"></script>
 </body>
 </html>
