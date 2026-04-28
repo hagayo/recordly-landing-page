@@ -1,110 +1,135 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en" dir="ltr" data-theme="light" data-lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Recordly - Privacy Policy</title>
+  <meta name="description" content="Privacy Policy for Recordly, a local-first desktop app for recording and editing tutorial videos without uploading user recordings." />
   <script>
     (function () {
       var savedTheme = localStorage.getItem('recordly-theme');
-      var prefersLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
-      document.documentElement.setAttribute('data-theme', savedTheme || (prefersLight ? 'light' : 'dark'));
+      var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      var savedLang = localStorage.getItem('recordly-lang');
+      var browserLang = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
+      var initialLang = savedLang || (browserLang.startsWith('he') ? 'he' : 'en');
+      document.documentElement.setAttribute('data-theme', savedTheme || (prefersDark ? 'dark' : 'light'));
+      document.documentElement.setAttribute('data-lang', initialLang);
+      document.documentElement.setAttribute('lang', initialLang);
+      document.documentElement.setAttribute('dir', initialLang === 'he' ? 'rtl' : 'ltr');
     }());
   </script>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="./styles.css" />
 </head>
 <body>
-<nav>
-  <a class="logo" href="https://recordly.ailoveu.art">Recordly</a>
-  <a class="cta-btn" href="https://recordly.ailoveu.art/#pricing">Get Started Free</a>
-  <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch theme" title="Switch theme">
-    <span class="theme-toggle-icon" aria-hidden="true">☾</span>
-  </button>
-</nav>
+  <div class="noise" aria-hidden="true"></div>
+  <div class="pointer-light" aria-hidden="true"></div>
 
-<section class="legal">
-  <div class="legal-container">
-    <h1>Privacy Policy</h1>
-    <p>Last updated: April 2026</p>
+  <header class="topbar">
+    <a class="brand" href="../index.html" aria-label="Recordly home">
+      <span class="brand-mark">R</span>
+      <span>Recordly</span>
+    </a>
 
-    <h2>Overview</h2>
-    <p>
-    Recordly is designed to work locally on your computer.
-    We do not collect, store, or process your recordings or any of their content.
-    </p>
+    <nav class="nav" aria-label="Main navigation">
+      <a href="../index.html#about" data-i18n="nav_about">About</a>
+      <a href="../index.html#demo" data-i18n="nav_demo">Demo</a>
+      <a href="../index.html#plans" data-i18n="nav_price">Pricing</a>
+      <a href="../index.html#faq" data-i18n="nav_faq">FAQ</a>
+      <a href="mailto:contact@recordly.ailoveu.art" data-i18n="nav_contact">Contact</a>
+    </nav>
 
-    <h2>What We Collect</h2>
-    <p>We only collect minimal data required to operate the service:</p>
-    <ul>
-      <li>Your subscription plan (Free or Pro)</li>
-      <li>Number of recordings used per month</li>
-      <li>Basic billing information (handled by payment provider)</li>
-    </ul>
+    <div class="top-actions">
+      <button class="language-toggle" type="button" data-lang-toggle aria-label="Switch language" title="Switch language">
+        <span data-lang-short>עב</span>
+      </button>
+      <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch theme" title="Switch theme">
+        <span aria-hidden="true">☀</span>
+      </button>
+      <a class="top-cta magnetic" href="../index.html#plans" data-i18n="nav_download">Get started</a>
+    </div>
+  </header>
 
-    <h2>What We Do NOT Collect</h2>
-    <ul>
-      <li>No video recordings</li>
-      <li>No audio recordings</li>
-      <li>No screen content</li>
-      <li>No user-generated files</li>
-    </ul>
+  <main class="legal-main funnel-main">
+    <section class="legal-hero funnel-hero" data-lang-content="en">
+      <span class="tiny">Legal / Privacy</span>
+      <h1>Your recordings never leave your computer.</h1>
+      <p class="legal-subtitle">Recordly is built for teachers who need a simple recording tool without turning every lesson into cloud data.</p>
+      <p class="legal-updated">Last updated: April 2026</p>
+      <div class="hero-actions">
+        <a class="top-cta magnetic" href="../index.html#plans">Start with the free plan</a>
+        <a class="ghost-link" href="../index.html#demo">See how Recordly works</a>
+      </div>
+    </section>
 
-    <h2>Local Processing</h2>
-    <p>
-    All recordings and edits are processed entirely on your device.
-    Nothing is uploaded to our servers.
-    </p>
+    <section class="legal-hero funnel-hero" data-lang-content="he" hidden>
+      <span class="tiny">משפטי / פרטיות</span>
+      <h1>ההקלטות שלך לא עוזבות את המחשב.</h1>
+      <p class="legal-subtitle">Recordly נבנתה למורים שצריכים כלי הקלטה פשוט בלי להפוך כל שיעור למידע בענן.</p>
+      <p class="legal-updated">עודכן לאחרונה: אפריל 2026</p>
+      <div class="hero-actions">
+        <a class="top-cta magnetic" href="../index.html#plans">להתחיל עם התוכנית החינמית</a>
+        <a class="ghost-link" href="../index.html#demo">לראות איך Recordly עובדת</a>
+      </div>
+    </section>
 
-    <h2>Data Sharing</h2>
-    <p>
-    We do not sell, share, or transfer your data to third parties.
-    </p>
+    <article class="legal-card funnel-card" data-lang-content="en">
+      <div class="legal-trust-box">
+        <strong>Privacy mode: on.</strong>
+        <span>Recordly runs locally. Your videos, audio, webcam footage, timeline edits, projects, and exports stay on your desktop.</span>
+      </div>
+      <div class="trust-grid" aria-label="Privacy highlights">
+        <div class="trust-item"><span>🔒</span><strong>No cloud upload</strong><p>Recordings are not sent to Recordly servers.</p></div>
+        <div class="trust-item"><span>💻</span><strong>Local processing</strong><p>Recording and editing happen on your machine.</p></div>
+        <div class="trust-item"><span>🚫</span><strong>No content tracking</strong><p>We do not scan lessons, screens, or files.</p></div>
+        <div class="trust-item"><span>📁</span><strong>Your files stay yours</strong><p>You choose where projects and exports are saved.</p></div>
+      </div>
+      <div class="legal-content">
+        <section class="summary-panel">
+          <h2>Plain English summary</h2>
+          <p><strong>We only need enough data to know your plan and monthly recording count.</strong> We do not collect your recordings, screen content, audio, camera footage, edits, exports, or project files.</p>
+        </section>
+        <section><h2>1. Overview</h2><p>Recordly is a desktop application for recording and editing tutorial videos locally on your computer. This Privacy Policy explains what limited information we collect, what we do not collect, and how we protect the privacy of your recordings.</p></section>
+        <section><h2>2. Data we collect</h2><p>We collect only the minimum information needed to operate the subscription and usage limits of the product:</p><ul><li>Your current plan: Free or Pro.</li><li>The number of recordings created in the current monthly usage period.</li><li>Basic account or billing status required to confirm whether your Pro plan is active.</li></ul><p>Payment details, such as full credit card numbers, should be handled by the payment provider. Recordly should not store full payment card details on its own servers.</p></section>
+        <section><h2>3. Data we do not collect</h2><ul class="check-list"><li>No video recordings.</li><li>No audio recordings.</li><li>No webcam footage.</li><li>No screen content.</li><li>No timeline edits, exports, project files, or local media files.</li><li>No behavioral advertising profiles.</li></ul></section>
+        <section><h2>4. Local processing and storage</h2><p>Recording, editing, rendering, exporting, and file storage happen locally on your device. Your recordings are saved only in the location you choose on your computer.</p><p>Because Recordly does not store your recordings in the cloud, we cannot recover deleted or lost recordings. You are responsible for backups, local storage permissions, and device security.</p></section>
+        <section><h2>5. Sharing and third parties</h2><p>We do not sell, rent, or share your Recordly usage data with third parties for advertising or marketing.</p><p>If a third-party payment provider is used to process subscriptions, that provider may process payment information under its own privacy and security terms. Recordly receives only the information needed to confirm plan status and billing state.</p></section>
+        <section><h2>6. Security</h2><p>We use reasonable technical and organizational safeguards for the limited account, plan, and usage-limit information we maintain. Your local files remain under your control, so local device security, passwords, disk encryption, backups, and access permissions are important.</p></section>
+        <section><h2>7. FAQ</h2><div class="faq-stack"><details><summary>Can Recordly see my lessons?</summary><p>No. Your lessons are recorded and edited locally on your desktop.</p></details><details><summary>Does Recordly upload videos in the background?</summary><p>No. Recordly is designed so your recordings and exports do not upload to Recordly servers.</p></details><details><summary>Can Recordly recover deleted recordings?</summary><p>No. Since your recordings are local only, you are responsible for backups.</p></details><details><summary>What data is used for the Free plan limit?</summary><p>Only your plan and monthly recording count are needed to enforce the 5 recordings per month Free plan limit.</p></details></div></section>
+        <section><h2>8. Your choices</h2><p>You can stop using Recordly at any time. You can cancel a Pro subscription at any time, and your Pro access remains active until the end of the current billing period.</p><p>You may contact us to ask about the limited account or billing-status data associated with your subscription.</p></section>
+        <section><h2>9. Contact</h2><p>Questions about privacy? Email us at <a href="mailto:contact@recordly.ailoveu.art">contact@recordly.ailoveu.art</a>.</p></section>
+        <section class="cta-panel"><h2>Ready to record without cloud upload?</h2><p>Start with the Free plan, record up to 5 videos per month, and upgrade only when you need unlimited recording.</p><a class="top-cta magnetic" href="../index.html#plans">Compare plans</a></section>
+      </div>
+    </article>
 
-    <h2>Data Security</h2>
-    <p>
-    Because your content stays on your device, you are responsible for backups and storage.
-    We cannot recover lost recordings.
-    </p>
+    <article class="legal-card funnel-card" data-lang-content="he" hidden>
+      <div class="legal-trust-box"><strong>מצב פרטיות: פעיל.</strong><span>Recordly פועלת מקומית. הווידאו, האודיו, המצלמה, העריכות, הפרויקטים והייצואים נשארים על המחשב שלך.</span></div>
+      <div class="trust-grid" aria-label="עיקרי פרטיות"><div class="trust-item"><span>🔒</span><strong>אין העלאה לענן</strong><p>ההקלטות לא נשלחות לשרתי Recordly.</p></div><div class="trust-item"><span>💻</span><strong>עיבוד מקומי</strong><p>הקלטה ועריכה מתבצעות על המחשב שלך.</p></div><div class="trust-item"><span>🚫</span><strong>אין מעקב אחר תוכן</strong><p>אנחנו לא סורקים שיעורים, מסכים או קבצים.</p></div><div class="trust-item"><span>📁</span><strong>הקבצים נשארים שלך</strong><p>אתה בוחר איפה לשמור פרויקטים וייצואים.</p></div></div>
+      <div class="legal-content">
+        <section class="summary-panel"><h2>תקציר פשוט</h2><p><strong>אנחנו צריכים רק מספיק מידע כדי לדעת מה התוכנית שלך וכמה הקלטות נוצרו החודש.</strong> אנחנו לא אוספים הקלטות, תוכן מסך, אודיו, צילום מצלמה, עריכות, ייצואים או קבצי פרויקט.</p></section>
+        <section><h2>1. סקירה כללית</h2><p>Recordly היא אפליקציית דסקטופ להקלטה ועריכה של סרטוני הדרכה באופן מקומי על המחשב שלך. מדיניות פרטיות זו מסבירה איזה מידע מוגבל אנחנו אוספים, איזה מידע איננו אוספים, ואיך אנחנו שומרים על פרטיות ההקלטות שלך.</p></section>
+        <section><h2>2. מידע שאנחנו אוספים</h2><p>אנחנו אוספים רק את המידע המינימלי הדרוש להפעלת המנוי ומגבלות השימוש במוצר:</p><ul><li>התוכנית הנוכחית שלך: חינם או פרו.</li><li>מספר ההקלטות שנוצרו בתקופת השימוש החודשית הנוכחית.</li><li>סטטוס חשבון או חיוב בסיסי שנדרש כדי לוודא שתוכנית הפרו פעילה.</li></ul><p>פרטי תשלום, כגון מספרי כרטיס אשראי מלאים, אמורים להיות מטופלים על ידי ספק התשלומים. Recordly אינה אמורה לשמור פרטי כרטיס מלאים בשרתים שלה.</p></section>
+        <section><h2>3. מידע שאנחנו לא אוספים</h2><ul class="check-list"><li>לא סרטוני וידאו.</li><li>לא הקלטות אודיו.</li><li>לא צילום מצלמה.</li><li>לא תוכן מסך.</li><li>לא עריכות טיימליין, קבצי ייצוא, פרויקטים או קבצי מדיה מקומיים.</li><li>לא פרופילי פרסום או מעקב התנהגותי.</li></ul></section>
+        <section><h2>4. עיבוד ושמירה מקומיים</h2><p>ההקלטה, העריכה, הרינדור, הייצוא ושמירת הקבצים מתבצעים מקומית על המכשיר שלך. ההקלטות נשמרות רק במיקום שאתה בוחר במחשב שלך.</p><p>מכיוון ש־Recordly לא שומרת את ההקלטות בענן, איננו יכולים לשחזר הקלטות שנמחקו או אבדו. האחריות לגיבויים, הרשאות אחסון מקומיות ואבטחת המכשיר היא עליך.</p></section>
+        <section><h2>5. שיתוף וצדדים שלישיים</h2><p>אנחנו לא מוכרים, משכירים או משתפים את נתוני השימוש שלך ב־Recordly עם צדדים שלישיים לצורכי פרסום או שיווק.</p><p>אם נעשה שימוש בספק תשלומים חיצוני לעיבוד מנויים, אותו ספק עשוי לעבד מידע תשלום לפי תנאי הפרטיות והאבטחה שלו. Recordly מקבלת רק את המידע הדרוש לאישור סטטוס התוכנית והחיוב.</p></section>
+        <section><h2>6. אבטחה</h2><p>אנחנו משתמשים באמצעי אבטחה טכניים וארגוניים סבירים עבור המידע המוגבל שאנחנו שומרים: חשבון, תוכנית ומכסת שימוש. הקבצים המקומיים נשארים בשליטתך, ולכן חשוב לשמור על אבטחת המכשיר, סיסמאות, הצפנת דיסק, גיבויים והרשאות גישה.</p></section>
+        <section><h2>7. שאלות נפוצות</h2><div class="faq-stack"><details><summary>האם Recordly רואה את השיעורים שלי?</summary><p>לא. השיעורים מוקלטים ונערכים מקומית על המחשב שלך.</p></details><details><summary>האם Recordly מעלה וידאו ברקע?</summary><p>לא. Recordly נבנתה כך שההקלטות והייצואים לא עולים לשרתי Recordly.</p></details><details><summary>האם Recordly יכולה לשחזר הקלטות שנמחקו?</summary><p>לא. מכיוון שההקלטות מקומיות בלבד, האחריות לגיבויים היא עליך.</p></details><details><summary>איזה מידע משמש למגבלת התוכנית החינמית?</summary><p>רק התוכנית שלך ומספר ההקלטות החודשי נדרשים כדי לאכוף את מגבלת 5 ההקלטות בחודש.</p></details></div></section>
+        <section><h2>8. הבחירות שלך</h2><p>אפשר להפסיק להשתמש ב־Recordly בכל זמן. אפשר לבטל מנוי פרו בכל זמן, והגישה לפרו תישאר פעילה עד סוף תקופת החיוב הנוכחית.</p><p>אפשר ליצור איתנו קשר כדי לשאול על נתוני החשבון או סטטוס החיוב המוגבלים הקשורים למנוי שלך.</p></section>
+        <section><h2>9. קשר</h2><p>לשאלות בנושא פרטיות אפשר לפנות אלינו בכתובת <a href="mailto:contact@recordly.ailoveu.art">contact@recordly.ailoveu.art</a>.</p></section>
+        <section class="cta-panel"><h2>רוצה להקליט בלי העלאה לענן?</h2><p>מתחילים בתוכנית חינם, מקליטים עד 5 סרטונים בחודש, ומשדרגים רק כשצריך הקלטות ללא הגבלה.</p><a class="top-cta magnetic" href="../index.html#plans">השוואת תוכניות</a></section>
+      </div>
+    </article>
+  </main>
 
-    <h2>Your Rights</h2>
-    <p>
-    You can stop using Recordly at any time. No personal data remains on our systems beyond billing metadata.
-    </p>
-
-    <h2>Contact</h2>
-    <p>Email: hagayo+privacy_policy@gmail.com</p>
-  </div>
-</section>
-
-  <footer>
-    <span>© 2026 Recordly. Made in Israel.</span>
+  <footer class="footer">
+    <span data-i18n="footer_copyright">© 2026 Recordly. Made in Israel.</span>
     <div>
-      <a href="./privacy-policy.html">Privacy Policy</a>
-      <a href="./terms-of-service.html">Terms of Service</a>
-      <a href="./refund-policy.html">Refund Policy</a>
-      <a href="mailto:contact@recordly.ailoveu.art">Contact</a>
+      <a href="./privacy-policy.html" data-i18n="footer_privacy">Privacy Policy</a>
+      <a href="./terms-of-service.html" data-i18n="footer_terms">Terms of Service</a>
+      <a href="./refund-policy.html" data-i18n="footer_refunds">Refund Policy</a>
+      <a href="mailto:contact@recordly.ailoveu.art" data-i18n="footer_contact">Contact</a>
     </div>
   </footer>
 
-  <script>
-    (function () {
-      var button = document.querySelector('[data-theme-toggle]');
-      if (!button) return;
-
-      function applyTheme(theme) {
-        document.documentElement.setAttribute('data-theme', theme);
-        localStorage.setItem('recordly-theme', theme);
-        button.setAttribute('aria-label', theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme');
-        button.setAttribute('title', theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme');
-        button.querySelector('.theme-toggle-icon').textContent = theme === 'dark' ? '☾' : '☀';
-      }
-
-      applyTheme(document.documentElement.getAttribute('data-theme') || 'dark');
-      button.addEventListener('click', function () {
-        var currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
-        applyTheme(currentTheme === 'dark' ? 'light' : 'dark');
-      });
-    }());
-  </script>
+  <script src="./legal.js"></script>
 </body>
 </html>
