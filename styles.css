@@ -411,3 +411,9 @@ html[dir="rtl"] .section-title h2, html[dir="rtl"] .proof-card h2, html[dir="rtl
   .proof-card { padding: 24px; }
   .footer { flex-direction: column; }
 }
+
+.legal-container {
+  max-width: 900px;
+  margin: 60px auto;
+  padding: 0 20px;
+}
