@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>צור קשר | Recordly</title>
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="icon" href="../assets/recordly-favicon.png">
+  <style>
+    /* Additional styles specific to contact form */
+    .contact-form {
+      max-width: 680px;
+      margin: 40px auto 0;
+    }
+    .form-group {
+      margin-bottom: 24px;
+    }
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 700;
+      color: var(--ink);
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 14px 18px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: var(--solid);
+      font-size: 16px;
+      transition: border 0.2s ease;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(51, 68, 238, 0.15);
+    }
+    .form-group textarea {
+      min-height: 160px;
+      resize: vertical;
+    }
+    .submit-btn {
+      width: 100%;
+      padding: 16px;
+      font-size: 18px;
+      font-weight: 900;
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <div class="brand-mark">R</div>
+      <div class="brand-name">Recordly</div>
+    </div>
+    <div class="top-actions">
+      <a href="../index.html" class="top-cta ghost">חזרה לאתר</a>
+    </div>
+  </header>
+
+  <main class="legal-main">
+    <div class="legal-hero">
+      <h1>צור קשר</h1>
+      <p class="legal-subtitle">אנחנו כאן כדי לעזור. שלח לנו שאלות, משוב, בקשות החזר או דיווחי באגים.</p>
+      <p class="legal-updated">עודכן לאחרונה: אפריל 2026</p>
+    </div>
+
+    <div class="legal-card">
+      <div class="legal-content">
+        <p><strong>תקציר:</strong> השתמש בטופס שלהלן כדי לפנות אלינו בנושאים כמו החזרים, תוכניות מנוי, אבטחה, משוב משתמשים או באגים. 
+        אנו מחויבים להגיב במהירות האפשרית.</p>
+
+        <div class="contact-form">
+          <form id="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST"> <!-- Replace with your actual form endpoint (Formspree, Getform, etc.) -->
+
+            <div class="form-group">
+              <label for="name" data-i18n="contact_name">שם מלא</label>
+              <input type="text" id="name" name="name" required>
+            </div>
+
+            <div class="form-group">
+              <label for="email" data-i18n="contact_email">כתובת אימייל</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="form-group">
+              <label for="category" data-i18n="contact_category">סוג הפנייה</label>
+              <select id="category" name="category" required>
+                <option value="">בחר קטגוריה...</option>
+                <option value="refund">החזר כספי / Refund</option>
+                <option value="billing">תוכניות מנוי וחיוב / Plans & Billing</option>
+                <option value="security">אבטחה ופרטיות / Security & Privacy</option>
+                <option value="feedback">משוב כללי / User Feedback</option>
+                <option value="bug">דיווח באג / Bug Report</option>
+                <option value="other">אחר / Other</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="subject" data-i18n="contact_subject">נושא</label>
+              <input type="text" id="subject" name="subject" required>
+            </div>
+
+            <div class="form-group">
+              <label for="message" data-i18n="contact_message">הודעה מפורטת</label>
+              <textarea id="message" name="message" required placeholder="תאר את הבעיה או הבקשה שלך..."></textarea>
+            </div>
+
+            <button type="submit" class="btn primary submit-btn" data-i18n="contact_submit">שלח הודעה</button>
+          </form>
+        </div>
+
+        <p style="margin-top: 40px; text-align: center; color: var(--muted);">
+          או שלח לנו ישירות: <a href="mailto:contact@recordly.ailoveu.art" style="color: var(--primary);">contact@recordly.ailoveu.art</a>
+        </p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div>© 2026 Recordly. Made in Israel.</div>
+    <div>
+      <a href="privacy-policy.html">מדיניות פרטיות</a>
+      <a href="terms-of-service.html">תנאי שימוש</a>
+      <a href="refund-policy.html">מדיניות החזרים</a>
+      <a href="cookie-policy.html">מדיניות עוגיות</a>
+      <a href="contact.html">צור קשר</a>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>
