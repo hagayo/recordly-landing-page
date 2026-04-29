@@ -99,6 +99,12 @@
       final_title: "המסך שלך כבר מסביר. עכשיו תן לו להיראות מקצועי.",
       final_cta: "להתחיל בחינם",
       final_contact: "לדבר איתנו",
+      contact_name: "שם מלא",
+      contact_email: "כתובת אימייל",
+      contact_category: "סוג הפנייה",
+      contact_subject: "נושא",
+      contact_message: "הודעה מפורטת",
+      contact_submit: "שלח הודעה",
       footer_copyright: "© 2026 Recordly. Built for people who care about their data.",
       footer_privacy: "מדיניות פרטיות",
       footer_terms: "תנאי שימוש",
@@ -203,6 +209,12 @@
       final_title: "Your screen already explains it. Now make it look professional.",
       final_cta: "Start free",
       final_contact: "Contact us",
+      contact_name: "Full Name",
+      contact_email: "Email Address",
+      contact_category: "Inquiry Type",
+      contact_subject: "Subject",
+      contact_message: "Detailed Message",
+      contact_submit: "Send Message",      
       footer_copyright: "© 2026 Recordly. Built for people who care about their data.",
       footer_privacy: "Privacy Policy",
       footer_terms: "Terms of Service",
@@ -210,11 +222,14 @@
     }
   };
 
+  // ====================== Theme & Language Handling ======================
   const themeToggle = document.querySelector("[data-theme-toggle]");
   const themeIcon = themeToggle ? themeToggle.querySelector("span") : null;
   const langToggle = document.querySelector("[data-lang-toggle]");
   const langShort = document.querySelector("[data-lang-short]");
-
+  const initialDefaultTheme = "light";
+  const initialDefaultLang = "he";
+  
   function setTheme(theme) {
     document.documentElement.setAttribute("data-theme", theme);
     localStorage.setItem("recordly-theme", theme);
@@ -239,6 +254,10 @@
       langToggle.setAttribute("title", lang === "he" ? "Switch to English" : "עבור לעברית");
     }
   }
+
+  // Initialize
+  setTheme(localStorage.getItem("recordly-theme") || initialDefaultTheme);
+  setLanguage(localStorage.getItem("recordly-lang") || initialDefaultLang);
 
   if (themeToggle) {
     setTheme(document.documentElement.getAttribute("data-theme") || "light");
