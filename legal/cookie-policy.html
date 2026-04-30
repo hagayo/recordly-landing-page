@@ -3,23 +3,38 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>מדיניות קובצי Cookie | Recordly</title>
-  <link rel="stylesheet" href="../styles.css">
+  <title>Recordly - Cookie Policy</title>
+  <meta name="description" content="Cookie Policy for Recordly, a local-first desktop app for recording and editing tutorial videos without uploading user recordings." />
+  <script>
+    (function () {
+      var savedTheme = localStorage.getItem('recordly-theme');
+      var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      var savedLang = localStorage.getItem('recordly-lang');
+      var browserLang = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
+      var initialLang = savedLang || (browserLang.startsWith('he') ? 'he' : 'en');
+      document.documentElement.setAttribute('data-theme', savedTheme || (prefersDark ? 'dark' : 'light'));
+      document.documentElement.setAttribute('data-lang', initialLang);
+      document.documentElement.setAttribute('lang', initialLang);
+      document.documentElement.setAttribute('dir', initialLang === 'he' ? 'rtl' : 'ltr');
+    }());
+  </script>
+  <link rel="stylesheet" href="../styles.css" />
   <link rel="icon" href="../assets/recordly-favicon.png">
+  <link rel="canonical" href="https://recordly.ailoveu.art/legal/cookie-policy.html">
 </head>
 <body>
   <div class="noise" aria-hidden="true"></div>
   <div class="pointer-light" aria-hidden="true"></div>
   
   <header class="topbar">
-    <a class="brand" href="#top" aria-label="Recordly">
+    <a class="brand" href="../index.html#top" aria-label="Recordly">
       <span class="brand-mark">R</span>
       <span class="brand-name">Recordly</span>
       <span class="privacy-pill" data-i18n="brand_badge">Local-first</span>
     </a>
 
     <nav class="nav" aria-label="Main navigation">
-      <a href="../index.html#about" data-i18n="nav_about">עלינו</a>
+      <a href="../index.html#top" data-i18n="nav_about">עלינו</a>
       <a href="../index.html#problem" data-i18n="nav_problem">למה זה שונה</a>
       <a href="../index.html#features" data-i18n="nav_features">יכולות</a>
       <a href="../index.html#proof" data-i18n="nav_proof">הוכחה</a>
@@ -36,15 +51,15 @@
       <button class="theme-toggle" type="button" data-theme-toggle aria-label="Toggle theme">
         <span aria-hidden="true">☀</span>
       </button>
-      <a class="top-cta magnetic" href="#plans" data-i18n="nav_download">להתחיל בחינם</a>
+      <a class="top-cta magnetic" href="../index.html#plans" data-i18n="nav_download">להתחיל בחינם</a>
     </div>
   </header>
 
-  <main class="legal-main">
+  <main class="legal-main funnel-main">
     <div class="legal-hero">
       <h1>מדיניות קובצי Cookie</h1>
-      <p class="legal-subtitle">שימוש מינימלי ומכבד פרטיות</p>
-      <p class="legal-updated">עודכן לאחרונה: אפריל 2026</p>
+      <p class="legal-subtitle" data-i18n="legal_subtitle_cookie">שימוש מינימלי ומכבד פרטיות</p>
+      <p class="legal-updated" data-i18n="legal_updated">עודכן לאחרונה: אפריל 2026</p>
     </div>
 
     <div class="legal-card">
@@ -66,27 +81,27 @@
 
         <section>
           <h2>2. אילו קובצי Cookie אנו משתמשים בהם?</h2>
-          <table style="width:100%; border-collapse: collapse; margin: 20px 0;">
+          <table>
             <thead>
-              <tr style="border-bottom: 2px solid var(--line);">
-                <th style="text-align: right; padding: 12px 0;">סוג</th>
-                <th style="text-align: right; padding: 12px 0;">שם</th>
-                <th style="text-align: right; padding: 12px 0;">מטרה</th>
-                <th style="text-align: right; padding: 12px 0;">משך</th>
+              <tr>
+                <th>סוג</th>
+                <th>שם</th>
+                <th>מטרה</th>
+                <th>משך</th>
               </tr>
             </thead>
             <tbody>
-              <tr style="border-bottom: 1px solid var(--line);">
-                <td style="padding: 12px 0;">Essential</td>
-                <td style="padding: 12px 0;">recordly-lang</td>
-                <td style="padding: 12px 0;">שמירת בחירת שפה (עברית / אנגלית)</td>
-                <td style="padding: 12px 0;">1 שנה</td>
+              <tr>
+                <td>Essential</td>
+                <td>recordly-lang</td>
+                <td>שמירת בחירת שפה (עברית / אנגלית)</td>
+                <td>1 שנה</td>
               </tr>
-              <tr style="border-bottom: 1px solid var(--line);">
-                <td style="padding: 12px 0;">Essential</td>
-                <td style="padding: 12px 0;">recordly-theme</td>
-                <td style="padding: 12px 0;">שמירת מצב תצוגה (Light / Dark)</td>
-                <td style="padding: 12px 0;">1 שנה</td>
+              <tr>
+                <td>Essential</td>
+                <td>recordly-theme</td>
+                <td>שמירת מצב תצוגה (Light / Dark)</td>
+                <td>1 שנה</td>
               </tr>
             </tbody>
           </table>
@@ -130,5 +145,6 @@
     </div>
   </footer>
 
+  <script src="../script.js"></script>
 </body>
 </html>

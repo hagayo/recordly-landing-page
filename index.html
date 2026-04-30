@@ -5,6 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Recordly - מקליטים מדריכים מקומית, בלי ענן ובלי כאב ראש</title>
   <meta name="description" content="Recordly היא אפליקציית דסקטופ למורים, יוצרים ומפתחים שרוצים להקליט ולערוך סרטוני הדרכה מקומית. 5 הקלטות בחינם, Pro ללא הגבלה." />
+  <meta property="og:title" content="Recordly -> Local-first screen recorder for tutorials">
+  <meta property="og:description" content="Record screen, camera and audio locally. Create clean tutorial videos without uploading recordings to the cloud.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://recordly.ailoveu.art/">
+  <meta property="og:image" content="https://recordly.ailoveu.art/assets/recordly-og.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Recordly - Local-first screen recorder">
+  <meta name="twitter:description" content="Create tutorial videos locally without uploading recordings.">
+  <meta name="twitter:image" content="https://recordly.ailoveu.art/assets/recordly-og.png">
   <script>
     (function () {
       const savedTheme = localStorage.getItem("recordly-theme");
@@ -23,6 +32,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700;800;900&family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./styles.css" />
   <link rel="icon" href="./assets/recordly-favicon.png" type="image/png">
+  <link rel="canonical" href="https://recordly.ailoveu.art/">
 </head>
 <body>
   <div class="noise" aria-hidden="true"></div>
@@ -50,7 +60,7 @@
       <button class="theme-toggle" type="button" data-theme-toggle aria-label="Toggle theme">
         <span aria-hidden="true">☀</span>
       </button>
-      <a class="top-cta magnetic" href="#plans" data-i18n="nav_download">להתחיל בחינם</a>
+      <a class="top-cta magnetic" href="./assets/recordly-installer.exe" download data-download-cta data-i18n="nav_download">להורדה חינם</a>
     </div>
   </header>
 
@@ -62,7 +72,7 @@
         <p class="lead" data-i18n="hero_lead">Recordly עוזרת למורים, יוצרים ומפתחים להקליט מסך, מצלמה ואודיו, לערוך מהר ולייצא סרטון נקי - כשההקלטות נשארות על המחשב שלך, לא בענן שלנו.</p>
 
         <div class="hero-actions">
-          <a class="btn primary magnetic" href="#plans" data-i18n="hero_cta">להתחיל עם 5 הקלטות חינם</a>
+          <a class="btn primary magnetic" href="./assets/recordly-installer.exe" download data-download-cta data-i18n="hero_cta">להתחיל עם 5 הקלטות חינם</a>
           <a class="btn ghost magnetic" href="#proof" data-i18n="hero_secondary">לראות למה זה בטוח</a>
         </div>
 
@@ -168,6 +178,11 @@
           <h3 data-i18n="feature_5_title">ייצוא נקי לשיתוף</h3>
           <p data-i18n="feature_5_text">סרטון מסודר שאפשר לשלוח לתלמידים, לקוח, צוות או קהילה.</p>
         </article>
+        <article class="feature-card wide reveal delay-4">
+          <div class="icon">🚀</div>
+          <h3 data-i18n="feature_6_title">פלטפורמות זמינות</h3>
+          <p data-i18n="feature_6_text">כרגע ווינדוס, בקרוב גרסת מק\אפל</p>
+        </article>
       </div>
     </section>
 
@@ -241,7 +256,7 @@
             <li data-i18n="free_li_3">ללא העלאת תוכן לשרת</li>
             <li class="off" data-i18n="free_li_4">הקלטות ללא הגבלה</li>
           </ul>
-          <a class="plan-btn outline magnetic" href="#" data-i18n="free_cta">להורדה חינם</a>
+          <a class="plan-btn outline magnetic" href="./assets/recordly-installer.exe" download data-download-cta data-i18n="free_cta">להורדה חינם</a>
         </article>
 
         <article class="plan pro reveal delay-1">
@@ -255,7 +270,9 @@
             <li data-i18n="pro_li_3">כל כלי העריכה</li>
             <li data-i18n="pro_li_4">גישה פעילה עד סוף תקופת החיוב לאחר ביטול</li>
           </ul>
-          <a class="plan-btn filled magnetic" href="#" data-i18n="pro_cta">לקבל Pro</a>
+          <!-- <a class="plan-btn filled magnetic" href="./legal/contact.html" data-i18n="pro_cta">לקבל Pro</a> -->
+          <a class="plan-btn filled magnetic" href="https://checkout.paddle.com/recordly-pro-pay-page" target="_blank" rel="noopener noreferrer" data-checkout-cta data-i18n="pro_cta">לקבל Pro</a>
+          
         </article>
       </div>
       <p class="pricing-note reveal delay-2" data-i18n="pricing_note">החזר שנתי מחושב לפי החודשים שנוצלו, כפי שמפורט במדיניות ההחזרים.</p>
@@ -263,14 +280,19 @@
 
     <section class="section faq" id="faq">
       <div class="section-title center reveal">
-        <span class="tiny" data-i18n="faq_label">שאלות</span>
-        <h2 data-i18n="faq_title">החששות הנכונים, בלי תשובות מתחמקות.</h2>
+        <span class="tiny" data-i18n="faq_label">שאלות נפוצות</span>
+        <h2 data-i18n="faq_title">כל מה שרציתם לדעת</h2>
       </div>
       <div class="faq-list">
         <details class="reveal" open><summary data-i18n="faq_1_q">הסרטונים שלי עולים לשרת?</summary><p data-i18n="faq_1_a">לא. תוכן ההקלטות נשמר מקומית בלבד ולא נשלח לשרתים שלנו.</p></details>
         <details class="reveal"><summary data-i18n="faq_2_q">איזה מידע אתם כן שומרים?</summary><p data-i18n="faq_2_a">רק את תוכנית התשלום שלך ואת מספר ההקלטות החודשי לצורך מגבלת Free ותפעול Pro.</p></details>
         <details class="reveal"><summary data-i18n="faq_3_q">אפשר לבטל Pro?</summary><p data-i18n="faq_3_a">כן. אפשר לבטל בכל זמן, והגישה נשארת פעילה עד סוף תקופת החיוב הנוכחית.</p></details>
         <details class="reveal"><summary data-i18n="faq_4_q">זה מתאים רק למורים?</summary><p data-i18n="faq_4_a">לא. זה נבנה סביב מורים, אבל מתאים גם ליוצרים, מפתחים, צוותי תמיכה וגיימרים.</p></details>
+        <details class="reveal"><summary data-i18n="faq_5_q">Requires ffmpeg?</summary><p data-i18n="faq_5_a">Yes, install ffmpeg before (Free)</p></details>
+        <details class="reveal"><summary data-i18n="faq_6_q">Works offline?</summary><p data-i18n="faq_6_a">Yes, turn your WiFi off and test us now!</p></details>
+        <details class="reveal"><summary data-i18n="faq_7_q">Supports system audio?</summary><p data-i18n="faq_7_a">Yes</p></details>
+        <details class="reveal"><summary data-i18n="faq_8_q">Supports mic + camera?</summary><p data-i18n="faq_8_a">Yes</p></details>
+        <details class="reveal"><summary data-i18n="faq_9_q">Exports MP4?</summary><p data-i18n="faq_9_a">Yes</p></details>
       </div>
     </section>
 
@@ -278,8 +300,8 @@
       <span class="tiny" data-i18n="final_label">Record once. Explain forever.</span>
       <h2 data-i18n="final_title">המסך שלך כבר מסביר. עכשיו תן לו להיראות מקצועי.</h2>
       <div class="hero-actions center-actions">
-        <a class="btn primary magnetic" href="#plans" data-i18n="final_cta">להתחיל בחינם</a>
-        <a class="btn ghost magnetic" href="mailto:contact@recordly.ailoveu.art" data-i18n="final_contact">לדבר איתנו</a>
+        <a class="btn primary magnetic" href="./assets/recordly-installer.exe" download data-download-cta data-i18n="final_cta">להתחיל בחינם</a>
+        <a class="btn ghost magnetic" href="./legal/contact.html" data-i18n="final_contact">לדבר איתנו</a>
       </div>
     </section>
   </main>

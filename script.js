@@ -1,4 +1,6 @@
 (function () {
+  "use strict";
+
   const translations = {
     he: {
       brand_badge: "Local-first",
@@ -99,12 +101,20 @@
       final_title: "המסך שלך כבר מסביר. עכשיו תן לו להיראות מקצועי.",
       final_cta: "להתחיל בחינם",
       final_contact: "לדבר איתנו",
+      legal_updated: "עודכן לאחרונה: אפריל 2026",
+      legal_subtitle_contact:  "אנחנו כאן כדי לעזור. שלח לנו שאלות, משוב, בקשות החזר או דיווחי באגים.",
+      legal_subtitle_cookie: "שימוש מינימלי ומכבד פרטיות",
       contact_name: "שם מלא",
       contact_email: "כתובת אימייל",
       contact_category: "סוג הפנייה",
       contact_subject: "נושא",
       contact_message: "הודעה מפורטת",
       contact_submit: "שלח הודעה",
+      nav_home: "בית",
+      nav_demo: "Demo",
+      nav_contact: "צרו קשר",
+      footer_cookies: "מדיניות עוגיות",
+      footer_contact: "צור קשר",
       footer_copyright: "© 2026 Recordly. Built for people who care about their data.",
       footer_privacy: "מדיניות פרטיות",
       footer_terms: "תנאי שימוש",
@@ -209,12 +219,20 @@
       final_title: "Your screen already explains it. Now make it look professional.",
       final_cta: "Start free",
       final_contact: "Contact us",
+      legal_updated: "Last updated: April 2026",
+      legal_subtitle_contact: "We are here to help. Contact us for any issue, and we will be happy to assist!",
+      legal_subtitle_cookie: "Minimal Privacy-Respecting usage",
       contact_name: "Full Name",
       contact_email: "Email Address",
       contact_category: "Inquiry Type",
       contact_subject: "Subject",
       contact_message: "Detailed Message",
-      contact_submit: "Send Message",      
+      contact_submit: "Send Message",
+      nav_home: "Home",
+      nav_demo: "Demo",
+      nav_contact: "Contact",
+      footer_cookies: "Cookie Policy",
+      footer_contact: "Contact",
       footer_copyright: "© 2026 Recordly. Built for people who care about their data.",
       footer_privacy: "Privacy Policy",
       footer_terms: "Terms of Service",
@@ -222,45 +240,150 @@
     }
   };
 
-  // ====================== Theme & Language Handling ======================
+  const storage = {
+    get(key) {
+      try { return localStorage.getItem(key); } catch (_) { return null; }
+    },
+    set(key, value) {
+      try { localStorage.setItem(key, value); } catch (_) { }
+    }
+  };
+
   const themeToggle = document.querySelector("[data-theme-toggle]");
   const themeIcon = themeToggle ? themeToggle.querySelector("span") : null;
   const langToggle = document.querySelector("[data-lang-toggle]");
   const langShort = document.querySelector("[data-lang-short]");
-  const initialDefaultTheme = "light";
-  const initialDefaultLang = "he";
-  
+
+  function getInitialTheme() {
+    const savedTheme = storage.get("recordly-theme");
+    if (savedTheme === "dark" || savedTheme === "light") return savedTheme;
+    const prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+    return prefersDark ? "dark" : "light";
+  }
+
+  function getInitialLang() {
+    const savedLang = storage.get("recordly-lang");
+    if (savedLang === "he" || savedLang === "en") return savedLang;
+    const pageLang = document.documentElement.getAttribute("data-lang") || document.documentElement.getAttribute("lang");
+    if (pageLang === "he" || pageLang === "en") return pageLang;
+    const browserLang = (navigator.language || navigator.userLanguage || "he").toLowerCase();
+    return browserLang.startsWith("he") ? "he" : "en";
+  }
+
   function setTheme(theme) {
-    document.documentElement.setAttribute("data-theme", theme);
-    localStorage.setItem("recordly-theme", theme);
-    if (themeIcon) themeIcon.textContent = theme === "dark" ? "☾" : "☀";
+    const normalizedTheme = theme === "dark" ? "dark" : "light";
+    document.documentElement.setAttribute("data-theme", normalizedTheme);
+    storage.set("recordly-theme", normalizedTheme);
+    if (themeIcon) themeIcon.textContent = normalizedTheme === "dark" ? "☾" : "☀";
   }
 
   function setLanguage(lang) {
-    const dictionary = translations[lang] || translations.he;
-    document.documentElement.setAttribute("lang", lang);
-    document.documentElement.setAttribute("dir", lang === "he" ? "rtl" : "ltr");
-    document.documentElement.setAttribute("data-lang", lang);
-    localStorage.setItem("recordly-lang", lang);
+    const normalizedLang = lang === "en" ? "en" : "he";
+    const dictionary = translations[normalizedLang] || translations.he || {};
+
+    document.documentElement.setAttribute("lang", normalizedLang);
+    document.documentElement.setAttribute("dir", normalizedLang === "he" ? "rtl" : "ltr");
+    document.documentElement.setAttribute("data-lang", normalizedLang);
+    storage.set("recordly-lang", normalizedLang);
 
     document.querySelectorAll("[data-i18n]").forEach((node) => {
       const key = node.getAttribute("data-i18n");
-      if (dictionary[key]) node.textContent = dictionary[key];
+      if (key && Object.prototype.hasOwnProperty.call(dictionary, key)) {
+        node.textContent = dictionary[key];
+      }
     });
 
-    if (langShort) langShort.textContent = lang === "he" ? "EN" : "עב";
+    document.querySelectorAll("[data-lang-content]").forEach((node) => {
+      const shouldShow = node.getAttribute("data-lang-content") === normalizedLang;
+      node.hidden = !shouldShow;
+    });
+
+    if (langShort) langShort.textContent = normalizedLang === "he" ? "EN" : "עב";
     if (langToggle) {
-      langToggle.setAttribute("aria-label", lang === "he" ? "Switch to English" : "עבור לעברית");
-      langToggle.setAttribute("title", lang === "he" ? "Switch to English" : "עבור לעברית");
+      langToggle.setAttribute("aria-label", normalizedLang === "he" ? "Switch to English" : "עבור לעברית");
+      langToggle.setAttribute("title", normalizedLang === "he" ? "Switch to English" : "עבור לעברית");
     }
   }
 
-  // Initialize
-  setTheme(localStorage.getItem("recordly-theme") || initialDefaultTheme);
-  setLanguage(localStorage.getItem("recordly-lang") || initialDefaultLang);
+  function setupPointerLight() {
+    const light = document.querySelector(".pointer-light");
+    if (!light || !window.matchMedia || !window.matchMedia("(pointer: fine)").matches) return;
+    window.addEventListener("pointermove", (event) => {
+      light.style.left = `${event.clientX}px`;
+      light.style.top = `${event.clientY}px`;
+    }, { passive: true });
+  }
+
+  function setupRevealAnimations() {
+    const revealNodes = document.querySelectorAll(".reveal");
+    if (!("IntersectionObserver" in window)) {
+      revealNodes.forEach((el) => el.classList.add("visible"));
+      return;
+    }
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("visible");
+        observer.unobserve(entry.target);
+      });
+    }, { threshold: 0.15 });
+    revealNodes.forEach((el) => observer.observe(el));
+  }
+
+  function setupTiltCards() {
+    if (!window.matchMedia || !window.matchMedia("(pointer: fine)").matches) return;
+    document.querySelectorAll("[data-tilt]").forEach((card) => {
+      card.addEventListener("pointermove", (event) => {
+        const rect = card.getBoundingClientRect();
+        const x = (event.clientX - rect.left) / rect.width - 0.5;
+        const y = (event.clientY - rect.top) / rect.height - 0.5;
+        card.style.transform = `rotate(${-1 + x * 1.4}deg) rotateX(${-y * 4}deg) rotateY(${x * 5}deg)`;
+      });
+      card.addEventListener("pointerleave", () => {
+        card.style.transform = "rotate(-1deg)";
+      });
+    });
+  }
+
+  function setupMagneticButtons() {
+    if (!window.matchMedia || !window.matchMedia("(pointer: fine)").matches) return;
+    document.querySelectorAll(".magnetic").forEach((el) => {
+      el.addEventListener("pointermove", (event) => {
+        const rect = el.getBoundingClientRect();
+        const x = event.clientX - rect.left - rect.width / 2;
+        const y = event.clientY - rect.top - rect.height / 2;
+        el.style.transform = `translate(${x * 0.08}px, ${y * 0.08}px)`;
+      });
+      el.addEventListener("pointerleave", () => {
+        el.style.transform = "translate(0, 0)";
+      });
+    });
+  }
+
+  function setupContactFormFallback() {
+    const form = document.querySelector("[data-contact-form]");
+    if (!form) return;
+    form.addEventListener("submit", (event) => {
+      const action = form.getAttribute("action") || "";
+      if (!action.startsWith("mailto:")) return;
+      event.preventDefault();
+      const data = new FormData(form);
+      const subject = encodeURIComponent(data.get("subject") || "Recordly contact request");
+      const body = encodeURIComponent([
+        `Name: ${data.get("name") || ""}`,
+        `Email: ${data.get("email") || ""}`,
+        `Category: ${data.get("category") || ""}`,
+        "",
+        data.get("message") || ""
+      ].join("\n"));
+      window.location.href = `mailto:contact@recordly.ailoveu.art?subject=${subject}&body=${body}`;
+    });
+  }
+
+  setTheme(getInitialTheme());
+  setLanguage(getInitialLang());
 
   if (themeToggle) {
-    setTheme(document.documentElement.getAttribute("data-theme") || "light");
     themeToggle.addEventListener("click", () => {
       const current = document.documentElement.getAttribute("data-theme") || "light";
       setTheme(current === "dark" ? "light" : "dark");
@@ -268,58 +391,15 @@
   }
 
   if (langToggle) {
-    setLanguage(document.documentElement.getAttribute("data-lang") || "he");
     langToggle.addEventListener("click", () => {
       const current = document.documentElement.getAttribute("data-lang") || "he";
       setLanguage(current === "he" ? "en" : "he");
     });
   }
 
-  const light = document.querySelector(".pointer-light");
-  if (light && window.matchMedia("(pointer: fine)").matches) {
-    window.addEventListener("pointermove", (event) => {
-      light.style.left = event.clientX + "px";
-      light.style.top = event.clientY + "px";
-    });
-  }
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (!entry.isIntersecting) return;
-      entry.target.classList.add("visible");
-      observer.unobserve(entry.target);
-    });
-  }, { threshold: 0.15 });
-
-  document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
-
-  document.querySelectorAll("[data-tilt]").forEach((card) => {
-    if (!window.matchMedia("(pointer: fine)").matches) return;
-
-    card.addEventListener("pointermove", (event) => {
-      const rect = card.getBoundingClientRect();
-      const x = (event.clientX - rect.left) / rect.width - 0.5;
-      const y = (event.clientY - rect.top) / rect.height - 0.5;
-      card.style.transform = `rotate(${-1 + x * 1.4}deg) rotateX(${-y * 4}deg) rotateY(${x * 5}deg)`;
-    });
-
-    card.addEventListener("pointerleave", () => {
-      card.style.transform = "rotate(-1deg)";
-    });
-  });
-
-  document.querySelectorAll(".magnetic").forEach((el) => {
-    if (!window.matchMedia("(pointer: fine)").matches) return;
-
-    el.addEventListener("pointermove", (event) => {
-      const rect = el.getBoundingClientRect();
-      const x = event.clientX - rect.left - rect.width / 2;
-      const y = event.clientY - rect.top - rect.height / 2;
-      el.style.transform = `translate(${x * 0.08}px, ${y * 0.08}px)`;
-    });
-
-    el.addEventListener("pointerleave", () => {
-      el.style.transform = "translate(0, 0)";
-    });
-  });
+  setupPointerLight();
+  setupRevealAnimations();
+  setupTiltCards();
+  setupMagneticButtons();
+  setupContactFormFallback();
 }());

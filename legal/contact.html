@@ -3,60 +3,31 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>צור קשר | Recordly</title>
-  <link rel="stylesheet" href="../styles.css">
+  <title>Recordly - Contact</title>
+  <meta name="description" content="Contact-us page of Recordly, a local-first desktop app for recording and editing tutorial videos without uploading user recordings." />
+  <script>
+    (function () {
+      var savedTheme = localStorage.getItem('recordly-theme');
+      var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      var savedLang = localStorage.getItem('recordly-lang');
+      var browserLang = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
+      var initialLang = savedLang || (browserLang.startsWith('he') ? 'he' : 'en');
+      document.documentElement.setAttribute('data-theme', savedTheme || (prefersDark ? 'dark' : 'light'));
+      document.documentElement.setAttribute('data-lang', initialLang);
+      document.documentElement.setAttribute('lang', initialLang);
+      document.documentElement.setAttribute('dir', initialLang === 'he' ? 'rtl' : 'ltr');
+    }());
+  </script>
+  <link rel="stylesheet" href="../styles.css" />
   <link rel="icon" href="../assets/recordly-favicon.png">
-  <style>
-    /* Additional styles specific to contact form */
-    .contact-form {
-      max-width: 680px;
-      margin: 40px auto 0;
-    }
-    .form-group {
-      margin-bottom: 24px;
-    }
-    .form-group label {
-      display: block;
-      margin-bottom: 8px;
-      font-weight: 700;
-      color: var(--ink);
-    }
-    .form-group input,
-    .form-group select,
-    .form-group textarea {
-      width: 100%;
-      padding: 14px 18px;
-      border: 1px solid var(--line);
-      border-radius: 16px;
-      background: var(--solid);
-      font-size: 16px;
-      transition: border 0.2s ease;
-    }
-    .form-group input:focus,
-    .form-group select:focus,
-    .form-group textarea:focus {
-      outline: none;
-      border-color: var(--primary);
-      box-shadow: 0 0 0 3px rgba(51, 68, 238, 0.15);
-    }
-    .form-group textarea {
-      min-height: 160px;
-      resize: vertical;
-    }
-    .submit-btn {
-      width: 100%;
-      padding: 16px;
-      font-size: 18px;
-      font-weight: 900;
-    }
-  </style>
+  <link rel="canonical" href="https://recordly.ailoveu.art/legal/contact.html">
 </head>
 <body>
   <div class="noise" aria-hidden="true"></div>
   <div class="pointer-light" aria-hidden="true"></div>
   
   <header class="topbar">
-    <a class="brand" href="#top" aria-label="Recordly">
+    <a class="brand" href="../index.html#top" aria-label="Recordly">
       <span class="brand-mark">R</span>
       <span class="brand-name">Recordly</span>
       <span class="privacy-pill" data-i18n="brand_badge">Local-first</span>
@@ -80,7 +51,7 @@
       <button class="theme-toggle" type="button" data-theme-toggle aria-label="Toggle theme">
         <span aria-hidden="true">☀</span>
       </button>
-      <a class="top-cta magnetic" href="#plans" data-i18n="nav_download">להתחיל בחינם</a>
+      <a class="top-cta magnetic" href="../index.html#plans" data-i18n="nav_download">להתחיל בחינם</a>
       <a href="../index.html" class="top-cta ghost">חזרה לאתר</a>
     </div>
   </header>
@@ -88,8 +59,8 @@
   <main class="legal-main">
     <div class="legal-hero">
       <h1>צור קשר</h1>
-      <p class="legal-subtitle">אנחנו כאן כדי לעזור. שלח לנו שאלות, משוב, בקשות החזר או דיווחי באגים.</p>
-      <p class="legal-updated">עודכן לאחרונה: אפריל 2026</p>
+      <p class="legal-subtitle" data-i18n="legal_subtitle_contact">אנחנו כאן כדי לעזור. שלח לנו שאלות, משוב, בקשות החזר או דיווחי באגים.</p>
+      <p class="legal-updated" data-i18n="legal_updated">עודכן לאחרונה: אפריל 2026</p>
     </div>
 
     <div class="legal-card">
@@ -98,7 +69,9 @@
         אנו מחויבים להגיב במהירות האפשרית.</p>
 
         <div class="contact-form">
-          <form id="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST"> <!-- Replace with your actual form endpoint (Formspree, Getform, etc.) -->
+ 		  <!-- <form id="contact-form" action="mailto:contact@recordly.ailoveu.art" method="POST" enctype="text/plain" data-contact-form> -->
+          <form id="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+          <!-- Replace with your actual form endpoint (Formspree, Getform, etc.) -->
 
             <div class="form-group">
               <label for="name" data-i18n="contact_name">שם מלא</label>
@@ -137,8 +110,8 @@
           </form>
         </div>
 
-        <p style="margin-top: 40px; text-align: center; color: var(--muted);">
-          או שלח לנו ישירות: <a href="mailto:contact@recordly.ailoveu.art" style="color: var(--primary);">contact@recordly.ailoveu.art</a>
+        <p class="direct-contact">
+          או שלח לנו ישירות: <a href="mailto:h2o@ailoveu.art">h2o@ailoveu.art</a>
         </p>
       </div>
     </div>
