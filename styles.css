@@ -798,3 +798,9 @@ html[data-theme="dark"] .faq-stack details {
     transform: none;
   }
 }
+
+.download-note {
+  margin: 0.75rem 0 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+}

@@ -9,11 +9,11 @@
       nav_proof: "הוכחה",
       nav_price: "מחיר",
       nav_faq: "שאלות",
-      nav_download: "להתחיל בחינם",
+      nav_download: "להורדה חינם",
       hero_kicker: "Privacy Mode: ON",
       hero_title: "המקליט שלא מרגל אחרי השיעור שלך.",
       hero_lead: "Recordly עוזרת למורים, יוצרים ומפתחים להקליט מסך, מצלמה ואודיו, לערוך מהר ולייצא סרטון נקי - כשההקלטות נשארות על המחשב שלך, לא בענן שלנו.",
-      hero_cta: "להתחיל עם 5 הקלטות חינם",
+      hero_cta: "להוריד בחינם",
       hero_secondary: "לראות למה זה בטוח",
       proof_local: "100% עריכה מקומית",
       proof_upload: "0 העלאות הקלטות",
@@ -85,7 +85,7 @@
       pro_li_2: "שימוש מקומי מלא",
       pro_li_3: "כל כלי העריכה",
       pro_li_4: "גישה פעילה עד סוף תקופת החיוב לאחר ביטול",
-      pro_cta: "לקבל Pro",
+      pro_cta: "לתוכנית פרו",
       pricing_note: "החזר שנתי מחושב לפי החודשים שנוצלו, כפי שמפורט במדיניות ההחזרים.",
       faq_label: "שאלות",
       faq_title: "החששות הנכונים, בלי תשובות מתחמקות.",
@@ -118,7 +118,8 @@
       footer_copyright: "© 2026 Recordly. Built for people who care about their data.",
       footer_privacy: "מדיניות פרטיות",
       footer_terms: "תנאי שימוש",
-      footer_refunds: "מדיניות החזרים"
+      footer_refunds: "מדיניות החזרים",
+      download-note: "ההתקנה והשימוש בחינם, אין צורך בכרטיס אשראי"
     },
     en: {
       brand_badge: "Local-first",
@@ -127,11 +128,11 @@
       nav_proof: "Proof",
       nav_price: "Pricing",
       nav_faq: "FAQ",
-      nav_download: "Start free",
+      nav_download: "Download free",
       hero_kicker: "Privacy Mode: ON",
       hero_title: "The recorder that doesn’t spy on your lesson.",
       hero_lead: "Recordly helps teachers, creators, and developers record screen, camera, and audio, edit fast, and export clean tutorial videos - while recordings stay on your computer, not in our cloud.",
-      hero_cta: "Start with 5 free recordings",
+      hero_cta: "Download Recordly free",
       hero_secondary: "See why it’s private",
       proof_local: "100% local editing",
       proof_upload: "0 recording uploads",
@@ -203,7 +204,7 @@
       pro_li_2: "Fully local use",
       pro_li_3: "All editing tools",
       pro_li_4: "Access continues until the end of the billing period after cancellation",
-      pro_cta: "Get Pro",
+      pro_cta: "Go Pro",
       pricing_note: "Annual refunds are calculated by months used, as detailed in the Refund Policy.",
       faq_label: "FAQ",
       faq_title: "The right concerns, answered directly.",
@@ -217,7 +218,7 @@
       faq_4_a: "No. It is built around teachers, but also works for creators, developers, support teams, and gamers.",
       final_label: "Record once. Explain forever.",
       final_title: "Your screen already explains it. Now make it look professional.",
-      final_cta: "Start free",
+      final_cta: "Download free",
       final_contact: "Contact us",
       legal_updated: "Last updated: April 2026",
       legal_subtitle_contact: "We are here to help. Contact us for any issue, and we will be happy to assist!",
@@ -236,7 +237,8 @@
       footer_copyright: "© 2026 Recordly. Built for people who care about their data.",
       footer_privacy: "Privacy Policy",
       footer_terms: "Terms of Service",
-      footer_refunds: "Refund Policy"
+      footer_refunds: "Refund Policy",
+      download-note: "Recordly installer · Local-first recording · No credit card required"
     }
   };
 
@@ -380,6 +382,25 @@
     });
   }
 
+  function setupCtaTracking() {
+    document.querySelectorAll("[data-download-cta]").forEach((link) => {
+      link.addEventListener("click", () => {
+        console.info("Recordly download CTA clicked:", link.href);
+        if (typeof window.plausible === "function") {
+          window.plausible("Recordly Download Click");
+        }
+      });
+    });
+    document.querySelectorAll("[data-checkout-cta]").forEach((link) => {
+      link.addEventListener("click", () => {
+        console.info("Recordly Pro checkout CTA clicked:", link.href);
+        if (typeof window.plausible === "function") {
+          window.plausible("Recordly Pro Checkout Click");
+        }
+      });
+    });
+  }
+
   setTheme(getInitialTheme());
   setLanguage(getInitialLang());
 
@@ -402,4 +423,5 @@
   setupTiltCards();
   setupMagneticButtons();
   setupContactFormFallback();
+  setupCtaTracking();
 }());
