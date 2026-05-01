@@ -119,7 +119,7 @@
       footer_privacy: "מדיניות פרטיות",
       footer_terms: "תנאי שימוש",
       footer_refunds: "מדיניות החזרים",
-      download-note: "ההתקנה והשימוש בחינם, אין צורך בכרטיס אשראי"
+      download_note: "ההתקנה והשימוש בחינם, אין צורך בכרטיס אשראי"
     },
     en: {
       brand_badge: "Local-first",
@@ -238,7 +238,7 @@
       footer_privacy: "Privacy Policy",
       footer_terms: "Terms of Service",
       footer_refunds: "Refund Policy",
-      download-note: "Recordly installer · Local-first recording · No credit card required"
+      download_note: "Recordly installer · Local-first recording · No credit card required"
     }
   };
 
