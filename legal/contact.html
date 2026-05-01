@@ -68,18 +68,19 @@
       <div class="legal-content">
         <p><strong>תקציר:</strong> השתמש בטופס שלהלן כדי לפנות אלינו בנושאים כמו החזרים, תוכניות מנוי, אבטחה, משוב משתמשים או באגים. 
         אנו מחויבים להגיב במהירות האפשרית.</p>
-
+    <!-- <section id="contact" class="contact-section"> -->
         <div class="contact-form">
- 		  <form id="contact-form" action="mailto:contact@recordly.ailoveu.art" method="POST" enctype="text/plain" data-contact-form>
+  		  <form id="contact-form" data-contact-form novalidate>
+ 		  <!-- <form id="contact-form" action="mailto:contact@recordly.ailoveu.art" method="POST" enctype="text/plain" data-contact-form> -->
           <!-- <form id="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST"> -->
             <div class="form-group">
               <label for="name" data-i18n="contact_name">שם מלא</label>
-              <input type="text" id="name" name="name" autocomplete="name" required>
+              <input type="text" id="name" name="name" autocomplete="name" maxlength="100" required>
             </div>
 
             <div class="form-group">
               <label for="email" data-i18n="contact_email">כתובת אימייל</label>
-              <input type="email" id="email" name="email" autocomplete="email" required>
+              <input type="email" id="email" name="email" autocomplete="email" maxlength="128" required>
             </div>
 
             <div class="form-group">
@@ -97,63 +98,31 @@
 
             <div class="form-group">
               <label for="subject" data-i18n="contact_subject">נושא</label>
-              <input type="text" id="subject" name="subject" required>
+              <input type="text" id="subject" name="subject" maxlength="150" required>
             </div>
 
             <div class="form-group">
               <label for="message" data-i18n="contact_message">הודעה מפורטת</label>
-              <textarea id="message" name="message" required placeholder="תאר את הבעיה או הבקשה שלך..."></textarea>
+              <textarea id="message" name="message" maxlength="1000" required placeholder="תאר את הבעיה או הבקשה שלך..."></textarea>
             </div>
 
-            <button type="submit" class="btn primary submit-btn" data-i18n="contact_submit">שלח הודעה</button>
+            <div class="hp-field" aria-hidden="true">
+              <label for="company">Company</label>
+              <input type="text" id="company" name="company" tabindex="-1" autocomplete="off">
+            </div>
+
+            <div class="turnstile-wrap">
+              <div class="cf-turnstile" data-sitekey="0x4AAAAAADGlAlVk4NLoeQmG" data-theme="auto"></div>
+            </div>
+
+            <button id="contact-submit" type="submit" class="btn primary submit-btn" data-i18n="contact_submit">שלח הודעה</button>
+            <p id="contact-status" class="contact-status" role="status" aria-live="polite"></p>
           </form>
         </div>
         <p class="direct-contact">או שלח לנו ישירות: <a href="mailto:h2o@ailoveu.art">h2o@ailoveu.art</a></p>
       </div>
     </div>
-    
-    <section id="contact" class="contact-section">
-      <div class="contact-card">
-        <p class="eyebrow">Need help?</p>
-        <h2>Send a Recordly issue</h2>
-        <p class="contact-intro">
-          Found a bug, installation issue, payment problem, or feature request?
-          Send it here and I’ll review it.
-        </p>
-
-        <form id="recordly-contact-form" class="contact-form" novalidate>
-          <div class="form-row">
-            <label for="contact-name">Name</label>
-            <input id="contact-name" name="name" type="text" autocomplete="name" maxlength="100" required>
-          </div>
-
-          <div class="form-row">
-            <label for="contact-email">Email</label>
-            <input id="contact-email" name="email" type="email" autocomplete="email" maxlength="254" required>
-          </div>
-
-          <div class="form-row">
-            <label for="contact-subject">Subject</label>
-            <input id="contact-subject" name="subject" type="text" maxlength="150" placeholder="Bug report / installation issue / feature request">
-          </div>
-
-          <div class="form-row">
-            <label for="contact-message">Message</label>
-            <textarea id="contact-message" name="message" rows="6" maxlength="5000" required placeholder="Describe the issue. Add Windows version, Recordly version, steps to reproduce, and screenshots link if relevant."></textarea>
-          </div>
-
-          <!-- Honeypot: real users should never fill this -->
-          <div class="hp-field" aria-hidden="true">
-            <label for="contact-company">Company</label>
-            <input id="contact-company" name="company" type="text" tabindex="-1" autocomplete="off">
-          </div>
-
-          <div class="cf-turnstile" data-sitekey="0x4AAAAAADGlAlVk4NLoeQmG" data-theme="light"></div>
-          <button id="contact-submit" class="btn btn-primary" type="submit">Send issue</button>
-          <p id="contact-status" class="contact-status" role="status" aria-live="polite"></p>
-        </form>
-      </div>
-    </section>
+    <!-- </section> -->
   </main>
 
   <!-- Footer -->

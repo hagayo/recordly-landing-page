@@ -362,24 +362,140 @@
     });
   }
 
-  function setupContactFormFallback() {
+  function setupContactForm() {
+    const endpoint = "https://recordly.ailoveu.art/contact";
     const form = document.querySelector("[data-contact-form]");
     if (!form) return;
-    form.addEventListener("submit", (event) => {
-      const action = form.getAttribute("action") || "";
-      if (!action.startsWith("mailto:")) return;
+
+    const status = document.getElementById("contact-status");
+    const submit = document.getElementById("contact-submit") || form.querySelector("button[type='submit']");
+
+    form.addEventListener("submit", async (event) => {
       event.preventDefault();
-      const data = new FormData(form);
-      const subject = encodeURIComponent(data.get("subject") || "Recordly contact request");
-      const body = encodeURIComponent([
-        `Name: ${data.get("name") || ""}`,
-        `Email: ${data.get("email") || ""}`,
-        `Category: ${data.get("category") || ""}`,
-        "",
-        data.get("message") || ""
-      ].join("\n"));
-      window.location.href = `mailto:contact@recordly.ailoveu.art?subject=${subject}&body=${body}`;
+      setContactStatus(status, contactMessage("sending"), "loading");
+      setContactSubmitting(submit, true);
+
+      try {
+        const formData = new FormData(form);
+        const token = getTurnstileToken();
+        if (!token) throw new Error(contactMessage("missingVerification"));
+
+        const category = cleanFormValue(formData.get("category"));
+        const rawMessage = cleanFormValue(formData.get("message"));
+        const payload = {
+          name: cleanFormValue(formData.get("name")),
+          email: cleanFormValue(formData.get("email")),
+          subject: cleanFormValue(formData.get("subject")) || "Recordly contact request",
+          message: category ? `Category: ${category}\n\n${rawMessage}` : rawMessage,
+          company: cleanFormValue(formData.get("company")),
+          token,
+        };
+
+        validateContactPayload(payload, category);
+
+        const response = await fetch(endpoint, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload),
+        });
+
+        let result = {};
+        try { result = await response.json(); } catch (_) { result = {}; }
+
+        if (!response.ok) {
+          if (response.status === 429) {
+            const retryAfter = result.retryAfter || 60;
+            throw new Error(contactMessage("rateLimited", retryAfter));
+          }
+          throw new Error(result.error || contactMessage("failed"));
+        }
+
+        form.reset();
+        resetTurnstile();
+        setContactStatus(status, contactMessage("success"), "success");
+      } catch (error) {
+        setContactStatus(status, error.message || contactMessage("failed"), "error");
+        resetTurnstile();
+      } finally {
+        setContactSubmitting(submit, false);
+      }
     });
+  }
+
+  function cleanFormValue(value) {
+    return typeof value === "string" ? value.trim() : "";
+  }
+
+  function getTurnstileToken() {
+    if (!window.turnstile) return "";
+    return window.turnstile.getResponse() || "";
+  }
+
+  function resetTurnstile() {
+    if (window.turnstile) window.turnstile.reset();
+  }
+
+  function validateContactPayload(payload, category) {
+    if (!payload.name) throw new Error(contactMessage("missingName"));
+    if (!payload.email || !isValidEmail(payload.email)) throw new Error(contactMessage("invalidEmail"));
+    if (!category) throw new Error(contactMessage("missingCategory"));
+    if (!payload.subject) throw new Error(contactMessage("missingSubject"));
+    if (!payload.message) throw new Error(contactMessage("missingMessage"));
+    if (payload.message.length > 5000) throw new Error(contactMessage("messageTooLong"));
+  }
+
+  function isValidEmail(email) {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  }
+
+  function setContactStatus(status, message, type) {
+    if (!status) return;
+    status.textContent = message;
+    status.classList.remove("is-success", "is-error", "is-loading");
+    if (type) status.classList.add(`is-${type}`);
+  }
+
+  function setContactSubmitting(submit, isSubmitting) {
+    if (!submit) return;
+    submit.disabled = isSubmitting;
+    submit.textContent = isSubmitting ? contactMessage("sendingButton") : contactMessage("submitButton");
+  }
+
+  function contactMessage(key, value) {
+    const lang = document.documentElement.getAttribute("data-lang") === "en" ? "en" : "he";
+    const messages = {
+      he: {
+        sending: "שולח את ההודעה...",
+        sendingButton: "שולח...",
+        submitButton: "שלח הודעה",
+        success: "ההודעה נשלחה בהצלחה. תודה!",
+        failed: "לא הצלחנו לשלוח את ההודעה. נסה שוב בעוד רגע.",
+        missingVerification: "יש להשלים את אימות האבטחה.",
+        rateLimited: `יותר מדי ניסיונות. נסה שוב בעוד ${value} שניות.`,
+        missingName: "נא למלא שם מלא.",
+        invalidEmail: "נא למלא כתובת אימייל תקינה.",
+        missingCategory: "נא לבחור סוג פנייה.",
+        missingSubject: "נא למלא נושא.",
+        missingMessage: "נא למלא הודעה.",
+        messageTooLong: "ההודעה ארוכה מדי.",
+      },
+      en: {
+        sending: "Sending your message...",
+        sendingButton: "Sending...",
+        submitButton: "Send Message",
+        success: "Message sent successfully. Thank you!",
+        failed: "Could not send the message. Please try again in a moment.",
+        missingVerification: "Please complete the security verification.",
+        rateLimited: `Too many attempts. Try again in ${value} seconds.`,
+        missingName: "Please enter your full name.",
+        invalidEmail: "Please enter a valid email address.",
+        missingCategory: "Please choose an inquiry type.",
+        missingSubject: "Please enter a subject.",
+        missingMessage: "Please enter your message.",
+        messageTooLong: "Message is too long.",
+      },
+    };
+    return messages[lang][key] || messages.en[key] || "";
   }
 
   function setupCtaTracking() {
@@ -422,111 +538,111 @@
   setupRevealAnimations();
   setupTiltCards();
   setupMagneticButtons();
-  setupContactFormFallback();
+  setupContactForm();
   setupCtaTracking();
 
   // contact page code for resend and cloudflare worker
-    const CONTACT_ENDPOINT = "https://recordly.ailoveu.art/contact";
-    const contactForm = document.getElementById("recordly-contact-form");
-    const contactStatus = document.getElementById("contact-status");
-    const contactSubmit = document.getElementById("contact-submit");
+//    const CONTACT_ENDPOINT = "https://recordly.ailoveu.art/contact";
+//    const contactForm = document.getElementById("recordly-contact-form");
+//    const contactStatus = document.getElementById("contact-status");
+//    const contactSubmit = document.getElementById("contact-submit");
 
-    if (contactForm) { contactForm.addEventListener("submit", handleContactSubmit); }
-    async function handleContactSubmit(event) {
-      event.preventDefault();
-      setContactStatus("Sending your message...", "loading");
-      setContactSubmitting(true);
-      try {
-        const formData = new FormData(contactForm);
-        const token = getTurnstileToken();
-        if (!token) { throw new Error("Please complete the verification box."); }
-        const payload = {
-          name: String(formData.get("name") || "").trim(),
-          email: String(formData.get("email") || "").trim(),
-          subject: String(formData.get("subject") || "").trim(),
-          message: String(formData.get("message") || "").trim(),
-          company: String(formData.get("company") || "").trim(),
-          token,
-        };
-        validateContactPayload(payload);
+//    if (contactForm) { contactForm.addEventListener("submit", handleContactSubmit); }
+//    async function handleContactSubmit(event) {
+//      event.preventDefault();
+//      setContactStatus("Sending your message...", "loading");
+//      setContactSubmitting(true);
+//      try {
+//        const formData = new FormData(contactForm);
+//        const token = getTurnstileToken();
+//        if (!token) { throw new Error("Please complete the verification box."); }
+//        const payload = {
+//          name: String(formData.get("name") || "").trim(),
+//          email: String(formData.get("email") || "").trim(),
+//          subject: String(formData.get("subject") || "").trim(),
+//          message: String(formData.get("message") || "").trim(),
+//          company: String(formData.get("company") || "").trim(),
+//          token,
+//        };
+//        validateContactPayload(payload);
 
-        const response = await fetch(CONTACT_ENDPOINT, {
-          method: "POST",
-          headers: { "Content-Type": "application/json", },
-          body: JSON.stringify(payload),
-        });
+//        const response = await fetch(CONTACT_ENDPOINT, {
+//          method: "POST",
+//          headers: { "Content-Type": "application/json", },
+//          body: JSON.stringify(payload),
+//       });
 
-        let result = {};
-        try {
-          result = await response.json();
-        } catch {
-          result = {};
-        }
+//        let result = {};
+//        try {
+//          result = await response.json();
+//        } catch {
+//          result = {};
+//        }
 
-        if (!response.ok) {
-          if (response.status === 429) {
-            const retryAfter = result.retryAfter || "a minute";
-            throw new Error(`Too many attempts. Try again in ${retryAfter} seconds.`);
-          }
+//        if (!response.ok) {
+//          if (response.status === 429) {
+//            const retryAfter = result.retryAfter || "a minute";
+//            throw new Error(`Too many attempts. Try again in ${retryAfter} seconds.`);
+//          }
 
-          throw new Error(result.error || "Could not send the message.");
-        }
-        contactForm.reset();
-        resetTurnstile();
+//          throw new Error(result.error || "Could not send the message.");
+//        }
+//        contactForm.reset();
+//        resetTurnstile();
 
-        setContactStatus("Message sent successfully. Thank you!", "success");
-      } catch (error) {
-        setContactStatus(error.message || "Something went wrong. Please try again.", "error");
-        resetTurnstile();
-      } finally {
-        setContactSubmitting(false);
-      }
-    }
+//        setContactStatus("Message sent successfully. Thank you!", "success");
+//      } catch (error) {
+//        setContactStatus(error.message || "Something went wrong. Please try again.", "error");
+//        resetTurnstile();
+//      } finally {
+//        setContactSubmitting(false);
+//      }
+//    }
 
-    function getTurnstileToken() {
-      if (!window.turnstile) { return ""; }
-      return window.turnstile.getResponse();
-    }
+//    function getTurnstileToken() {
+//      if (!window.turnstile) { return ""; }
+//      return window.turnstile.getResponse();
+//    }
 
-    function resetTurnstile() {
-      if (window.turnstile) {
-        window.turnstile.reset();
-      }
-    }
+//    function resetTurnstile() {
+//      if (window.turnstile) {
+//        window.turnstile.reset();
+//      }
+//    }
 
-    function validateContactPayload(payload) {
-      if (!payload.name) {
-        throw new Error("Please enter your name.");
-      }
+//    function validateContactPayload(payload) {
+//      if (!payload.name) {
+//        throw new Error("Please enter your name.");
+//      }
 
-      if (!payload.email || !isValidEmail(payload.email)) {
-        throw new Error("Please enter a valid email address.");
-      }
+//      if (!payload.email || !isValidEmail(payload.email)) {
+//        throw new Error("Please enter a valid email address.");
+//      }
 
-      if (!payload.message) {
-        throw new Error("Please enter your message.");
-      }
+//      if (!payload.message) {
+//        throw new Error("Please enter your message.");
+//      }
 
-      if (payload.message.length > 5000) {
-        throw new Error("Message is too long.");
-      }
-    }
+//      if (payload.message.length > 5000) {
+//        throw new Error("Message is too long.");
+//      }
+//    }
 
-    function isValidEmail(email) {
-      return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-    }
+//    function isValidEmail(email) {
+//      return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+//    }
 
-    function setContactStatus(message, type) {
-      if (!contactStatus) { return; }
-      contactStatus.textContent = message;
-      contactStatus.classList.remove("is-success", "is-error", "is-loading");
-      if (type) { contactStatus.classList.add(`is-${type}`); }
-    }
+//    function setContactStatus(message, type) {
+//      if (!contactStatus) { return; }
+//      contactStatus.textContent = message;
+//      contactStatus.classList.remove("is-success", "is-error", "is-loading");
+//      if (type) { contactStatus.classList.add(`is-${type}`); }
+//    }
 
-    function setContactSubmitting(isSubmitting) {
-      if (!contactSubmit) { return; }
-      contactSubmit.disabled = isSubmitting;
-      contactSubmit.textContent = isSubmitting ? "Sending..." : "Send issue";
-    }
+//    function setContactSubmitting(isSubmitting) {
+//      if (!contactSubmit) { return; }
+//      contactSubmit.disabled = isSubmitting;
+//      contactSubmit.textContent = isSubmitting ? "Sending..." : "Send issue";
+//    }
 }());
 
