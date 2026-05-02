@@ -44,9 +44,12 @@ body {
   margin: 0;
   font-family: Inter, Assistant, "Segoe UI", Arial, sans-serif;
   background:
-    radial-gradient(circle at 12% 2%, rgba(24, 191, 167, 0.11), transparent 28rem),
+/*    radial-gradient(circle at 12% 2%, rgba(24, 191, 167, 0.11), transparent 28rem),
     radial-gradient(circle at 88% 0%, rgba(49, 66, 231, 0.12), transparent 32rem),
-    linear-gradient(180deg, rgba(255,255,255,0.32), transparent 24rem),
+    linear-gradient(180deg, rgba(255,255,255,0.32), transparent 24rem), */
+    radial-gradient(circle at 12% 8%, rgba(0, 209, 178, 0.18), transparent 30rem),
+    radial-gradient(circle at 84% 2%, rgba(58, 46, 255, 0.22), transparent 34rem),
+    radial-gradient(circle at 72% 72%, rgba(255, 122, 24, 0.12), transparent 32rem),
     var(--bg);
   color: var(--ink);
   overflow-x: hidden;
@@ -67,7 +70,8 @@ ul { list-style-type: square; }
   position: fixed;
   inset: 0;
   z-index: 0;
-  opacity: 0.018;
+  opacity: 0.048;
+/*  opacity: 0.018; */
   background-image: linear-gradient(90deg, #000 1px, transparent 1px), linear-gradient(#000 1px, transparent 1px);
   background-size: 36px 36px;
 }
