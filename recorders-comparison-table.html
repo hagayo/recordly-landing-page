@@ -123,8 +123,11 @@
             background-color: var(--accent-orange);
             color: white;
             text-decoration: none;
+            font: inherit;
             font-weight: bold;
+            border: 0;
             border-radius: 6px;
+            cursor: pointer;
             transition: transform 0.2s ease;
         }
         .cta-button:hover { transform: translateY(-2px); }
@@ -255,9 +258,10 @@
         <section class="verdict">
             <h2>The Verdict</h2>
             <p>If you are a corporate team needing a 2-minute update, use Loom. If you are a professional Twitch streamer with a dual-PC setup, use OBS. But if you are a <strong>teacher, gamer, or content creator</strong> who needs professional quality without the complexity or the high monthly cost—Recordly is the definitive choice.</p>
-            <a href="/api/download/windows?source=comparison_table" class="cta-button" data-download-cta>Start Recording with Recordly</a>
+            <button type="button" class="cta-button js-free-download-cta">Start Recording with Recordly</button>
         </section>
     </div>
 
+    <script src="./script.js" defer></script>
 </body>
 </html>

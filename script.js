@@ -535,15 +535,50 @@
     return messages[lang][key] || messages.en[key] || "";
   }
 
-  function setupCtaTracking() {
-    document.querySelectorAll("[data-download-cta]").forEach((link) => {
-      link.addEventListener("click", () => {
-        console.info("Recordly download CTA clicked:", link.href);
-        if (typeof window.plausible === "function") {
-          window.plausible("Recordly Download Click");
-        }
-      });
+  const SCRIPT_BASE_URL = new URL(".", document.currentScript ? document.currentScript.src : window.location.href);
+  const RECORDLY_INSTALLER_DOWNLOAD_URL = new URL("assets/recordly-installer.exe", SCRIPT_BASE_URL).href;
+  const RECORDLY_AFTER_DOWNLOAD_URL = new URL("how-to.html", SCRIPT_BASE_URL).href;
+  const DOWNLOAD_REDIRECT_DELAY_MS = 900;
+
+  function trackRecordlyDownloadClick() {
+    console.info("Recordly download CTA clicked:", RECORDLY_INSTALLER_DOWNLOAD_URL);
+    if (typeof window.plausible === "function") {
+      window.plausible("Recordly Download Click");
+    }
+  }
+
+  function triggerRecordlyInstallerDownload() {
+    const temporaryDownloadLink = document.createElement("a");
+    temporaryDownloadLink.href = RECORDLY_INSTALLER_DOWNLOAD_URL;
+    temporaryDownloadLink.download = "recordly-installer.exe";
+    temporaryDownloadLink.rel = "noopener";
+    temporaryDownloadLink.style.display = "none";
+
+    document.body.appendChild(temporaryDownloadLink);
+    temporaryDownloadLink.click();
+    temporaryDownloadLink.remove();
+  }
+
+  function redirectToRecordlyHowToPage() {
+    window.setTimeout(() => {
+      window.location.href = RECORDLY_AFTER_DOWNLOAD_URL;
+    }, DOWNLOAD_REDIRECT_DELAY_MS);
+  }
+
+  function handleFreeDownloadCtaClick(event) {
+    event.preventDefault();
+    trackRecordlyDownloadClick();
+    triggerRecordlyInstallerDownload();
+    redirectToRecordlyHowToPage();
+  }
+
+  function setupFreeDownloadCtas() {
+    document.querySelectorAll(".js-free-download-cta").forEach((button) => {
+      button.addEventListener("click", handleFreeDownloadCtaClick);
     });
+  }
+
+  function setupCtaTracking() {
     document.querySelectorAll("[data-checkout-cta]").forEach((link) => {
       link.addEventListener("click", () => {
         console.info("Recordly Pro checkout CTA clicked:", link.href);
@@ -576,6 +611,7 @@
   setupTiltCards();
   setupMagneticButtons();
   setupContactForm();
+  setupFreeDownloadCtas();
   setupCtaTracking();
 
   // contact page code for resend and cloudflare worker
