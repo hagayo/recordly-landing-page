@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recordly - Contact</title>
+  <meta name="description" content="Contact Recordly for support, billing, bug reports, feature requests, partnerships, or general questions." />
+  <meta property="og:title" content="Recordly - Contact" />
+  <meta property="og:description" content="Contact Recordly for support, billing, bug reports, feature requests, partnerships, or general questions." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://recordly.ailoveu.art/contact.html" />
+  <meta property="og:image" content="https://recordly.ailoveu.art/assets/recordly-og.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Recordly - Contact" />
+  <meta name="twitter:description" content="Contact Recordly for support, billing, bug reports, feature requests, partnerships, or general questions." />
+  <meta name="twitter:image" content="https://recordly.ailoveu.art/assets/recordly-og.png" />
+  <link rel="canonical" href="https://recordly.ailoveu.art/contact.html" />
+  <script>
+    (function () {
+      var savedTheme = localStorage.getItem('recordly-theme');
+      var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      var savedLang = localStorage.getItem('recordly-lang');
+      var browserLang = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
+      var initialLang = savedLang || (browserLang.startsWith('he') ? 'he' : 'en');
+      document.documentElement.setAttribute('data-theme', savedTheme || (prefersDark ? 'dark' : 'light'));
+      document.documentElement.setAttribute('data-lang', initialLang);
+      document.documentElement.setAttribute('lang', initialLang);
+      document.documentElement.setAttribute('dir', initialLang === 'he' ? 'rtl' : 'ltr');
+    }());
+  </script>
+  <link rel="stylesheet" href="./styles.css" />
+  <link rel="icon" href="./assets/recordly-favicon.png">
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+</head>
+<body>
+  <div class="noise" aria-hidden="true"></div>
+  <div class="pointer-light" aria-hidden="true"></div>
+  
+  <header class="topbar">
+    <a class="brand" href="./index.html#top" aria-label="Recordly">
+      <span class="brand-mark">R</span>
+      <span class="brand-name">Recordly</span>
+      <span class="privacy-pill" data-i18n="brand_badge">Local-first</span>
+    </a>
+
+    <nav class="nav" aria-label="Main navigation">
+      <a href="./index.html#about" data-i18n="nav_about">עלינו</a>
+      <a href="./index.html#problem" data-i18n="nav_problem">למה זה שונה</a>
+      <a href="./index.html#features" data-i18n="nav_features">יכולות</a>
+      <a href="./index.html#proof" data-i18n="nav_proof">הוכחה</a>
+      <a href="./index.html#plans" data-i18n="nav_price">מחיר</a>
+      <a href="./index.html#faq" data-i18n="nav_faq">שאלות</a>
+      <a href="./index.html#demo" data-i18n="nav_demo">Demo</a>
+      <a href="./contact.html" data-i18n="nav_contact">צרו קשר</a>
+    </nav>
+
+    <div class="top-actions">
+      <button class="language-toggle" type="button" data-lang-toggle aria-label="Switch language" title="Switch language">
+        <span data-lang-short>EN</span>
+      </button>
+      <button class="theme-toggle" type="button" data-theme-toggle aria-label="Toggle theme">
+        <span aria-hidden="true">☀</span>
+      </button>
+      <a class="top-cta magnetic" href="./download.html" data-i18n="nav_download">הורדה חינם</a>
+      <a href="./index.html" class="top-cta ghost">חזרה לאתר</a>
+    </div>
+  </header>
+
+  <main class="legal-main">
+    <div class="legal-hero">
+      <h1>צור קשר</h1>
+      <p class="legal-subtitle" data-i18n="legal_subtitle_contact">אנחנו כאן כדי לעזור. שלח לנו שאלות, משוב, בקשות החזר או דיווחי באגים.</p>
+      <p class="legal-updated" data-i18n="legal_updated">עודכן לאחרונה: אפריל 2026</p>
+    </div>
+
+    <div class="legal-card">
+      <div class="legal-content">
+        <p><strong>תקציר:</strong> השתמש בטופס שלהלן כדי לפנות אלינו בנושאים כמו החזרים, תוכניות מנוי, אבטחה, משוב משתמשים או באגים. 
+        אנו מחויבים להגיב במהירות האפשרית.</p>
+    <!-- <section id="contact" class="contact-section"> -->
+        <div class="contact-form">
+  		  <form id="contact-form" data-contact-form novalidate>
+ 		  <!-- <form id="contact-form" action="mailto:contact@recordly.ailoveu.art" method="POST" enctype="text/plain" data-contact-form> -->
+          <!-- <form id="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST"> -->
+            <div class="form-group">
+              <label for="name" data-i18n="contact_name">שם מלא</label>
+              <input type="text" id="name" name="name" autocomplete="name" maxlength="100" required>
+            </div>
+
+            <div class="form-group">
+              <label for="email" data-i18n="contact_email">כתובת אימייל</label>
+              <input type="email" id="email" name="email" autocomplete="email" maxlength="128" required>
+            </div>
+
+            <div class="form-group">
+              <label for="category" data-i18n="contact_category">סוג הפנייה</label>
+              <select id="category" name="category" required>
+                <option value="" data-i18n="contact_category_placeholder">בחר קטגוריה</option>
+                <option value="support" data-i18n="contact_category_support">תמיכה</option>
+                <option value="bug" data-i18n="contact_category_bug">דיווח על תקלה</option>
+                <option value="billing" data-i18n="contact_category_billing">חיובים ותשלומים</option>
+                <option value="feature_request" data-i18n="contact_category_feature_request">בקשת פיצ׳ר</option>
+                <option value="partnership" data-i18n="contact_category_partnership">שיתוף פעולה</option>
+                <!-- option value="security">אבטחה ופרטיות / Security & Privacy</option -->
+                <!-- option value="feedback">משוב כללי / User Feedback</option -->
+				<!-- <option value="refund">החזר כספי / Refund</option> -->
+                <option value="general" data-i18n="contact_category_general">אחר</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="subject" data-i18n="contact_subject">נושא</label>
+              <input type="text" id="subject" name="subject" maxlength="150" required>
+            </div>
+
+            <div class="form-group">
+              <label for="message" data-i18n="contact_message">הודעה מפורטת</label>
+              <textarea id="message" name="message" maxlength="1000" required placeholder="תאר את הבעיה או הבקשה שלך..."></textarea>
+            </div>
+
+            <div class="hp-field" aria-hidden="true">
+              <label for="company">Company</label>
+              <input type="text" id="company" name="company" tabindex="-1" autocomplete="off">
+            </div>
+
+            <div class="turnstile-wrap">
+              <div class="cf-turnstile" data-sitekey="0x4AAAAAADGlAlVk4NLoeQmG" data-theme="auto"></div>
+            </div>
+
+            <button id="contact-submit" type="submit" class="btn primary submit-btn" data-i18n="contact_submit">שלח הודעה</button>
+            <p id="contact-status" class="contact-status" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+        <p class="direct-contact">או שלח לנו ישירות: <a href="mailto:h2o@ailoveu.art">h2o@ailoveu.art</a></p>
+      </div>
+    </div>
+    <!-- </section> -->
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <span data-i18n="footer_copyright">© 2026 Recordly. Built for people who care about their data.</span>
+    <div>
+      <a href="./legal/privacy-policy.html" data-i18n="footer_privacy">מדיניות פרטיות</a>
+      <a href="./legal/terms-of-service.html" data-i18n="footer_terms">תנאי שימוש</a>
+      <a href="./legal/refund-policy.html" data-i18n="footer_refunds">מדיניות החזרים</a>
+      <a href="./legal/cookie-policy.html" data-i18n="footer_cookies">מדיניות עוגיות</a>
+      <a href="./contact.html" data-i18n="footer_contact">צור קשר</a>
+    </div>
+  </footer>
+
+  <script src="./script.js"></script>
+</body>
+</html>

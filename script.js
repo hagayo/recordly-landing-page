@@ -100,6 +100,16 @@
       faq_3_a: "כן. אפשר לבטל בכל זמן, והגישה נשארת פעילה עד סוף תקופת החיוב הנוכחית.",
       faq_4_q: "זה מתאים רק למורים?",
       faq_4_a: "לא. זה נבנה סביב מורים, אבל מתאים גם ליוצרים, מפתחים, צוותי תמיכה וגיימרים.",
+      faq_5_q: "האם צריך להתקין ffmpeg?",
+      faq_5_a: "כן. בגרסת הבטא החינמית יש להתקין ffmpeg מראש.",
+      faq_6_q: "האם Recordly עובד בלי אינטרנט?",
+      faq_6_a: "כן. ההקלטה והעריכה עובדות מקומית, כך שאפשר לנתק Wi-Fi ולבדוק.",
+      faq_7_q: "האם יש תמיכה באודיו מערכת?",
+      faq_7_a: "כן.",
+      faq_8_q: "האם יש תמיכה במיקרופון ובמצלמה?",
+      faq_8_a: "כן.",
+      faq_9_q: "האם אפשר לייצא MP4?",
+      faq_9_a: "כן.",
       final_label: "Record once. Explain forever.",
       final_title: "המסך שלך כבר מסביר. עכשיו תן לו להיראות מקצועי.",
       final_cta: "הורדה חינם",
@@ -262,6 +272,16 @@
       faq_3_a: "Yes. You can cancel anytime, and access remains active until the end of the current billing period.",
       faq_4_q: "Is it only for teachers?",
       faq_4_a: "No. It is built around teachers, but also works for creators, developers, support teams, and gamers.",
+      faq_5_q: "Does Recordly require ffmpeg?",
+      faq_5_a: "Yes. For the free beta, install ffmpeg before using Recordly.",
+      faq_6_q: "Does Recordly work offline?",
+      faq_6_a: "Yes. Recording and editing work locally, so you can turn Wi-Fi off and test it.",
+      faq_7_q: "Does it support system audio?",
+      faq_7_a: "Yes.",
+      faq_8_q: "Does it support microphone and camera?",
+      faq_8_a: "Yes.",
+      faq_9_q: "Does it export MP4?",
+      faq_9_a: "Yes.",
       final_label: "Record once. Explain forever.",
       final_title: "Your screen already explains it. Now make it look professional.",
       final_cta: "Download Free",
@@ -596,27 +616,15 @@
   }
 
   const SCRIPT_BASE_URL = new URL(".", document.currentScript ? document.currentScript.src : window.location.href);
-  const RECORDLY_DOWNLOAD_PAGE_URL = new URL("download.html", SCRIPT_BASE_URL).href;
   const RECORDLY_INSTALLER_DOWNLOAD_URL = new URL("assets/recordly-installer.exe", SCRIPT_BASE_URL).href;
   const RECORDLY_AFTER_DOWNLOAD_URL = new URL("how-to.html", SCRIPT_BASE_URL).href;
   const DOWNLOAD_REDIRECT_DELAY_MS = 900;
-
-  function trackRecordlyDownloadPageClick() {
-    console.info("Recordly download page CTA clicked:", RECORDLY_DOWNLOAD_PAGE_URL);
-    if (typeof window.plausible === "function") {
-      window.plausible("Recordly Download Page Click");
-    }
-  }
 
   function trackRecordlyInstallerDownloadClick() {
     console.info("Recordly installer download clicked:", RECORDLY_INSTALLER_DOWNLOAD_URL);
     if (typeof window.plausible === "function") {
       window.plausible("Recordly Installer Download Click");
     }
-  }
-
-  function openRecordlyDownloadPage() {
-    window.location.href = RECORDLY_DOWNLOAD_PAGE_URL;
   }
 
   function triggerRecordlyInstallerDownload() {
@@ -637,23 +645,11 @@
     }, DOWNLOAD_REDIRECT_DELAY_MS);
   }
 
-  function handleDownloadPageCtaClick(event) {
-    event.preventDefault();
-    trackRecordlyDownloadPageClick();
-    openRecordlyDownloadPage();
-  }
-
   function handleWindowsInstallerDownloadClick(event) {
     event.preventDefault();
     trackRecordlyInstallerDownloadClick();
     triggerRecordlyInstallerDownload();
     redirectToRecordlyHowToPage();
-  }
-
-  function setupDownloadPageCtas() {
-    document.querySelectorAll(".js-download-page-cta").forEach((button) => {
-      button.addEventListener("click", handleDownloadPageCtaClick);
-    });
   }
 
   function setupWindowsInstallerDownloadCtas() {
@@ -710,7 +706,6 @@ function setupDebugReferrer() {
     : "Referrer: direct / unknown";
 }
 
-setupDownloadPageCtas();
 setupWindowsInstallerDownloadCtas();
 setupDebugReferrer();
   setupCtaTracking();

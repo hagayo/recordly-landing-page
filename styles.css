@@ -58,7 +58,7 @@ html[dir="rtl"] body { font-family: Assistant, "Noto Sans Hebrew", Arial, sans-s
 a { color: inherit; text-decoration: none; }
 button, a { -webkit-tap-highlight-color: transparent; }
 button { font: inherit; }
-button.js-download-page-cta, button.js-windows-installer-download-cta { cursor: pointer; text-align: center; }
+button.js-windows-installer-download-cta { cursor: pointer; text-align: center; }
 h1, h2, h3, p { margin: 0; }
 ul { list-style-type: square; }
 
@@ -82,6 +82,16 @@ ul { list-style-type: square; }
   transform: translate(-50%, -50%);
   background: radial-gradient(circle, rgba(24, 191, 167, 0.08), transparent 68%);
   filter: blur(12px);
+}
+
+
+/* Keep global header and footer layout direction stable while language text changes. */
+.topbar, .footer { direction: ltr; }
+
+.topbar .nav,
+.topbar .top-actions,
+.footer > div {
+  direction: ltr;
 }
 
 .topbar {
