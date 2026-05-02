@@ -58,7 +58,7 @@ html[dir="rtl"] body { font-family: Assistant, "Noto Sans Hebrew", Arial, sans-s
 a { color: inherit; text-decoration: none; }
 button, a { -webkit-tap-highlight-color: transparent; }
 button { font: inherit; }
-button.js-free-download-cta { cursor: pointer; text-align: center; }
+button.js-download-page-cta, button.js-windows-installer-download-cta { cursor: pointer; text-align: center; }
 h1, h2, h3, p { margin: 0; }
 ul { list-style-type: square; }
 
@@ -810,18 +810,106 @@ html[data-theme="dark"] .faq-stack details {
 .how-to-placeholder { min-height: 280px; }
 .center-text { text-align: center; }
 
-//.form-row { display: grid; gap: 8px; }
-//.form-row label { font-weight: 700; color: #0f172a; }
-//.form-row input, .form-row textarea {
-//  width: 100%; padding: 14px 16px; border: 1px solid rgba(15, 23, 42, 0.18);
-//  border-radius: 14px; font: inherit; color: #0f172a; background: #ffffff;
-//  transition: border-color 160ms ease, box-shadow 160ms ease;
-//}
-//.form-row input:focus, .form-row textarea:focus {
-//  outline: none; border-color: #2563eb; box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.14);
-//}
-//.form-row textarea { resize: vertical; min-height: 150px; }
-/.hp-field { position: absolute; left: -9999px; opacity: 0; pointer-events: none; }
+.debug-referrer {
+  width: 100%;
+  margin: 0 0 10px;
+  color: var(--muted);
+  font-size: 0.82rem;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+/* Download and getting-started pages */
+.download-main .legal-hero { max-width: 900px; }
+.download-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+  gap: 18px;
+  max-width: 980px;
+  margin: 0 auto 24px;
+}
+.download-card {
+  padding: 30px;
+  border: 1px solid var(--line);
+  border-radius: 28px;
+  background: var(--surface);
+  box-shadow: 0 22px 58px var(--shadow);
+}
+.primary-download-card {
+  background: linear-gradient(135deg, rgba(49,66,231,.13), rgba(24,191,167,.10));
+}
+.disabled-download-card { opacity: .76; }
+.download-platform-badge {
+  display: inline-flex;
+  align-items: center;
+  margin-bottom: 14px;
+  padding: 7px 12px;
+  border-radius: 999px;
+  background: var(--ink);
+  color: var(--bg);
+  font-size: 12px;
+  font-weight: 950;
+}
+.download-platform-badge.muted { background: var(--solid); color: var(--muted); border: 1px solid var(--line); }
+.download-card h2 { margin: 0 0 10px; font-size: clamp(28px, 3vw, 40px); letter-spacing: -0.03em; }
+.download-card p { color: var(--muted); font-weight: 700; line-height: 1.7; }
+.download-meta { margin-bottom: 12px; color: var(--primary) !important; font-weight: 950 !important; }
+.download-card .btn { margin-top: 22px; }
+.download-card button:disabled { cursor: not-allowed; opacity: .62; transform: none; }
+.download-trust-card { margin-top: 22px; }
+.download-checks {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  padding: 0;
+  margin: 22px 0 0;
+  list-style: none;
+}
+.download-checks li {
+  padding: 14px 16px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: var(--solid);
+  color: var(--ink);
+  font-weight: 850;
+}
+.how-to-steps {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 12px;
+}
+.how-to-step {
+  position: relative;
+  min-height: 170px;
+  padding: 24px 18px;
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  background: linear-gradient(180deg, var(--surface), var(--solid));
+  text-align: center;
+}
+.how-to-step span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  margin-bottom: 16px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--primary), var(--primary-2));
+  color: #fff;
+  font-weight: 950;
+}
+.how-to-step p { color: var(--ink); font-weight: 900; line-height: 1.45; }
+.how-to-note { margin: 1.25rem 0 0; color: var(--muted); text-align: center; font-size: 0.95rem; }
+.checksum-note { margin-top: 1rem; color: var(--muted); font-size: 0.85rem; word-break: break-all; }
+.checksum-note code { font-size: 0.8rem; }
+
+@media (max-width: 900px) {
+  .download-grid { grid-template-columns: 1fr; }
+  .download-checks { grid-template-columns: 1fr; }
+  .how-to-steps { grid-template-columns: 1fr; }
+  .how-to-step { min-height: auto; }
+}
 
 @media (max-width: 880px) {
   .trust-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -829,7 +917,6 @@ html[data-theme="dark"] .faq-stack details {
 }
 
 @media (max-width: 680px) { .contact-form { margin-top: 28px; } }
-
 
 @media (max-width: 560px) {
   .trust-grid { grid-template-columns: 1fr; padding: 18px 18px 0; }
@@ -847,3 +934,16 @@ html[data-theme="dark"] .faq-stack details {
   }
   .reveal { opacity: 1; transform: none; }
 }
+
+//.form-row { display: grid; gap: 8px; }
+//.form-row label { font-weight: 700; color: #0f172a; }
+//.form-row input, .form-row textarea {
+//  width: 100%; padding: 14px 16px; border: 1px solid rgba(15, 23, 42, 0.18);
+//  border-radius: 14px; font: inherit; color: #0f172a; background: #ffffff;
+//  transition: border-color 160ms ease, box-shadow 160ms ease;
+//}
+//.form-row input:focus, .form-row textarea:focus {
+//  outline: none; border-color: #2563eb; box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.14);
+//}
+//.form-row textarea { resize: vertical; min-height: 150px; }
+/.hp-field { position: absolute; left: -9999px; opacity: 0; pointer-events: none; }

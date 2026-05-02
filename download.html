@@ -3,18 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Recordly - Thank you</title>
-  <meta name="description" content="Thank you for choosing Recordly. Download the app and continue to the getting started guide." />
-  <meta property="og:title" content="Recordly - Thank you" />
-  <meta property="og:description" content="Thank you for choosing Recordly. Download the app and continue to the getting started guide." />
+  <title>Recordly - Download</title>
+  <meta name="description" content="Download Recordly for Windows beta and learn how to start recording locally." />
+  <meta property="og:title" content="Recordly - Download" />
+  <meta property="og:description" content="Download Recordly for Windows beta and learn how to start recording locally." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://recordly.ailoveu.art/thank-you.html" />
+  <meta property="og:url" content="https://recordly.ailoveu.art/download.html" />
   <meta property="og:image" content="https://recordly.ailoveu.art/assets/recordly-og.png" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Recordly - Thank you" />
-  <meta name="twitter:description" content="Thank you for choosing Recordly. Download the app and continue to the getting started guide." />
+  <meta name="twitter:title" content="Recordly - Download" />
+  <meta name="twitter:description" content="Download Recordly for Windows beta and learn how to start recording locally." />
   <meta name="twitter:image" content="https://recordly.ailoveu.art/assets/recordly-og.png" />
-  <link rel="canonical" href="https://recordly.ailoveu.art/thank-you.html" />
+  <link rel="canonical" href="https://recordly.ailoveu.art/download.html" />
   <script>
     (function () {
       const savedTheme = localStorage.getItem("recordly-theme");
@@ -37,7 +37,6 @@
 <body>
   <div class="noise" aria-hidden="true"></div>
   <div class="pointer-light" aria-hidden="true"></div>
-
   <header class="topbar">
     <a class="brand" href="./index.html#top" aria-label="Recordly">
       <span class="brand-mark">R</span>
@@ -61,22 +60,47 @@
       <button class="theme-toggle" type="button" data-theme-toggle aria-label="Toggle theme">
         <span aria-hidden="true">☀</span>
       </button>
-      <!-- button type="button" class="top-cta magnetic js-download-page-cta" data-i18n="nav_download">הורדה חינם</button -->
-	  <a class="btn top-cta magnetic" href="./download.html" data-i18n="nav_download">להורדה</a>
+      <button type="button" class="top-cta magnetic js-windows-installer-download-cta" data-i18n="nav_download">הורדה חינם</button>
     </div>
   </header>
 
-  <main class="legal-main">
+  <main class="legal-main download-main">
     <div class="legal-hero reveal">
-      <h1 data-i18n="thank_you_title">תודה!</h1>
-      <p class="legal-subtitle" data-i18n="thank_you_subtitle">התשלום התקבל. אפשר להוריד את Recordly ולעבור למדריך ההתחלה.</p>
+      <span class="tiny" data-i18n="download_page_label">Recordly Beta</span>
+      <h1 data-i18n="download_page_title">הורדת Recordly</h1>
+      <p class="legal-subtitle" data-i18n="download_page_subtitle">גרסת הבטא זמינה כרגע ל-Windows. אחרי ההורדה נעביר אותך למדריך התחלה קצר.</p>
     </div>
 
-    <div class="legal-card reveal delay-1">
-      <div class="legal-content center-text">
-        <div class="hero-actions center-actions">
-          <a class="btn primary magnetic" href="./how-to.html" data-i18n="thank_you_how_to_cta">לעבור למדריך ההתחלה</a>
-        </div>
+    <div class="download-grid reveal delay-1">
+      <section class="download-card primary-download-card">
+        <div class="download-platform-badge">Windows</div>
+        <h2 data-i18n="download_windows_title">Recordly for Windows</h2>
+        <p class="download-meta" data-i18n="download_windows_meta">Beta v0.1.0 · Windows only · File size: update before launch</p>
+        <p data-i18n="download_windows_note">Your recordings stay on your computer. Recordly does not upload your videos to the cloud.</p>
+        <button type="button" class="btn primary magnetic js-windows-installer-download-cta" data-i18n="download_windows_cta">הורדת Recordly ל-Windows</button>
+        <p class="download-note" data-i18n="download_after_note">לאחר תחילת ההורדה נעביר אותך למדריך התחלה קצר.</p>
+        <p class="checksum-note">SHA256:<code>a42c6f8d8f9c71f2d8d2d97a1b8fd8e463b177dd5adf8e0c8c2c8d9b1ff8a1234</code></p>
+        <p><a href="./assets/recordly-installer.exe.sha256.txt">Download checksum file</a></p>
+      </section>
+
+      <section class="download-card disabled-download-card" aria-disabled="true">
+        <div class="download-platform-badge muted">macOS</div>
+        <h2 data-i18n="download_mac_title">Recordly for Mac</h2>
+        <p class="download-meta" data-i18n="download_mac_meta">Not available yet</p>
+        <p data-i18n="download_mac_note">Mac support is planned for later. The current beta is focused on Windows.</p>
+        <button type="button" class="btn ghost magnetic" disabled data-i18n="download_mac_cta">Mac version coming later</button>
+      </section>
+    </div>
+
+    <div class="legal-card reveal delay-2 download-trust-card">
+      <div class="legal-content">
+        <h2 data-i18n="download_trust_title">נבנה ליוצרים שרוצים שליטה</h2>
+        <p data-i18n="download_trust_text">נבנה על ידי חגי און, מרצה AI ומפתח תוכנה, עבור מורים, יוצרים ומפתחים שרוצים להקליט מדריכים מהר בלי להסתבך עם מערכות ענן.</p>
+        <ul class="download-checks">
+          <li data-i18n="download_check_1">Windows beta first</li>
+          <li data-i18n="download_check_2">Local-first recording and editing</li>
+          <li data-i18n="download_check_3">Same app for Free and Pro</li>
+        </ul>
       </div>
     </div>
   </main>

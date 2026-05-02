@@ -9,11 +9,11 @@
       nav_proof: "הוכחה",
       nav_price: "מחיר",
       nav_faq: "שאלות",
-      nav_download: "להורדה חינם",
+      nav_download: "הורדה חינם",
       hero_kicker: "Privacy Mode: ON",
       hero_title: "המקליט שלא מרגל אחרי השיעור שלך.",
       hero_lead: "Recordly עוזרת למורים, יוצרים ומפתחים להקליט מסך, מצלמה ואודיו, לערוך מהר ולייצא סרטון נקי - כשההקלטות נשארות על המחשב שלך, לא בענן שלנו.",
-      hero_cta: "להוריד בחינם",
+      hero_cta: "הורדה חינם",
       hero_secondary: "לראות למה זה בטוח",
       proof_local: "100% עריכה מקומית",
       proof_upload: "0 העלאות הקלטות",
@@ -79,7 +79,8 @@
       free_li_2: "הקלטה ועריכה מקומית",
       free_li_3: "ללא העלאת תוכן לשרת",
       free_li_4: "הקלטות ללא הגבלה",
-      free_cta: "להורדה חינם",
+      free_li_5: "אין צורך בכרטיס אשראי",
+      free_cta: "הורדה חינם",
       pro_label: "הכי מתאים למורים פעילים",
       pro_desc: "או $45 לשנה. ביטול בכל זמן.",
       pro_li_1: "הקלטות ללא הגבלה",
@@ -87,6 +88,7 @@
       pro_li_3: "כל כלי העריכה",
       pro_li_4: "גישה פעילה עד סוף תקופת החיוב לאחר ביטול",
       pro_cta: "לתוכנית פרו",
+      pricing_same_app: "אותה אפליקציה בדיוק. Pro פשוט פותח מגבלות זמן וכמות.",
       pricing_note: "החזר שנתי מחושב לפי החודשים שנוצלו, כפי שמפורט במדיניות ההחזרים.",
       faq_label: "שאלות",
       faq_title: "החששות הנכונים, בלי תשובות מתחמקות.",
@@ -100,7 +102,7 @@
       faq_4_a: "לא. זה נבנה סביב מורים, אבל מתאים גם ליוצרים, מפתחים, צוותי תמיכה וגיימרים.",
       final_label: "Record once. Explain forever.",
       final_title: "המסך שלך כבר מסביר. עכשיו תן לו להיראות מקצועי.",
-      final_cta: "להתחיל בחינם",
+      final_cta: "הורדה חינם",
       final_contact: "לדבר איתנו",
       legal_updated: "עודכן לאחרונה: אפריל 2026",
       legal_subtitle_contact:  "אנחנו כאן כדי לעזור. שלח לנו שאלות, משוב, בקשות החזר או דיווחי באגים.",
@@ -122,14 +124,37 @@
       nav_demo: "Demo",
       nav_contact: "צרו קשר",
       how_to_title: "איך מתחילים עם Recordly",
-      how_to_subtitle: "מדריך קצר עם 5 שלבים יופיע כאן בקרוב.",
+      how_to_subtitle: "5 שלבים קצרים להתחלת הקלטה עם Recordly.",
+      how_to_step_1: "הורד והתקן את Recordly",
+      how_to_step_2: "פתח את האפליקציה",
+      how_to_step_3: "בחר מסך, מיקרופון, אודיו מערכת ומצלמה",
+      how_to_step_4: "לחץ Record",
+      how_to_step_5: "ייצא את הסרטון שלך",
+      how_to_note: "צילומי מסך ומדריך מלא יעלו בקרוב.",
+      download_page_label: "Recordly Beta",
+      download_page_title: "הורדת Recordly",
+      download_page_subtitle: "גרסת הבטא זמינה כרגע ל-Windows. אחרי ההורדה נעביר אותך למדריך התחלה קצר.",
+      download_windows_title: "Recordly ל-Windows",
+      download_windows_meta: "Beta v0.1.0 · Windows בלבד · גודל קובץ: לעדכן לפני העלייה לאוויר",
+      download_windows_note: "ההקלטות נשארות על המחשב שלך. Recordly לא מעלה את הסרטונים שלך לענן.",
+      download_windows_cta: "הורדת Recordly ל-Windows",
+      download_after_note: "לאחר תחילת ההורדה נעביר אותך למדריך התחלה קצר.",
+      download_mac_title: "Recordly ל-Mac",
+      download_mac_meta: "עדיין לא זמין",
+      download_mac_note: "תמיכה ב-Mac מתוכננת להמשך. גרסת הבטא הנוכחית מתמקדת ב-Windows.",
+      download_mac_cta: "גרסת Mac תגיע בהמשך",
+      download_trust_title: "נבנה ליוצרים שרוצים שליטה",
+      download_trust_text: "נבנה על ידי חגי און, מרצה AI ומפתח תוכנה, עבור מורים, יוצרים ומפתחים שרוצים להקליט מדריכים מהר בלי להסתבך עם מערכות ענן.",
+      download_check_1: "בטא ל-Windows בשלב ראשון",
+      download_check_2: "הקלטה ועריכה בגישה local-first",
+      download_check_3: "אותה אפליקציה ל-Free ול-Pro",
       thank_you_title: "תודה!",
       thank_you_subtitle: "התשלום התקבל. אפשר להוריד את Recordly ולעבור למדריך ההתחלה.",
       thank_you_how_to_cta: "לעבור למדריך ההתחלה",
       not_found_title: "העמוד לא נמצא",
       not_found_subtitle: "כנראה שהקישור השתנה, הועבר או פשוט יצא להפסקת קפה.",
       not_found_back_home: "חזרה לדף הבית",
-      not_found_download: "להוריד את Recordly",
+      not_found_download: "הורדה חינם",
       not_found_contact: "לפנות לתמיכה",
       footer_cookies: "מדיניות עוגיות",
       footer_contact: "צור קשר",
@@ -137,7 +162,7 @@
       footer_privacy: "מדיניות פרטיות",
       footer_terms: "תנאי שימוש",
       footer_refunds: "מדיניות החזרים",
-      download_note: "ההתקנה והשימוש בחינם, אין צורך בכרטיס אשראי"
+      download_note: "הורדה חינם · אין צורך בכרטיס אשראי"
     },
     en: {
       brand_badge: "Local-first",
@@ -146,11 +171,11 @@
       nav_proof: "Proof",
       nav_price: "Pricing",
       nav_faq: "FAQ",
-      nav_download: "Download free",
+      nav_download: "Download Free",
       hero_kicker: "Privacy Mode: ON",
       hero_title: "The recorder that doesn’t spy on your lesson.",
       hero_lead: "Recordly helps teachers, creators, and developers record screen, camera, and audio, edit fast, and export clean tutorial videos - while recordings stay on your computer, not in our cloud.",
-      hero_cta: "Download Recordly free",
+      hero_cta: "Download Free",
       hero_secondary: "See why it’s private",
       proof_local: "100% local editing",
       proof_upload: "0 recording uploads",
@@ -216,7 +241,8 @@
       free_li_2: "Local recording and editing",
       free_li_3: "No content upload to our server",
       free_li_4: "Unlimited recordings",
-      free_cta: "Download free",
+      free_li_5: "No credit card needed",
+      free_cta: "Download Free",
       pro_label: "Best for active teachers",
       pro_desc: "Or $45/year. Cancel anytime.",
       pro_li_1: "Unlimited recordings",
@@ -224,6 +250,7 @@
       pro_li_3: "All editing tools",
       pro_li_4: "Access continues until the end of the billing period after cancellation",
       pro_cta: "Go Pro",
+      pricing_same_app: "Same app. Pro simply unlocks the time and usage limits.",
       pricing_note: "Annual refunds are calculated by months used, as detailed in the Refund Policy.",
       faq_label: "FAQ",
       faq_title: "The right concerns, answered directly.",
@@ -237,7 +264,7 @@
       faq_4_a: "No. It is built around teachers, but also works for creators, developers, support teams, and gamers.",
       final_label: "Record once. Explain forever.",
       final_title: "Your screen already explains it. Now make it look professional.",
-      final_cta: "Download free",
+      final_cta: "Download Free",
       final_contact: "Contact us",
       legal_updated: "Last updated: April 2026",
       legal_subtitle_contact: "We are here to help. Contact us for any issue, and we will be happy to assist!",
@@ -259,14 +286,37 @@
       nav_demo: "Demo",
       nav_contact: "Contact",
       how_to_title: "How to start with Recordly",
-      how_to_subtitle: "A short 5-step getting started guide will appear here soon.",
+      how_to_subtitle: "A simple 5-step guide to start recording with Recordly.",
+      how_to_step_1: "Download and install Recordly",
+      how_to_step_2: "Open the app",
+      how_to_step_3: "Choose screen, microphone, system audio, and camera",
+      how_to_step_4: "Click Record",
+      how_to_step_5: "Export your video",
+      how_to_note: "Screenshots and full tutorial coming soon.",
+      download_page_label: "Recordly Beta",
+      download_page_title: "Download Recordly",
+      download_page_subtitle: "The beta is currently available for Windows. After the download starts, we will send you to a short getting started guide.",
+      download_windows_title: "Recordly for Windows",
+      download_windows_meta: "Beta v0.1.0 · Windows only · File size: update before launch",
+      download_windows_note: "Your recordings stay on your computer. Recordly does not upload your videos to the cloud.",
+      download_windows_cta: "Download Recordly for Windows",
+      download_after_note: "After the download starts, we will send you to a short getting started guide.",
+      download_mac_title: "Recordly for Mac",
+      download_mac_meta: "Not available yet",
+      download_mac_note: "Mac support is planned for later. The current beta is focused on Windows.",
+      download_mac_cta: "Mac version coming later",
+      download_trust_title: "Built for creators who want control",
+      download_trust_text: "Built by Hagay Onn, AI lecturer and software developer, for teachers, creators, and developers who want fast tutorial videos without cloud complexity.",
+      download_check_1: "Windows beta first",
+      download_check_2: "Local-first recording and editing",
+      download_check_3: "Same app for Free and Pro",
       thank_you_title: "Thank you!",
       thank_you_subtitle: "Payment received. You can download Recordly and continue to the getting started guide.",
       thank_you_how_to_cta: "Open the getting started guide",
       not_found_title: "Page not found",
       not_found_subtitle: "The link may have moved, changed, or taken a small coffee break.",
       not_found_back_home: "Back to homepage",
-      not_found_download: "Download Recordly",
+      not_found_download: "Download Free",
       not_found_contact: "Contact support",
       footer_cookies: "Cookie Policy",
       footer_contact: "Contact",
@@ -274,7 +324,7 @@
       footer_privacy: "Privacy Policy",
       footer_terms: "Terms of Service",
       footer_refunds: "Refund Policy",
-      download_note: "Recordly installer · Local-first recording · No credit card required"
+      download_note: "Download Free · No credit card needed"
     }
   };
 
@@ -546,15 +596,27 @@
   }
 
   const SCRIPT_BASE_URL = new URL(".", document.currentScript ? document.currentScript.src : window.location.href);
+  const RECORDLY_DOWNLOAD_PAGE_URL = new URL("download.html", SCRIPT_BASE_URL).href;
   const RECORDLY_INSTALLER_DOWNLOAD_URL = new URL("assets/recordly-installer.exe", SCRIPT_BASE_URL).href;
   const RECORDLY_AFTER_DOWNLOAD_URL = new URL("how-to.html", SCRIPT_BASE_URL).href;
   const DOWNLOAD_REDIRECT_DELAY_MS = 900;
 
-  function trackRecordlyDownloadClick() {
-    console.info("Recordly download CTA clicked:", RECORDLY_INSTALLER_DOWNLOAD_URL);
+  function trackRecordlyDownloadPageClick() {
+    console.info("Recordly download page CTA clicked:", RECORDLY_DOWNLOAD_PAGE_URL);
     if (typeof window.plausible === "function") {
-      window.plausible("Recordly Download Click");
+      window.plausible("Recordly Download Page Click");
     }
+  }
+
+  function trackRecordlyInstallerDownloadClick() {
+    console.info("Recordly installer download clicked:", RECORDLY_INSTALLER_DOWNLOAD_URL);
+    if (typeof window.plausible === "function") {
+      window.plausible("Recordly Installer Download Click");
+    }
+  }
+
+  function openRecordlyDownloadPage() {
+    window.location.href = RECORDLY_DOWNLOAD_PAGE_URL;
   }
 
   function triggerRecordlyInstallerDownload() {
@@ -575,16 +637,28 @@
     }, DOWNLOAD_REDIRECT_DELAY_MS);
   }
 
-  function handleFreeDownloadCtaClick(event) {
+  function handleDownloadPageCtaClick(event) {
     event.preventDefault();
-    trackRecordlyDownloadClick();
+    trackRecordlyDownloadPageClick();
+    openRecordlyDownloadPage();
+  }
+
+  function handleWindowsInstallerDownloadClick(event) {
+    event.preventDefault();
+    trackRecordlyInstallerDownloadClick();
     triggerRecordlyInstallerDownload();
     redirectToRecordlyHowToPage();
   }
 
-  function setupFreeDownloadCtas() {
-    document.querySelectorAll(".js-free-download-cta").forEach((button) => {
-      button.addEventListener("click", handleFreeDownloadCtaClick);
+  function setupDownloadPageCtas() {
+    document.querySelectorAll(".js-download-page-cta").forEach((button) => {
+      button.addEventListener("click", handleDownloadPageCtaClick);
+    });
+  }
+
+  function setupWindowsInstallerDownloadCtas() {
+    document.querySelectorAll(".js-windows-installer-download-cta").forEach((button) => {
+      button.addEventListener("click", handleWindowsInstallerDownloadClick);
     });
   }
 
@@ -636,7 +710,8 @@ function setupDebugReferrer() {
     : "Referrer: direct / unknown";
 }
 
-setupFreeDownloadCtas();
+setupDownloadPageCtas();
+setupWindowsInstallerDownloadCtas();
 setupDebugReferrer();
   setupCtaTracking();
 
