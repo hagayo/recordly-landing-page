@@ -483,6 +483,18 @@ html[dir="rtl"] .legal-hero h1::after { background: linear-gradient(270deg, var(
   font-size: 14px;
   font-weight: 850;
 }
+.legal-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 4px;
+}
+
+.legal-actions .btn {
+  min-width: 180px;
+}
+
 .legal-card {
   border: 1px solid var(--line);
   border-radius: 34px;

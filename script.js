@@ -126,6 +126,11 @@
       thank_you_title: "תודה!",
       thank_you_subtitle: "התשלום התקבל. אפשר להוריד את Recordly ולעבור למדריך ההתחלה.",
       thank_you_how_to_cta: "לעבור למדריך ההתחלה",
+      not_found_title: "העמוד לא נמצא",
+      not_found_subtitle: "כנראה שהקישור השתנה, הועבר או פשוט יצא להפסקת קפה.",
+      not_found_back_home: "חזרה לדף הבית",
+      not_found_download: "להוריד את Recordly",
+      not_found_contact: "לפנות לתמיכה",
       footer_cookies: "מדיניות עוגיות",
       footer_contact: "צור קשר",
       footer_copyright: "© 2026 Recordly. Built for people who care about their data.",
@@ -258,6 +263,11 @@
       thank_you_title: "Thank you!",
       thank_you_subtitle: "Payment received. You can download Recordly and continue to the getting started guide.",
       thank_you_how_to_cta: "Open the getting started guide",
+      not_found_title: "Page not found",
+      not_found_subtitle: "The link may have moved, changed, or taken a small coffee break.",
+      not_found_back_home: "Back to homepage",
+      not_found_download: "Download Recordly",
+      not_found_contact: "Contact support",
       footer_cookies: "Cookie Policy",
       footer_contact: "Contact",
       footer_copyright: "© 2026 Recordly. Built for people who care about their data.",
@@ -611,7 +621,23 @@
   setupTiltCards();
   setupMagneticButtons();
   setupContactForm();
-  setupFreeDownloadCtas();
+  
+
+function setupDebugReferrer() {
+  const referrerElement = document.getElementById("debug-referrer");
+
+  if (!referrerElement) {
+    return;
+  }
+
+  const referrer = document.referrer && document.referrer.trim();
+  referrerElement.textContent = referrer
+    ? `Referrer: ${referrer}`
+    : "Referrer: direct / unknown";
+}
+
+setupFreeDownloadCtas();
+setupDebugReferrer();
   setupCtaTracking();
 
   // contact page code for resend and cloudflare worker

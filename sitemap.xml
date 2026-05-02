@@ -8,39 +8,15 @@
   </url>
   <url>
     <loc>https://recordly.ailoveu.art/</loc>
-    <lastmod>2026-04-29</lastmod>
+    <lastmod>2026-05-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://recordly.ailoveu.art/legal/privacy-policy.html</loc>
-    <lastmod>2026-04-29</lastmod>
+    <loc>https://recordly.ailoveu.art/recorders-comparison-table.html</loc>
+    <lastmod>2026-05-02</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://recordly.ailoveu.art/legal/terms-of-service.html</loc>
-    <lastmod>2026-04-29</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://recordly.ailoveu.art/legal/refund-policy.html</loc>
-    <lastmod>2026-04-29</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://recordly.ailoveu.art/legal/cookie-policy.html</loc>
-    <lastmod>2026-04-29</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://recordly.ailoveu.art/legal/contact.html</loc>
-    <lastmod>2026-04-29</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://recordly.ailoveu.art/how-to.html</loc>
@@ -55,9 +31,33 @@
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://recordly.ailoveu.art/recorders-comparison-table.html</loc>
+    <loc>https://recordly.ailoveu.art/legal/privacy-policy.html</loc>
     <lastmod>2026-05-02</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://recordly.ailoveu.art/legal/terms-of-service.html</loc>
+    <lastmod>2026-05-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://recordly.ailoveu.art/legal/refund-policy.html</loc>
+    <lastmod>2026-05-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://recordly.ailoveu.art/legal/cookie-policy.html</loc>
+    <lastmod>2026-05-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://recordly.ailoveu.art/legal/contact.html</loc>
+    <lastmod>2026-05-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
 </urlset>
