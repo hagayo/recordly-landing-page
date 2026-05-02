@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Recordly - What to look for in a screen recorder</title>
+  <meta name="description" content="A practical guide to choosing a screen recorder for tutorials, teaching, demos, and product videos." />
+  <meta property="og:title" content="What to look for in a screen recorder" />
+  <meta property="og:description" content="Learn what matters in a screen recorder: privacy, audio, performance, workflow, export, and pricing." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://recordly.ailoveu.art/screen-recorder-guide.html" />
+  <meta property="og:image" content="https://recordly.ailoveu.art/assets/recordly-og.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="What to look for in a screen recorder" />
+  <meta name="twitter:description" content="A practical checklist for choosing a screen recorder for tutorials and demos." />
+  <meta name="twitter:image" content="https://recordly.ailoveu.art/assets/recordly-og.png" />
+  <link rel="canonical" href="https://recordly.ailoveu.art/screen-recorder-guide.html" />
+  <script>
+    (function () {
+      const savedTheme = localStorage.getItem("recordly-theme");
+      const prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+      const savedLang = localStorage.getItem("recordly-lang");
+      const browserLang = (navigator.language || navigator.userLanguage || "he").toLowerCase();
+      const initialLang = savedLang || (browserLang.startsWith("he") ? "he" : "en");
+      document.documentElement.setAttribute("data-theme", savedTheme || (prefersDark ? "dark" : "light"));
+      document.documentElement.setAttribute("lang", initialLang);
+      document.documentElement.setAttribute("dir", initialLang === "he" ? "rtl" : "ltr");
+      document.documentElement.setAttribute("data-lang", initialLang);
+    }());
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700;800;900&family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css" />
+  <link rel="icon" href="./assets/recordly-favicon.png" type="image/png">
+</head>
+<body>
+  <div class="noise" aria-hidden="true"></div>
+  <div class="pointer-light" aria-hidden="true"></div>
+
+  <header class="topbar">
+    <a class="brand" href="./index.html#top" aria-label="Recordly">
+      <span class="brand-mark">R</span>
+      <span class="brand-name">Recordly</span>
+      <span class="privacy-pill" data-i18n="brand_badge">Local-first</span>
+    </a>
+
+    <nav class="nav" aria-label="Main navigation">
+      <a href="./index.html#problem" data-i18n="nav_problem">למה זה שונה</a>
+      <a href="./index.html#features" data-i18n="nav_features">יכולות</a>
+      <a href="./index.html#proof" data-i18n="nav_proof">הוכחה</a>
+      <a href="./index.html#plans" data-i18n="nav_price">מחיר</a>
+      <a href="./index.html#faq" data-i18n="nav_faq">שאלות</a>
+      <a href="./contact.html" data-i18n="nav_contact">צרו קשר</a>
+    </nav>
+
+    <div class="top-actions">
+      <button class="language-toggle" type="button" data-lang-toggle aria-label="Switch language" title="Switch language">
+        <span data-lang-short>EN</span>
+      </button>
+      <button class="theme-toggle" type="button" data-theme-toggle aria-label="Toggle theme">
+        <span aria-hidden="true">☀</span>
+      </button>
+      <a class="btn top-cta magnetic" href="./download.html" data-i18n="nav_download">הורדה חינם</a>
+    </div>
+  </header>
+
+  <main class="legal-main guide-main">
+    <div class="legal-hero reveal">
+      <span class="tiny" data-i18n="guide_label">מדריך בחירה</span>
+      <h1 data-i18n="guide_title">מה חשוב לבדוק לפני שבוחרים מקליט מסך?</h1>
+      <p class="legal-subtitle" data-i18n="guide_subtitle">מקליט מסך טוב הוא לא רק כפתור Record. הוא צריך לשמור על הפרטיות שלך, לקצר את העבודה, ולהוציא סרטון ברור בלי להפוך כל הקלטה לפרויקט.</p>
+    </div>
+
+    <section class="guide-intro-card legal-card reveal delay-1">
+      <div class="legal-content">
+        <h2 data-i18n="guide_intro_title">הכלי הנכון מרגיש קטן בזמן העבודה וגדול בתוצאה.</h2>
+        <p data-i18n="guide_intro_text">כשאתה מקליט שיעור, דמו, באג או הדרכה פנימית, אתה לא באמת מחפש עוד תוכנת וידאו. אתה מחפש דרך להסביר מהר, להישאר בשליטה, ולשלוח משהו שנראה מקצועי.</p>
+      </div>
+    </section>
+
+    <section class="guide-checklist reveal delay-2" aria-label="Screen recorder buyer checklist">
+      <article class="guide-criterion">
+        <span class="guide-number">01</span>
+        <h2 data-i18n="guide_1_title">פרטיות ושליטה בקבצים</h2>
+        <p data-i18n="guide_1_text">בדוק האם ההקלטות עולות אוטומטית לענן או נשמרות אצלך. לחומרים של תלמידים, לקוחות, קוד או מערכות פנימיות, שליטה מקומית היא יתרון גדול.</p>
+      </article>
+      <article class="guide-criterion">
+        <span class="guide-number">02</span>
+        <h2 data-i18n="guide_2_title">זרימת עבודה קצרה</h2>
+        <p data-i18n="guide_2_text">הקלטה טובה לא אמורה להפוך לעריכת סרט. חפש כלי שמאפשר להתחיל מהר, לחתוך טעויות ושקטים, ולייצא בלי ללמוד מערכת מורכבת.</p>
+      </article>
+      <article class="guide-criterion">
+        <span class="guide-number">03</span>
+        <h2 data-i18n="guide_3_title">מסך, מיקרופון, אודיו מערכת ומצלמה</h2>
+        <p data-i18n="guide_3_text">מדריך טוב צריך תמונה ברורה וקול ברור. ודא שהכלי תומך בשילוב המקורות שאתה באמת צריך, בלי טריקים ובלי תוספים מיותרים.</p>
+      </article>
+      <article class="guide-criterion">
+        <span class="guide-number">04</span>
+        <h2 data-i18n="guide_4_title">ביצועים שלא מפריעים להקלטה</h2>
+        <p data-i18n="guide_4_text">אם המקליט כבד מדי, הוא פוגע בדיוק ברגע שבו אתה צריך מחשב יציב. חשוב לבדוק שהכלי קל, מגיב מהר, ולא תלוי בחיבור ענן כדי לעבוד.</p>
+      </article>
+      <article class="guide-criterion">
+        <span class="guide-number">05</span>
+        <h2 data-i18n="guide_5_title">ייצוא ושיתוף בלי נעילה</h2>
+        <p data-i18n="guide_5_text">בסוף אתה צריך קובץ שאפשר לשלוח, להעלות או לשמור בארכיון שלך. העדף כלי שמוציא קובץ נקי ולא מכריח אותך להישאר בתוך פלטפורמה אחת.</p>
+      </article>
+      <article class="guide-criterion guide-highlight">
+        <span class="guide-number">06</span>
+        <h2 data-i18n="guide_6_title">מחיר ומגבלות שקופים</h2>
+        <p data-i18n="guide_6_text">שאל מה באמת מוגבל: זמן הקלטה, מספר סרטונים, איכות ייצוא או אפשרויות עריכה. במודל טוב, אתה מבין מהר מה חינם ומה Pro פותח.</p>
+      </article>
+    </section>
+
+    <section class="legal-card guide-summary reveal delay-3">
+      <div class="legal-content">
+        <span class="tiny" data-i18n="guide_recordly_label">איפה Recordly נכנסת לתמונה?</span>
+        <h2 data-i18n="guide_recordly_title">Recordly נבנתה בדיוק סביב הצ׳קליסט הזה.</h2>
+        <p data-i18n="guide_recordly_text">הגישה היא local-first, הזרימה מיועדת להסברים קצרים וברורים, וההבדל בין Free ל-Pro הוא פתיחת מגבלות - לא אפליקציה אחרת ולא בלבול מיותר.</p>
+        <div class="hero-actions center-actions guide-actions">
+          <a class="btn primary magnetic" href="./download.html" data-i18n="final_cta">הורדה חינם</a>
+          <a class="btn ghost magnetic" href="./recorders-comparison-table.html" data-i18n="compare_full_cta">לראות השוואה מלאה</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span data-i18n="footer_copyright">© 2026 Recordly. Built for people who care about their data.</span>
+    <div>
+      <a href="./legal/privacy-policy.html" data-i18n="footer_privacy">מדיניות פרטיות</a>
+      <a href="./legal/terms-of-service.html" data-i18n="footer_terms">תנאי שימוש</a>
+      <a href="./legal/refund-policy.html" data-i18n="footer_refunds">מדיניות החזרים</a>
+      <a href="./legal/cookie-policy.html" data-i18n="footer_cookies">מדיניות עוגיות</a>
+      <a href="./contact.html" data-i18n="footer_contact">צור קשר</a>
+    </div>
+  </footer>
+
+  <script src="./script.js"></script>
+</body>
+</html>
