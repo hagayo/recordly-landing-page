@@ -52,7 +52,7 @@
       <button class="theme-toggle" type="button" data-theme-toggle aria-label="Toggle theme">
         <span aria-hidden="true">☀</span>
       </button>
-      <a class="top-cta magnetic" href="../index.html#plans" data-i18n="nav_download">להתחיל בחינם</a>
+      <a class="top-cta magnetic" href="/api/download/windows?source=legal_top" data-download-cta data-i18n="nav_download">להורדה חינם</a>
       <a href="../index.html" class="top-cta ghost">חזרה לאתר</a>
     </div>
   </header>
@@ -86,13 +86,16 @@
             <div class="form-group">
               <label for="category" data-i18n="contact_category">סוג הפנייה</label>
               <select id="category" name="category" required>
-                <option value="">בחר קטגוריה...</option>
+                <option value="" data-i18n="contact_category_placeholder">בחר קטגוריה</option>
                 <option value="refund">החזר כספי / Refund</option>
-                <option value="billing">תוכניות מנוי וחיוב / Plans & Billing</option>
-                <option value="security">אבטחה ופרטיות / Security & Privacy</option>
-                <option value="feedback">משוב כללי / User Feedback</option>
-                <option value="bug">דיווח באג / Bug Report</option>
-                <option value="other">אחר / Other</option>
+				<option value="billing" data-i18n="contact_category_billing">חיובים ותשלומים</option>
+                <option value="bug" data-i18n="contact_category_bug">דיווח באג / Bug Report</option>
+                <option value="feature_request" data-i18n="contact_category_feature_request">בקשת פיצ׳ר</option>			
+                <option value="partnership" data-i18n="contact_category_partnership">שיתוף פעולה</option> 
+                <!-- option value="security">אבטחה ופרטיות / Security & Privacy</option -->
+                <!-- option value="feedback">משוב כללי / User Feedback</option -->
+				<option value="support" data-i18n="contact_category_support">תמיכה</option>
+                <option value="general" data-i18n="contact_category_general">אחר</option>
               </select>
             </div>
 

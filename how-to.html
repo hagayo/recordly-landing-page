@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Recordly - How to start</title>
+  <meta name="description" content="A short getting started guide for Recordly users." />
+  <script>
+    (function () {
+      const savedTheme = localStorage.getItem("recordly-theme");
+      const prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+      const savedLang = localStorage.getItem("recordly-lang");
+      const browserLang = (navigator.language || navigator.userLanguage || "he").toLowerCase();
+      const initialLang = savedLang || (browserLang.startsWith("he") ? "he" : "en");
+      document.documentElement.setAttribute("data-theme", savedTheme || (prefersDark ? "dark" : "light"));
+      document.documentElement.setAttribute("lang", initialLang);
+      document.documentElement.setAttribute("dir", initialLang === "he" ? "rtl" : "ltr");
+      document.documentElement.setAttribute("data-lang", initialLang);
+    }());
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700;800;900&family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css" />
+  <link rel="icon" href="./assets/recordly-favicon.png" type="image/png">
+  <link rel="canonical" href="https://recordly.ailoveu.art/how-to.html">
+</head>
+<body>
+  <div class="noise" aria-hidden="true"></div>
+  <div class="pointer-light" aria-hidden="true"></div>
+
+  <header class="topbar">
+    <a class="brand" href="./index.html#top" aria-label="Recordly">
+      <span class="brand-mark">R</span>
+      <span class="brand-name">Recordly</span>
+      <span class="privacy-pill" data-i18n="brand_badge">Local-first</span>
+    </a>
+
+    <nav class="nav" aria-label="Main navigation">
+      <a href="./index.html#problem" data-i18n="nav_problem">למה זה שונה</a>
+      <a href="./index.html#features" data-i18n="nav_features">יכולות</a>
+      <a href="./index.html#proof" data-i18n="nav_proof">הוכחה</a>
+      <a href="./index.html#plans" data-i18n="nav_price">מחיר</a>
+      <a href="./index.html#faq" data-i18n="nav_faq">שאלות</a>
+      <a href="./legal/contact.html" data-i18n="nav_contact">צרו קשר</a>
+    </nav>
+
+    <div class="top-actions">
+      <button class="language-toggle" type="button" data-lang-toggle aria-label="Switch language" title="Switch language">
+        <span data-lang-short>EN</span>
+      </button>
+      <button class="theme-toggle" type="button" data-theme-toggle aria-label="Toggle theme">
+        <span aria-hidden="true">☀</span>
+      </button>
+      <a class="top-cta magnetic" href="/api/download/windows?source=how_to_top" data-download-cta data-i18n="nav_download">להורדה חינם</a>
+    </div>
+  </header>
+
+  <main class="legal-main">
+    <div class="legal-hero reveal">
+      <h1 data-i18n="how_to_title">איך מתחילים עם Recordly</h1>
+      <p class="legal-subtitle" data-i18n="how_to_subtitle">מדריך קצר עם 5 שלבים יופיע כאן בקרוב.</p>
+    </div>
+
+    <div class="legal-card reveal delay-1">
+      <div class="legal-content how-to-placeholder">
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <span data-i18n="footer_copyright">© 2026 Recordly. Built for people who care about their data.</span>
+    <div>
+      <a href="./legal/privacy-policy.html" data-i18n="footer_privacy">מדיניות פרטיות</a>
+      <a href="./legal/terms-of-service.html" data-i18n="footer_terms">תנאי שימוש</a>
+      <a href="./legal/refund-policy.html" data-i18n="footer_refunds">מדיניות החזרים</a>
+      <a href="./legal/cookie-policy.html" data-i18n="footer_cookies">מדיניות עוגיות</a>
+      <a href="./legal/contact.html" data-i18n="footer_contact">צור קשר</a>
+    </div>
+  </footer>
+
+  <script src="./script.js"></script>
+</body>
+</html>

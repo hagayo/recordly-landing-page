@@ -60,6 +60,7 @@
       compare_recordly_1: "הקלטות נשמרות אצלך",
       compare_recordly_2: "עובד בגישה local-first",
       compare_recordly_3: "קל להסביר, לערוך ולשלוח",
+      compare_full_cta: "לראות השוואה מלאה",
       audience_label: "למי זה מתאים",
       audience_title: "כל מי שמסביר משהו על המסך.",
       aud_1_title: "מורים ומרצים",
@@ -107,12 +108,24 @@
       contact_name: "שם מלא",
       contact_email: "כתובת אימייל",
       contact_category: "סוג הפנייה",
+      contact_category_placeholder: "בחר קטגוריה",
+      contact_category_support: "תמיכה",
+      contact_category_bug: "דיווח על תקלה",
+      contact_category_billing: "חיובים ותשלומים",
+      contact_category_feature_request: "בקשת פיצ׳ר",
+      contact_category_partnership: "שיתוף פעולה",
+      contact_category_general: "שאלה כללית",
       contact_subject: "נושא",
       contact_message: "הודעה מפורטת",
       contact_submit: "שלח הודעה",
       nav_home: "בית",
       nav_demo: "Demo",
       nav_contact: "צרו קשר",
+      how_to_title: "איך מתחילים עם Recordly",
+      how_to_subtitle: "מדריך קצר עם 5 שלבים יופיע כאן בקרוב.",
+      thank_you_title: "תודה!",
+      thank_you_subtitle: "התשלום התקבל. אפשר להוריד את Recordly ולעבור למדריך ההתחלה.",
+      thank_you_how_to_cta: "לעבור למדריך ההתחלה",
       footer_cookies: "מדיניות עוגיות",
       footer_contact: "צור קשר",
       footer_copyright: "© 2026 Recordly. Built for people who care about their data.",
@@ -179,6 +192,7 @@
       compare_recordly_1: "Recordings stay with you",
       compare_recordly_2: "Built with a local-first approach",
       compare_recordly_3: "Easy to explain, edit, and send",
+      compare_full_cta: "See full comparison",
       audience_label: "Who it’s for",
       audience_title: "Anyone who explains something on screen.",
       aud_1_title: "Teachers and lecturers",
@@ -226,12 +240,24 @@
       contact_name: "Full Name",
       contact_email: "Email Address",
       contact_category: "Inquiry Type",
+      contact_category_placeholder: "Select category",
+      contact_category_support: "Support",
+      contact_category_bug: "Bug report",
+      contact_category_billing: "Billing",
+      contact_category_feature_request: "Feature request",
+      contact_category_partnership: "Partnership",
+      contact_category_general: "General question",
       contact_subject: "Subject",
       contact_message: "Detailed Message",
       contact_submit: "Send Message",
       nav_home: "Home",
       nav_demo: "Demo",
       nav_contact: "Contact",
+      how_to_title: "How to start with Recordly",
+      how_to_subtitle: "A short 5-step getting started guide will appear here soon.",
+      thank_you_title: "Thank you!",
+      thank_you_subtitle: "Payment received. You can download Recordly and continue to the getting started guide.",
+      thank_you_how_to_cta: "Open the getting started guide",
       footer_cookies: "Cookie Policy",
       footer_contact: "Contact",
       footer_copyright: "© 2026 Recordly. Built for people who care about their data.",
@@ -363,7 +389,8 @@
   }
 
   function setupContactForm() {
-    const endpoint = "https://recordly.ailoveu.art/contact";
+    // const endpoint = "https://recordly.ailoveu.art/contact";
+    const endpoint = "https://recordly.ailoveu.art/api/contact";
     const form = document.querySelector("[data-contact-form]");
     if (!form) return;
 
@@ -383,10 +410,11 @@
         const category = cleanFormValue(formData.get("category"));
         const rawMessage = cleanFormValue(formData.get("message"));
         const payload = {
+          category,
           name: cleanFormValue(formData.get("name")),
           email: cleanFormValue(formData.get("email")),
           subject: cleanFormValue(formData.get("subject")) || "Recordly contact request",
-          message: category ? `Category: ${category}\n\n${rawMessage}` : rawMessage,
+          message: rawMessage,
           company: cleanFormValue(formData.get("company")),
           token,
         };
@@ -436,9 +464,18 @@
   }
 
   function validateContactPayload(payload, category) {
+    const allowedCategories = new Set([
+      "support",
+      "bug",
+      "billing",
+      "feature_request",
+      "partnership",
+      "general",
+    ]);
+
     if (!payload.name) throw new Error(contactMessage("missingName"));
     if (!payload.email || !isValidEmail(payload.email)) throw new Error(contactMessage("invalidEmail"));
-    if (!category) throw new Error(contactMessage("missingCategory"));
+    if (!category || !allowedCategories.has(category)) throw new Error(contactMessage("missingCategory"));
     if (!payload.subject) throw new Error(contactMessage("missingSubject"));
     if (!payload.message) throw new Error(contactMessage("missingMessage"));
     if (payload.message.length > 5000) throw new Error(contactMessage("messageTooLong"));

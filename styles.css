@@ -793,6 +793,9 @@ html[data-theme="dark"] .faq-stack details {
 .direct-contact a { color: var(--primary); font-weight: 900; }
 .top-cta.ghost { background: var(--solid); color: var(--ink); }
 
+.how-to-placeholder { min-height: 280px; }
+.center-text { text-align: center; }
+
 //.form-row { display: grid; gap: 8px; }
 //.form-row label { font-weight: 700; color: #0f172a; }
 //.form-row input, .form-row textarea {
@@ -830,5 +833,3 @@ html[data-theme="dark"] .faq-stack details {
   }
   .reveal { opacity: 1; transform: none; }
 }
-
-
