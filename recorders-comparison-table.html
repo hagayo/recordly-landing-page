@@ -25,7 +25,6 @@
             --border-color: #e0e0e0;
             --row-alt: #f8f9fa;
         }
-
         body {
             font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             color: var(--text-dark);
@@ -34,50 +33,15 @@
             padding: 1rem 2rem;
             margin: 0;
         }
-
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            overflow-y: auto;
-        }
-
+        .container { max-width: 1000px; margin: 0 auto; overflow-y: auto; }
         header, .comparison-header { text-align: center; margin-bottom: 2rem; }
-        
-        h1, h2 {
-            font-size: 2.8rem;
-            color: var(--primary-blue);
-            margin-bottom: 1rem;
-        }
+        h1, h2 { font-size: 2.8rem; color: var(--primary-blue); margin-bottom: 1rem; }
         h2 { font-size: 2.2rem; margin-bottom: 0.5rem;}
-        
-        .subtitle {
-            font-size: 1.2rem;
-            color: var(--text-muted);
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
-        /* Verbal Explanations Section */
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-bottom: 2rem;
-        }
-
-        .feature-card {
-            padding: 1.5rem;
-            border-left: 4px solid var(--accent-orange);
-            background: var(--row-alt);
-        }
-
-        .feature-card h3 {
-            margin-top: 0;
-            color: var(--primary-blue);
-        }
-
+        .subtitle { font-size: 1.2rem; color: var(--text-muted); max-width: 700px; margin: 0 auto; }
+        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-bottom: 2rem; }
+        .feature-card { padding: 1.5rem; border-left: 4px solid var(--accent-orange); background: var(--row-alt); }
+        .feature-card h3 { margin-top: 0; color: var(--primary-blue); }
         .comparison-table { margin-bottom: 4rem; }
-
         table {
             width: 100%;
             border-collapse: collapse;
@@ -86,38 +50,22 @@
             border-radius: 12px;
             overflow: hidden;
         }
-
-        th, td {
-            padding: 1.2rem 1rem;
-            text-align: left;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        th {
-            background-color: var(--primary-blue);
-            color: white;
-            font-weight: 600;
-        }
-
+        th, td { padding: 1.2rem 1rem; text-align: left; border-bottom: 1px solid var(--border-color); }
+        th { background-color: var(--primary-blue); color: white; font-weight: 600; }
         th:first-child { background-color: #f1f3f5; color: var(--text-dark); }
-
         td:nth-child(4), th:nth-child(4) {
             background-color: rgba(255, 107, 0, 0.03);
             border-left: 2px solid var(--accent-orange);
             border-right: 2px solid var(--accent-orange);
         }
-
         th:nth-child(4) {
             background-color: var(--accent-orange);
             color: white;
             border: none;
         }
-
         .feature-title { font-weight: 600; color: var(--primary-blue); }
         .winner-tag { color: var(--accent-orange); font-weight: bold; font-size: 0.9rem; }
         .winner-check { color: var(--accent-orange); font-weight: bold; }
-
-        /* Summary Section */
         .verdict {
             background-color: var(--primary-blue);
             color: white;
@@ -126,7 +74,6 @@
             text-align: center;
         }
         .verdict h2 { margin-top: 0; font-size: 2rem; color: white; }
-        
         .cta-button {
             display: inline-block;
             margin-top: 1.5rem;
@@ -155,7 +102,7 @@
 <body>
 
     <div class="container">
-        <p><a href="./index.html#plans">Back to Recordly landing page</a> · <a href="./screen-recorder-guide.html">What to look for in a screen recorder</a></p>
+        <p><a href="./index.html">Back</a> · <a href="./screen-recorder-guide.html">What to look for in a screen recorder</a> · <a href="./about.html" data-i18n="about_text">About</a></p>
         <header>
             <h1>Screen Recorders Comparison</h1>
             <p class="subtitle">Most tools are either too simple for pros or too complex for creators. Recordly was built to bridge that gap with power, privacy, and performance.</p>
