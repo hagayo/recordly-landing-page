@@ -7,18 +7,17 @@
       nav_problem: "למה זה שונה",
       nav_features: "יכולות",
       nav_proof: "הוכחה",
-      nav_price: "מחיר",
+      nav_price: "תוכניות",
       nav_faq: "שאלות",
       nav_download: "הורדה חינם",
       hero_kicker: "מוד פרטיות",
       hero_title: "המקליט שלא מרגל אחרי השיעור שלך.",
       hero_lead: "Recordly עוזרת למורים, יוצרים ומפתחים להקליט מסך, מצלמה ואודיו, לערוך מהר ולייצא סרטון נקי - כשההקלטות נשארות על המחשב שלך, לא בענן שלנו.",
-      hero_cta: "הורדה חינם",
       hero_secondary: "לראות למה זה בטוח",
       proof_local: "100% עריכה מקומית",
       proof_upload: "0 העלאות הקלטות",
       proof_price: "Pro ב־$5 לחודש",
-      screen_topic: "שיעור: שברים ב־4 דקות",
+      screen_topic: "שיעור: נגזרות ב-3 דקות!",
       tag_cut: "חיתוך שקטים",
       tag_private: "בלי ענן",
       tag_export: "ייצוא נקי",
@@ -115,8 +114,6 @@
       faq_9_a: "כן.",
       final_label: "!להקליט פעם אחת, ללמד אלפי אנשים",
       final_title: "המסך שלך כבר מסביר. עכשיו תן לו להיראות מקצועי.",
-      final_cta: "הורדה חינם",
-      final_contact: "לדבר איתנו",
       legal_updated: "עודכן לאחרונה: אפריל 2026",
       legal_subtitle_contact:  "אנחנו כאן כדי לעזור. שלח לנו שאלות, משוב, בקשות החזר או דיווחי באגים.",
       legal_subtitle_cookie: "שימוש מינימלי ומכבד פרטיות",
@@ -167,11 +164,10 @@
       not_found_title: "העמוד לא נמצא",
       not_found_subtitle: "כנראה שהקישור השתנה, הועבר או פשוט יצא להפסקת קפה.",
       not_found_back_home: "חזרה לדף הבית",
-      not_found_download: "הורדה חינם",
       not_found_contact: "לפנות לתמיכה",
       footer_cookies: "מדיניות עוגיות",
       footer_contact: "צור קשר",
-      footer_copyright: "© 2026 Recordly",
+      footer_copyright: "כל הזכויות שמורות",
       footer_privacy: "מדיניות פרטיות",
       footer_terms: "תנאי שימוש",
       footer_refunds: "מדיניות החזרים",
@@ -200,7 +196,6 @@
       about_eyebrow: "אודות רקורדלי",
       about_title: "מקליט מסך שנבנה בשביל מהירות, בהירות ושליטה מלאה",
       about_subtitle: "רקורדלי עוזר למרצים, יוצרים, מפתחים וצוותים להקליט מדריכים, הדגמות, שיעורים וסרטוני מוצר בלי מערכות ענן כבדות ובלי מורכבות מיותרת.",
-      about_primary_cta: "הורדה חינם",
       about_secondary_cta: "איך מתחילים",
       about_why_title: "למה רקורדלי קיים?",
       about_why_p1: "הרבה מקליטי מסך מנסים להיות הכל בבת אחת: פלטפורמת ענן, עורך וידאו, ספריית צוותים, מערכת שיתוף, כלי אנליטיקה ומכונת שיווק. זה מתאים לחלק מהמשתמשים, אבל לא לכל מי שפשוט רוצה להקליט הסבר ברור עכשיו.",
@@ -224,8 +219,10 @@
       about_not_text: "רקורדלי לא מנסה להחליף מערכת וידאו ארגונית כבדה או עורך קולנוע מקצועי. היא נבנתה למי שרוצה להקליט תוכן ברור במהירות, עם פחות חיכוך.",
       about_founder_title: "נבנה על ידי מישהו שמקליט, מלמד ומפתח",
       about_founder_text: "רקורדלי נבנה על ידי חגי און, מרצה AI ומפתח תוכנה, מתוך צורך אמיתי: ליצור מדריכים והסברים במהירות בלי להילחם בכלים כבדים ובלי לוותר על פרטיות ושליטה.",
-      about_final_cta: "הורדה חינם",
-      about_contact_cta: "יצירת קשר"
+      contact_cta: "יצירת קשר",
+      pricing_page_eyebrow: "מחירים",
+      pricing_page_title: "מתחילים בחינם. משדרגים כשזה הופך לכלי עבודה.",
+      pricing_page_subtitle: "Recordly Free מתאימה להתנסות ולהקלטות מזדמנות. Recordly Pro פותחת הקלטות ארוכות יותר, מגבלות גבוהות יותר וזרימת עבודה חלקה ליוצרים, מרצים, מפתחים וצוותים."
     },
     en: {
       brand_badge: "Local-first",
@@ -238,12 +235,11 @@
       hero_kicker: "Privacy Mode: ON",
       hero_title: "The recorder that doesn’t spy on your lesson.",
       hero_lead: "Recordly helps teachers, creators, and developers record screen, camera, and audio, edit fast, and export clean tutorial videos - while recordings stay on your computer, not in our cloud.",
-      hero_cta: "Download Free",
       hero_secondary: "See why it’s private",
       proof_local: "100% local editing",
       proof_upload: "0 recording uploads",
       proof_price: "$5/month Pro",
-      screen_topic: "Lesson: Fractions in 4 minutes",
+      screen_topic: "Lesson: Fractions in 3 minutes",
       tag_cut: "Cut silence",
       tag_private: "No cloud",
       tag_export: "Export clean",
@@ -340,8 +336,6 @@
       faq_9_a: "Yes.",
       final_label: "Record once. Explain forever.",
       final_title: "Your screen already explains it. Now make it look professional.",
-      final_cta: "Download Free",
-      final_contact: "Contact us",
       legal_updated: "Last updated: April 2026",
       legal_subtitle_contact: "We are here to help. Contact us for any issue, and we will be happy to assist!",
       legal_subtitle_cookie: "Minimal Privacy-Respecting usage",
@@ -392,11 +386,10 @@
       not_found_title: "Page not found",
       not_found_subtitle: "The link may have moved, changed, or taken a small coffee break.",
       not_found_back_home: "Back to homepage",
-      not_found_download: "Download Free",
       not_found_contact: "Contact support",
       footer_cookies: "Cookie Policy",
       footer_contact: "Contact",
-      footer_copyright: "© 2026 Recordly. Built for people who care about their data.",
+      footer_copyright: "All rights reserved.",
       footer_privacy: "Privacy Policy",
       footer_terms: "Terms of Service",
       footer_refunds: "Refund Policy",
@@ -425,7 +418,6 @@
       about_eyebrow: "About Recordly",
       about_title: "A screen recorder built for speed, clarity, and full control",
       about_subtitle: "Recordly helps teachers, creators, developers, and teams record tutorials, demos, lessons, and product videos without heavy cloud systems or unnecessary complexity.",
-      about_primary_cta: "Download Free",
       about_secondary_cta: "How to start",
       about_why_title: "Why Recordly exists",
       about_why_p1: "Many screen recorders try to be everything at once: a cloud platform, video editor, team library, sharing system, analytics tool, and marketing machine. That works for some users, but not for everyone who simply wants to record a clear explanation now.",
@@ -449,8 +441,10 @@
       about_not_text: "Recordly is not trying to replace a heavy enterprise video platform or a professional cinematic editor. It is built for people who want to record clear content quickly, with less friction.",
       about_founder_title: "Built by someone who records, teaches, and develops",
       about_founder_text: "Recordly is built by Hagay Onn, AI lecturer and software developer, from a real need: creating tutorials and explanations quickly without fighting heavy tools or giving up privacy and control.",
-      about_final_cta: "Download Free",
-      about_contact_cta: "Contact us"      
+      contact_cta: "Contact us",
+      pricing_page_eyebrow: "Prices",
+      pricing_page_title: "Start Free, Upgrade for essential work",
+      pricing_page_subtitle: "Recordly Free is perfect for trying the app and creating occasional videos. Recordly Pro unlocks longer recordings, higher limits, and a smoother workflow for creators, teachers, developers, and teams."
     }
   };
 
@@ -801,10 +795,7 @@
 
 function setupDebugReferrer() {
   const referrerElement = document.getElementById("debug-referrer");
-
-  if (!referrerElement) {
-    return;
-  }
+  if (!referrerElement) { return; }
 
   const referrer = document.referrer && document.referrer.trim();
   referrerElement.textContent = referrer
@@ -814,7 +805,7 @@ function setupDebugReferrer() {
 
 setupWindowsInstallerDownloadCtas();
 setupDebugReferrer();
-  setupCtaTracking();
+setupCtaTracking();
 
   // contact page code for resend and cloudflare worker
 //    const CONTACT_ENDPOINT = "https://recordly.ailoveu.art/contact";
@@ -920,4 +911,3 @@ setupDebugReferrer();
 //      contactSubmit.textContent = isSubmitting ? "Sending..." : "Send issue";
 //    }
 }());
-

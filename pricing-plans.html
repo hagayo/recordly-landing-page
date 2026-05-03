@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Recordly - מקליטים מדריכים מקומית, בלי ענן ובלי כאב ראש</title>
+  <meta name="description" content="Recordly היא אפליקציית דסקטופ למורים, יוצרים ומפתחים שרוצים להקליט ולערוך סרטוני הדרכה מקומית. 5 הקלטות בחינם, Pro ללא הגבלה." />
+  <meta property="og:title" content="Recordly -> Local-first screen recorder for tutorials">
+  <meta property="og:description" content="Record screen, camera and audio locally. Create clean tutorial videos without uploading recordings to the cloud.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://recordly.ailoveu.art/pricing-plans.html">
+  <meta property="og:image" content="https://recordly.ailoveu.art/assets/recordly-og.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Recordly - Local-first screen recorder">
+  <meta name="twitter:description" content="Create tutorial videos locally without uploading recordings.">
+  <meta name="twitter:image" content="https://recordly.ailoveu.art/assets/recordly-og.png">
+  <script>
+    (function () {
+      const savedTheme = localStorage.getItem("recordly-theme");
+      const prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+      const savedLang = localStorage.getItem("recordly-lang");
+      const browserLang = (navigator.language || navigator.userLanguage || "he").toLowerCase();
+      const initialLang = savedLang || (browserLang.startsWith("he") ? "he" : "en");
+      document.documentElement.setAttribute("data-theme", savedTheme || (prefersDark ? "dark" : "light"));
+      document.documentElement.setAttribute("lang", initialLang);
+      document.documentElement.setAttribute("dir", initialLang === "he" ? "rtl" : "ltr");
+      document.documentElement.setAttribute("data-lang", initialLang);
+    }());
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700;800;900&family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css" />
+  <link rel="icon" href="./assets/recordly-favicon.png" type="image/png">
+  <link rel="canonical" href="https://recordly.ailoveu.art/pricing-plans.html">
+</head>
+<body>
+  <div class="noise" aria-hidden="true"></div>
+  <div class="pointer-light" aria-hidden="true"></div>
+
+  <header class="topbar">
+    <a class="brand" href="#top" aria-label="Recordly">
+      <span class="brand-mark">R</span>
+      <span class="brand-name">Recordly</span>
+      <span class="privacy-pill" data-i18n="brand_badge">תמיד לוקאלי</span>
+    </a>
+
+    <nav class="nav" aria-label="Main navigation">
+      <a href="./index.html" data-i18n="about_text">חזרה</a>
+      <a href="./about.html" data-i18n="about_text">אודות</a>
+    </nav>
+
+    <div class="top-actions">
+      <button class="language-toggle" type="button" data-lang-toggle aria-label="Switch language" title="Switch language">
+        <span data-lang-short>EN</span>
+      </button>
+      <button class="theme-toggle" type="button" data-theme-toggle aria-label="Toggle theme">
+        <span aria-hidden="true">☀</span>
+      </button>
+      <a class="top-cta magnetic" href="./download.html" data-i18n="nav_download">הורדה חינם</a>
+    </div>
+  </header>
+
+    <section class="legal-hero reveal pricing-page-hero">
+      <p class="eyebrow" data-i18n="pricing_page_eyebrow">Pricing</p>
+      <h1 data-i18n="pricing_page_title">Start free. Upgrade when recording becomes part of your work.</h1>
+      <p class="legal-subtitle" data-i18n="pricing_page_subtitle">
+        Recordly Free is perfect for trying the app and creating occasional videos. Recordly Pro unlocks longer recordings, higher limits, and a smoother workflow for creators, teachers, developers, and teams.
+      </p>
+    </section>
+
+    <section class="pricing-plans-page-grid reveal delay-1">
+      <article class="pricing-page-card">
+        <div class="plan-kicker" data-i18n="pricing_free_kicker">For getting started</div>
+        <h2 data-i18n="pricing_free_title">Free</h2>
+        <p class="plan-price" data-i18n="pricing_free_price">$0</p>
+        <p class="plan-description" data-i18n="pricing_free_description">
+          Try Recordly, record short videos, and see how fast local-first screen recording can feel.
+        </p>
+
+        <a class="plan-btn outline magnetic" href="./download.html" data-i18n="free_cta">Download Free</a>
+
+        <ul class="plan-feature-list">
+          <li data-i18n="pricing_free_feature_1">Same Recordly app as Pro</li>
+          <li data-i18n="pricing_free_feature_2">Local-first screen recording</li>
+          <li data-i18n="pricing_free_feature_3">Record screen, microphone, system audio, and camera</li>
+          <li data-i18n="pricing_free_feature_4">Great for testing, demos, and occasional videos</li>
+          <li data-i18n="pricing_free_feature_5">No credit card needed</li>
+        </ul>
+      </article>
+
+      <article class="pricing-page-card featured">
+        <div class="plan-badge" data-i18n="pricing_pro_badge">Best for serious creators</div>
+        <div class="plan-kicker" data-i18n="pricing_pro_kicker">For regular recording</div>
+        <h2 data-i18n="pricing_pro_title">Pro</h2>
+        <p class="plan-price" data-i18n="pricing_pro_price">$5 <span>/ month</span></p>
+        <p class="plan-description" data-i18n="pricing_pro_description">
+          Unlock the freedom to record more, record longer, and use Recordly as a real content tool - not just a trial.
+        </p>
+
+        <a class="plan-btn filled magnetic" href="https://checkout.paddle.com/recordly-pro-pay-page" data-i18n="pricing_pro_cta">Get Pro</a>
+
+        <ul class="plan-feature-list">
+          <li data-i18n="pricing_pro_feature_1">Everything in Free</li>
+          <li data-i18n="pricing_pro_feature_2">Higher monthly recording limits</li>
+          <li data-i18n="pricing_pro_feature_3">Longer recordings for real lessons, demos, and tutorials</li>
+          <li data-i18n="pricing_pro_feature_4">Built for regular creators, teachers, and product teams</li>
+          <li data-i18n="pricing_pro_feature_5">One simple low monthly price</li>
+        </ul>
+      </article>
+    </section>
+
+    <section class="legal-card reveal delay-2 pricing-compare-card">
+      <div class="legal-content">
+        <h2 data-i18n="pricing_compare_title">Compare Free and Pro</h2>
+        <p data-i18n="pricing_compare_subtitle">Both plans use the same Recordly app. Pro simply removes the limits that get in the way when recording becomes part of your workflow.</p>
+
+        <div class="pricing-compare-table" role="table" aria-label="Recordly pricing comparison">
+          <div class="pricing-row pricing-head" role="row">
+            <div role="columnheader" data-i18n="pricing_col_feature">Feature</div>
+            <div role="columnheader" data-i18n="pricing_col_free">Free</div>
+            <div role="columnheader" data-i18n="pricing_col_pro">Pro</div>
+          </div>
+
+          <div class="pricing-row" role="row">
+            <div data-i18n="pricing_cmp_same_app">Same Recordly app</div>
+            <div>✓</div>
+            <div>✓</div>
+          </div>
+
+          <div class="pricing-row" role="row">
+            <div data-i18n="pricing_cmp_local">Local-first recording</div>
+            <div>✓</div>
+            <div>✓</div>
+          </div>
+
+          <div class="pricing-row" role="row">
+            <div data-i18n="pricing_cmp_sources">Screen, mic, system audio, camera</div>
+            <div>✓</div>
+            <div>✓</div>
+          </div>
+
+          <div class="pricing-row" role="row">
+            <div data-i18n="pricing_cmp_monthly">Monthly recording limit</div>
+            <div data-i18n="pricing_cmp_monthly_free">Limited</div>
+            <div data-i18n="pricing_cmp_monthly_pro">Expanded</div>
+          </div>
+
+          <div class="pricing-row" role="row">
+            <div data-i18n="pricing_cmp_length">Recording length</div>
+            <div data-i18n="pricing_cmp_length_free">Short recordings</div>
+            <div data-i18n="pricing_cmp_length_pro">Longer recordings</div>
+          </div>
+
+          <div class="pricing-row" role="row">
+            <div data-i18n="pricing_cmp_best_for">Best for</div>
+            <div data-i18n="pricing_cmp_best_free">Trying and occasional use</div>
+            <div data-i18n="pricing_cmp_best_pro">Regular content creation</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="pricing-value-grid reveal delay-3">
+      <article class="about-feature-card">
+        <span class="about-icon">∞</span>
+        <h3 data-i18n="pricing_value_1_title">Less planning around limits</h3>
+        <p data-i18n="pricing_value_1_text">Free is great for starting. Pro is for the moment you stop asking “do I have enough recordings left?” and just create.</p>
+      </article>
+
+      <article class="about-feature-card">
+        <span class="about-icon">◉</span>
+        <h3 data-i18n="pricing_value_2_title">Better for real lessons and demos</h3>
+        <p data-i18n="pricing_value_2_text">Longer recordings make Pro a better fit for courses, onboarding videos, product walkthroughs, and serious tutorials.</p>
+      </article>
+
+      <article class="about-feature-card">
+        <span class="about-icon">⚡</span>
+        <h3 data-i18n="pricing_value_3_title">A tiny cost for a tool you actually use</h3>
+        <p data-i18n="pricing_value_3_text">If Recordly saves even a few minutes per video, Pro quickly pays for itself in clarity, speed, and fewer interruptions.</p>
+      </article>
+    </section>
+
+    <section class="legal-card reveal delay-4">
+      <div class="legal-content">
+        <h2 data-i18n="pricing_faq_title">Pricing questions</h2>
+
+        <div class="pricing-faq-list">
+          <details>
+            <summary data-i18n="pricing_faq_1_q">Is the Free plan really free?</summary>
+            <p data-i18n="pricing_faq_1_a">Yes. Free is designed so you can try Recordly and create occasional recordings without a credit card.</p>
+          </details>
+
+          <details>
+            <summary data-i18n="pricing_faq_2_q">Do Free and Pro use different apps?</summary>
+            <p data-i18n="pricing_faq_2_a">No. It is the same Recordly app. Pro unlocks higher limits and a better workflow for regular recording.</p>
+          </details>
+
+          <details>
+            <summary data-i18n="pricing_faq_3_q">When should I upgrade to Pro?</summary>
+            <p data-i18n="pricing_faq_3_a">Upgrade when you record regularly, need longer videos, or want Recordly to become part of your teaching, content, or product workflow.</p>
+          </details>
+
+          <details>
+            <summary data-i18n="pricing_faq_4_q">Can I start with Free and upgrade later?</summary>
+            <p data-i18n="pricing_faq_4_a">Yes. Start with Free, test your workflow, and upgrade only when the extra freedom is worth it for you.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+  <!-- Footer -->
+  <footer class="footer">
+    <div>© 2026 Recordly. <span data-i18n="footer_copyright">All rights reserved.</span></div>
+    <div>
+      <a href="./legal/privacy-policy.html" data-i18n="footer_privacy">מדיניות פרטיות</a>
+      <a href="./legal/terms-of-service.html" data-i18n="footer_terms">תנאי שימוש</a>
+      <a href="./legal/refund-policy.html" data-i18n="footer_refunds">מדיניות החזרים</a>
+      <a href="./legal/cookie-policy.html" data-i18n="footer_cookies">מדיניות עוגיות</a>
+      <a href="./contact.html" data-i18n="footer_contact">צור קשר</a>
+    </div>
+  </footer>
+
+  <script src="./script.js"></script>
+</body>
+</html>
+
+<!-- Page Structure:
+Nav
+Hero: Simple headline + subtitle + CTA
+Plan cards: Free / Pro (visually highlighted)
+Comparison section: Feature-by-feature comparison
+Added Value section: Why Recordly Pro is worth it
+FAQ: Pricing objections and upgrade clarity
+Footer
+Free CTA -> href="./download.html"
+Pro CTA  -> href="https://checkout.paddle.com/recordly-pro-pay-page"
+-->
+
+<!-- pricing_free_kicker: "להתחלה והתנסות", -->
+<!-- pricing_free_title: "Free", -->
+<!-- pricing_free_price: "$0", -->
+<!-- pricing_free_description: "נסו את Recordly, הקליטו סרטונים קצרים, וגלו כמה פשוטה יכולה להיות הקלטת מסך מקומית ומהירה.", -->
+<!-- pricing_free_feature_1: "אותה אפליקציית Recordly כמו ב-Pro", -->
+<!-- pricing_free_feature_2: "הקלטת מסך Local-first", -->
+<!-- pricing_free_feature_3: "הקלטת מסך, מיקרופון, שמע מערכת ומצלמה", -->
+<!-- pricing_free_feature_4: "מעולה להתנסות, הדגמות וסרטונים מזדמנים", -->
+<!-- pricing_free_feature_5: "לא צריך כרטיס אשראי", -->
+<!-- pricing_pro_badge: "הכי מתאים ליוצרים רציניים", -->
+<!-- pricing_pro_kicker: "להקלטה קבועה", -->
+<!-- pricing_pro_title: "Pro", -->
+<!-- pricing_pro_price: "$5 <span>/ חודש</span>", -->
+<!-- pricing_pro_description: "פתחו את החופש להקליט יותר, להקליט ארוך יותר, ולהשתמש ב-Recordly ככלי עבודה אמיתי - לא רק כניסיון.", -->
+<!-- pricing_pro_cta: "שדרוג ל-Pro", -->
+<!-- pricing_pro_feature_1: "כל מה שיש ב-Free", -->
+<!-- pricing_pro_feature_2: "מגבלות חודשיות גבוהות יותר", -->
+<!-- pricing_pro_feature_3: "הקלטות ארוכות יותר לשיעורים, הדגמות ומדריכים אמיתיים", -->
+<!-- pricing_pro_feature_4: "נבנה ליוצרים, מרצים וצוותי מוצר שמקליטים באופן קבוע", -->
+<!-- pricing_pro_feature_5: "מחיר חודשי פשוט ונמוך", -->
+
+<!-- pricing_compare_title: "השוואה בין Free ל-Pro", -->
+<!-- pricing_compare_subtitle:   "שתי התוכניות משתמשות באותה אפליקציית Recordly. Pro פשוט מסירה את המגבלות שמפריעות כשהקלטה הופכת לחלק משגרת העבודה.", -->
+<!-- pricing_col_feature: "יכולת", -->
+<!-- pricing_col_free: "Free", -->
+<!-- pricing_col_pro: "Pro", -->
+<!-- pricing_cmp_same_app: "אותה אפליקציית Recordly", -->
+<!-- pricing_cmp_local: "הקלטה מקומית Local-first", -->
+<!-- pricing_cmp_sources: "מסך, מיקרופון, שמע מערכת ומצלמה", -->
+<!-- pricing_cmp_monthly: "מגבלת הקלטות חודשית", -->
+<!-- pricing_cmp_monthly_free: "מוגבלת", -->
+<!-- pricing_cmp_monthly_pro: "מורחבת", -->
+<!-- pricing_cmp_length: "אורך הקלטה", -->
+<!-- pricing_cmp_length_free: "הקלטות קצרות", -->
+<!-- pricing_cmp_length_pro: "הקלטות ארוכות יותר", -->
+<!-- pricing_cmp_best_for: "הכי מתאים ל", -->
+<!-- pricing_cmp_best_free: "התנסות ושימוש מזדמן", -->
+<!-- pricing_cmp_best_pro: "יצירת תוכן קבועה", -->
+
+<!-- pricing_value_1_title: "פחות תכנון סביב מגבלות", -->
+<!-- pricing_value_1_text: "Free מצוינת להתחלה. Pro מיועדת לרגע שבו מפסיקים לשאול “נשארו לי מספיק הקלטות?” ופשוט יוצרים.", -->
+<!-- pricing_value_2_title: "טוב יותר לשיעורים והדגמות אמיתיים", -->
+<!-- pricing_value_2_text: "הקלטות ארוכות יותר הופכות את Pro למתאימה יותר לקורסים, סרטוני Onboarding, הדגמות מוצר ומדריכים רציניים.", -->
+<!-- pricing_value_3_title: "עלות קטנה לכלי שבאמת משתמשים בו", -->
+<!-- pricing_value_3_text: "אם Recordly חוסכת אפילו כמה דקות בכל וידאו, Pro מחזירה את עצמה מהר דרך בהירות, מהירות ופחות הפרעות.", -->
+
+<!-- pricing_faq_title: "שאלות על מחירים", -->
+<!-- pricing_faq_1_q: "האם תוכנית Free באמת חינמית?", -->
+<!-- pricing_faq_1_a: "כן. Free נועדה לאפשר לך לנסות את Recordly וליצור הקלטות מזדמנות בלי כרטיס אשראי.", -->
+<!-- pricing_faq_2_q: "האם Free ו-Pro משתמשות באפליקציות שונות?", -->
+<!-- pricing_faq_2_a: "לא. זו אותה אפליקציית Recordly. Pro פותחת מגבלות גבוהות יותר וזרימת עבודה טובה יותר למי שמקליט באופן קבוע.", -->
+<!-- pricing_faq_3_q: "מתי כדאי לשדרג ל-Pro?", -->
+<!-- pricing_faq_3_a: "כדאי לשדרג כשאתה מקליט באופן קבוע, צריך סרטונים ארוכים יותר, או רוצה ש-Recordly תהפוך לחלק מתהליך ההוראה, התוכן או המוצר שלך.", -->
+<!-- pricing_faq_4_q: "אפשר להתחיל ב-Free ולשדרג אחר כך?", -->
+<!-- pricing_faq_4_a: "כן. מתחילים עם Free, בודקים את זרימת העבודה, ומשדרגים רק כשהחופש הנוסף באמת שווה לך.", -->

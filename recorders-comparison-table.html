@@ -15,6 +15,24 @@
     <meta name="twitter:description" content="Compare Recordly with Loom and OBS for local-first screen recording, privacy, performance, pricing, and ease of use." />
     <meta name="twitter:image" content="https://recordly.ailoveu.art/assets/recordly-og.png" />
     <link rel="canonical" href="https://recordly.ailoveu.art/recorders-comparison-table.html" />
+    <script>
+    (function () {
+      const savedTheme = localStorage.getItem("recordly-theme");
+      const prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+      const savedLang = localStorage.getItem("recordly-lang");
+      const browserLang = (navigator.language || navigator.userLanguage || "he").toLowerCase();
+      const initialLang = savedLang || (browserLang.startsWith("he") ? "he" : "en");
+      document.documentElement.setAttribute("data-theme", savedTheme || (prefersDark ? "dark" : "light"));
+      document.documentElement.setAttribute("lang", initialLang);
+      document.documentElement.setAttribute("dir", initialLang === "he" ? "rtl" : "ltr");
+      document.documentElement.setAttribute("data-lang", initialLang);
+    }());
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700;800;900&family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="./styles.css" /> -->
+    <link rel="icon" href="./assets/recordly-favicon.png" type="image/png">
     <style>
         :root {
             --primary-blue: #0056b3;
@@ -97,10 +115,8 @@
             th, td { padding: 0.75rem; font-size: 0.9rem; }
         }
     </style>
-    <link rel="icon" href="./assets/recordly-favicon.png" type="image/png">
 </head>
 <body>
-
     <div class="container">
         <p><a href="./index.html">Back</a> · <a href="./screen-recorder-guide.html">What to look for in a screen recorder</a> · <a href="./about.html" data-i18n="about_text">About</a></p>
         <header>
@@ -222,6 +238,18 @@
         </section>
     </div>
 
-    <script src="./script.js" defer></script>
+  <!-- Footer -->
+  <footer class="footer">
+    <div>© 2026 Recordly. <span data-i18n="footer_copyright">All rights reserved.</span></div>
+    <div>
+      <a href="./legal/privacy-policy.html" data-i18n="footer_privacy">Privacy Policy</a>
+      <a href="./legal/terms-of-service.html" data-i18n="footer_terms">Terms of Service</a>
+      <a href="./legal/refund-policy.html" data-i18n="footer_refunds">Refund Policy</a>
+      <a href="./legal/cookie-policy.html" data-i18n="footer_cookies">Cookie Policy</a>
+      <a href="./contact.html" data-i18n="footer_contact">Contact</a>
+    </div>
+  </footer>
+  
+  <script src="./script.js" defer></script>
 </body>
 </html>
