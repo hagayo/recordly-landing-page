@@ -15,25 +15,13 @@
   <meta name="twitter:description" content="Thank you for choosing Recordly. Download the app and continue to the getting started guide." />
   <meta name="twitter:image" content="https://recordly.ailoveu.art/assets/recordly-og.png" />
   <meta name="robots" content="noindex">
-  <link rel="canonical" href="https://recordly.ailoveu.art/thank-you.html" />
-  <script>
-    (function () {
-      const savedTheme = localStorage.getItem("recordly-theme");
-      const prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
-      const savedLang = localStorage.getItem("recordly-lang");
-      const browserLang = (navigator.language || navigator.userLanguage || "he").toLowerCase();
-      const initialLang = savedLang || (browserLang.startsWith("he") ? "he" : "en");
-      document.documentElement.setAttribute("data-theme", savedTheme || (prefersDark ? "dark" : "light"));
-      document.documentElement.setAttribute("lang", initialLang);
-      document.documentElement.setAttribute("dir", initialLang === "he" ? "rtl" : "ltr");
-      document.documentElement.setAttribute("data-lang", initialLang);
-    }());
-  </script>
+  <script src="./init-theme-lang.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700;800;900&family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./styles.css" />
   <link rel="icon" href="./assets/recordly-favicon.png" type="image/png">
+  <link rel="canonical" href="https://recordly.ailoveu.art/thank-you.html" />
 </head>
 <body>
   <div class="noise" aria-hidden="true"></div>

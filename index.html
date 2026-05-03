@@ -14,19 +14,7 @@
   <meta name="twitter:title" content="Recordly - Local-first screen recorder">
   <meta name="twitter:description" content="Create tutorial videos locally without uploading recordings.">
   <meta name="twitter:image" content="https://recordly.ailoveu.art/assets/recordly-og.png">
-  <script>
-    (function () {
-      const savedTheme = localStorage.getItem("recordly-theme");
-      const prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
-      const savedLang = localStorage.getItem("recordly-lang");
-      const browserLang = (navigator.language || navigator.userLanguage || "he").toLowerCase();
-      const initialLang = savedLang || (browserLang.startsWith("he") ? "he" : "en");
-      document.documentElement.setAttribute("data-theme", savedTheme || (prefersDark ? "dark" : "light"));
-      document.documentElement.setAttribute("lang", initialLang);
-      document.documentElement.setAttribute("dir", initialLang === "he" ? "rtl" : "ltr");
-      document.documentElement.setAttribute("data-lang", initialLang);
-    }());
-  </script>
+  <script src="./init-theme-lang.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700;800;900&family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
@@ -47,10 +35,10 @@
 
     <nav class="nav" aria-label="Main navigation">
       <a href="./about.html" data-i18n="about_text">אודות</a>
-      <a href="#problem" data-i18n="nav_problem">למה זה שונה</a>
+      <!-- <a href="#problem" data-i18n="nav_problem">למה זה שונה</a> -->
       <a href="#features" data-i18n="nav_features">יכולות</a>
-      <a href="#proof" data-i18n="nav_proof">הוכחה</a>
-      <a href="#plans" data-i18n="nav_price">מחיר</a>
+      <!-- <a href="#proof" data-i18n="nav_proof">הוכחה</a> -->
+      <a href="./pricing-plans.html" data-i18n="nav_price">תוכניות</a>
       <a href="#faq" data-i18n="nav_faq">שאלות</a>
     </nav>
 

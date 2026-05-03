@@ -14,22 +14,10 @@
   <meta name="twitter:title" content="Recordly - Terms of Service" />
   <meta name="twitter:description" content="Terms of Service for Recordly, a local-first desktop screen recording app." />
   <meta name="twitter:image" content="https://recordly.ailoveu.art/assets/recordly-og.png" />
-  <link rel="canonical" href="https://recordly.ailoveu.art/legal/terms-of-service.html" />
-  <script>
-    (function () {
-      var savedTheme = localStorage.getItem('recordly-theme');
-      var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-      var savedLang = localStorage.getItem('recordly-lang');
-      var browserLang = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
-      var initialLang = savedLang || (browserLang.startsWith('he') ? 'he' : 'en');
-      document.documentElement.setAttribute('data-theme', savedTheme || (prefersDark ? 'dark' : 'light'));
-      document.documentElement.setAttribute('data-lang', initialLang);
-      document.documentElement.setAttribute('lang', initialLang);
-      document.documentElement.setAttribute('dir', initialLang === 'he' ? 'rtl' : 'ltr');
-    }());
-  </script>
+  <script src="../init-theme-lang.js"></script>
   <link rel="stylesheet" href="../styles.css" />
   <link rel="icon" href="../assets/recordly-favicon.png">
+  <link rel="canonical" href="https://recordly.ailoveu.art/legal/terms-of-service.html" />
 </head>
 <body>
   <div class="noise" aria-hidden="true"></div>
