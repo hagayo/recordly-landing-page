@@ -568,9 +568,11 @@
     });
   }
 
+  const CONTACT_ENDPOINT = "https://recordly.ailoveu.art/api/contact";
+
   function setupContactForm() {
     // const endpoint = "https://recordly.ailoveu.art/contact";
-    const endpoint = "https://recordly.ailoveu.art/api/contact";
+    // const endpoint = "https://recordly.ailoveu.art/api/contact";
     const form = document.querySelector("[data-contact-form]");
     if (!form) return;
 
@@ -584,8 +586,8 @@
 
       try {
         const formData = new FormData(form);
-        const token = getTurnstileToken();
-        if (!token) throw new Error(contactMessage("missingVerification"));
+        const turnstileToken = getTurnstileToken();
+        if (!turnstileToken) throw new Error(contactMessage("missingVerification"));
 
         const category = cleanFormValue(formData.get("category"));
         const rawMessage = cleanFormValue(formData.get("message"));
@@ -596,38 +598,68 @@
           subject: cleanFormValue(formData.get("subject")) || "Recordly contact request",
           message: rawMessage,
           company: cleanFormValue(formData.get("company")),
-          token,
+          turnstileToken,
         };
 
         validateContactPayload(payload, category);
 
-        const response = await fetch(endpoint, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(payload),
-        });
+        const response = await postContactRequest(payload);
+        const result = await readJsonResponse(response);
 
-        let result = {};
-        try { result = await response.json(); } catch (_) { result = {}; }
-
-        if (!response.ok) {
-          if (response.status === 429) {
-            const retryAfter = result.retryAfter || 60;
-            throw new Error(contactMessage("rateLimited", retryAfter));
-          }
-          throw new Error(result.error || contactMessage("failed"));
+        if (!response.ok || result.ok === false) {
+          throwContactResponseError(response, result);
         }
 
         form.reset();
         resetTurnstile();
         setContactStatus(status, contactMessage("success"), "success");
       } catch (error) {
-        setContactStatus(status, error.message || contactMessage("failed"), "error");
+        const message = getFriendlyContactErrorMessage(error);
+        setContactStatus(status, message, "error");
         resetTurnstile();
       } finally {
         setContactSubmitting(submit, false);
       }
     });
+  }
+
+  async function postContactRequest(payload) {
+    return fetch(CONTACT_ENDPOINT, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload),
+    });
+  }
+
+  async function readJsonResponse(response) {
+    try {
+      return await response.json();
+    } catch (_) {
+      return {};
+    }
+  }
+
+  function throwContactResponseError(response, result) {
+    if (response.status === 429) {
+      const retryAfter = result.retryAfter || 60;
+      throw new Error(contactMessage("rateLimited", retryAfter));
+    }
+
+    if (response.status === 404 || response.status >= 500) {
+      const error = new Error(contactMessage("serviceUnavailable"));
+      error.isContactServiceUnavailable = true;
+      throw error;
+    }
+
+    throw new Error(result.error || contactMessage("failed"));
+  }
+
+  function getFriendlyContactErrorMessage(error) {
+    if (!navigator.onLine || error instanceof TypeError || error?.isContactServiceUnavailable) {
+      return contactMessage("serviceUnavailable");
+    }
+
+    return error?.message || contactMessage("failed");
   }
 
   function cleanFormValue(value) {
@@ -686,7 +718,8 @@
         sendingButton: "שולח...",
         submitButton: "שלח הודעה",
         success: "ההודעה נשלחה בהצלחה. תודה!",
-        failed: "לא הצלחנו לשלוח את ההודעה. נסה שוב בעוד רגע.",
+        failed: "לא הצלחנו לשלוח את ההודעה. נסה שוב בעוד רגע, או שלח לנו מייל ישירות ל-h2o@ailoveu.art.",
+        serviceUnavailable: "טופס יצירת הקשר אינו זמין כרגע. נסה שוב בעוד רגע, או שלח לנו מייל ישירות ל-h2o@ailoveu.art.",
         missingVerification: "יש להשלים את אימות האבטחה.",
         rateLimited: `יותר מדי ניסיונות. נסה שוב בעוד ${value} שניות.`,
         missingName: "נא למלא שם מלא.",
@@ -701,7 +734,8 @@
         sendingButton: "Sending...",
         submitButton: "Send Message",
         success: "Message sent successfully. Thank you!",
-        failed: "Could not send the message. Please try again in a moment.",
+        failed: "Could not send your message. Please try again in a moment, or email us directly at h2o@ailoveu.art.",
+        serviceUnavailable: "The contact form is temporarily unavailable. Please try again in a moment, or email us directly at h2o@ailoveu.art.",
         missingVerification: "Please complete the security verification.",
         rateLimited: `Too many attempts. Try again in ${value} seconds.`,
         missingName: "Please enter your full name.",

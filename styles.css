@@ -707,7 +707,7 @@ html[data-theme="dark"] .faq-stack details { background: rgba(255, 255, 255, .05
   opacity: .72;
   transform: none;
 }
-.contact-status { min-height: 24px; margin-top: 16px; text-align: center; font-weight: 900; line-height: 1.5; }
+.contact-status { min-height: 24px; margin: 16px auto 0; max-width: 620px; text-align: center; font-weight: 900; line-height: 1.5; overflow-wrap: anywhere; }
 .contact-status.is-success { color: #15803d; }
 .contact-status.is-error { color: var(--danger); }
 .contact-status.is-loading { color: var(--primary); }
