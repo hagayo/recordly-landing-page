@@ -3,16 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Recordly - מקליטים מדריכים מקומית, בלי ענן ובלי כאב ראש</title>
-  <meta name="description" content="Recordly היא אפליקציית דסקטופ למורים, יוצרים ומפתחים שרוצים להקליט ולערוך סרטוני הדרכה מקומית. 5 הקלטות בחינם, Pro ללא הגבלה." />
-  <meta property="og:title" content="Recordly -> Local-first screen recorder for tutorials">
-  <meta property="og:description" content="Record screen, camera and audio locally. Create clean tutorial videos without uploading recordings to the cloud.">
+  <title>Recordly Pricing - Free vs Pro local-first screen recorder</title>
+  <meta name="description" content="Compare Recordly Free and Pro. Start with a free local-first screen recorder, then upgrade to Pro for longer recordings and higher monthly limits." />
+  <meta property="og:title" content="Recordly Pricing - Free vs Pro">
+  <meta property="og:description" content="Start free, then upgrade to Pro when Recordly becomes part of your teaching, product, support or content workflow.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://recordly.ailoveu.art/pricing-plans.html">
   <meta property="og:image" content="https://recordly.ailoveu.art/assets/recordly-og.png">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Recordly - Local-first screen recorder">
-  <meta name="twitter:description" content="Create tutorial videos locally without uploading recordings.">
+  <meta name="twitter:title" content="Recordly Pricing - Free vs Pro">
+  <meta name="twitter:description" content="Free for occasional recordings. Pro for serious creators who need higher limits and longer recording sessions.">
   <meta name="twitter:image" content="https://recordly.ailoveu.art/assets/recordly-og.png">
   <script src="./init-theme-lang.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,6 +21,20 @@
   <link rel="stylesheet" href="./styles.css" />
   <link rel="icon" href="./assets/recordly-favicon.png" type="image/png">
   <link rel="canonical" href="https://recordly.ailoveu.art/pricing-plans.html">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "Recordly",
+    "description": "A local-first screen recorder for tutorials, lessons, product demos and support videos.",
+    "brand": { "@type": "Brand", "name": "Recordly" },
+    "offers": [
+      { "@type": "Offer", "name": "Recordly Free", "price": "0", "priceCurrency": "USD", "availability": "https://schema.org/InStock" },
+      { "@type": "Offer", "name": "Recordly Pro", "price": "5", "priceCurrency": "USD", "availability": "https://schema.org/InStock" }
+    ]
+  }
+  </script>
+
 </head>
 <body>
   <div class="noise" aria-hidden="true"></div>
@@ -33,11 +47,11 @@
       <span class="privacy-pill" data-i18n="brand_badge">תמיד לוקאלי</span>
     </a>
 
-    <nav class="nav" aria-label="Main navigation">
-      <a href="./index.html" data-i18n="about_text">חזרה</a>
+    <nav class="nav" id="nav-links" aria-label="Main navigation">
+      <a href="./index.html" data-i18n="not_found_back_home">חזרה</a>
       <a href="./about.html" data-i18n="about_text">אודות</a>
       <a href="./index.html#features" data-i18n="nav_features">יכולות</a>
-      <a href="./pricing-plans.html" data-i18n="nav_price">תוכניות</a>
+      <!-- a href="./pricing-plans.html" data-i18n="nav_price" disabled>תוכניות</a -->
       <a href="./recorders-comparison-table.html" data-i18n="compare_full_cta">השוואה</a>
       <a href="./screen-recorder-guide.html" data-i18n="nav_guide">מדריך בחירה</a>
       <a href="./contact.html" data-i18n="nav_contact">צרו קשר</a>
@@ -179,6 +193,15 @@
       </article>
     </section>
 
+    <section class="legal-card reveal delay-4 pricing-pro-story-card">
+      <div class="legal-content">
+        <span class="tiny" data-i18n="pricing_story_label">למה Pro משתלם?</span>
+        <h2 data-i18n="pricing_story_title">כשאתם מקליטים כחלק מהעבודה, מגבלות קטנות הופכות לבזבוז זמן.</h2>
+        <p data-i18n="pricing_story_text_1">תוכנית Free מצוינת כדי לבדוק את Recordly וליצור סרטונים מזדמנים. אבל ברגע שאתם מקליטים שיעורים, מדריכים, דמו מוצר, סרטוני תמיכה או תוכן לקהילה באופן קבוע, הערך של Pro הוא לא רק “עוד הקלטות”. הערך הוא פחות עצירות, פחות תכנון סביב מגבלות, ויותר זרימה.</p>
+        <p data-i18n="pricing_story_text_2">במחיר קטן וקבוע, Pro הופכת את Recordly לכלי עבודה יומיומי: אותה אפליקציה, אותה חוויית שימוש, אבל עם יותר חופש להקליט ברצינות.</p>
+      </div>
+    </section>
+
     <section class="legal-card reveal delay-4 pricing-faq-card">
       <div class="legal-content">
         <h2 data-i18n="pricing_faq_title">שאלות על מחירים</h2>
@@ -203,6 +226,22 @@
             <summary data-i18n="pricing_faq_4_q">אפשר להתחיל ב-Free ולשדרג אחר כך?</summary>
             <p data-i18n="pricing_faq_4_a">כן. מתחילים עם Free, בודקים את זרימת העבודה, ומשדרגים רק כשהחופש הנוסף באמת שווה לך.</p>
           </details>
+
+          <details>
+            <summary data-i18n="pricing_faq_5_q">האם Pro מתאים לי אם אני מקליט רק מדי פעם?</summary>
+            <p data-i18n="pricing_faq_5_a">אם אתם מקליטים רק פעם בכמה זמן, Free כנראה מספיקה. Pro מתאים יותר למי שהקלטות הן חלק אמיתי מהעבודה, ההוראה, התמיכה או יצירת התוכן שלו.</p>
+          </details>
+
+          <details>
+            <summary data-i18n="pricing_faq_6_q">האם התוכן שלי מקבל פיצ׳רים שונים ב-Pro?</summary>
+            <p data-i18n="pricing_faq_6_a">לא. Recordly שומרת על אותו עיקרון: אותה אפליקציה ואותה גישה מקומית. Pro פותחת מגבלות שימוש כדי שתוכלו להקליט יותר ובאורך שמתאים לעבודה אמיתית.</p>
+          </details>
+
+          <details>
+            <summary data-i18n="pricing_faq_7_q">למה לא להשתמש פשוט בכלי חינמי אחר?</summary>
+            <p data-i18n="pricing_faq_7_a">אם כלי חינמי נותן לכם בדיוק את הזרימה, הפרטיות והפשטות שאתם צריכים, מצוין. Recordly מיועדת למי שרוצה איזון בין קלות שימוש, הקלטה מקומית, מקור קול/מצלמה ברור ומודל מחיר פשוט.</p>
+          </details>
+
         </div>
       </div>
     </section>

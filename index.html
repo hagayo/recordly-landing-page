@@ -6,13 +6,13 @@
   <title>Recordly - מקליטים מדריכים מקומית, בלי ענן ובלי כאב ראש</title>
   <meta name="description" content="Recordly היא אפליקציית דסקטופ למורים, יוצרים ומפתחים שרוצים להקליט ולערוך סרטוני הדרכה מקומית. 5 הקלטות בחינם, Pro ללא הגבלה." />
   <meta property="og:title" content="Recordly -> Local-first screen recorder for tutorials">
-  <meta property="og:description" content="Record screen, camera and audio locally. Create clean tutorial videos without uploading recordings to the cloud.">
+  <meta property="og:description" content="Record screen, camera, microphone and system audio locally. Create tutorials, software demos, lessons and support videos without uploading recordings to the cloud.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://recordly.ailoveu.art/">
   <meta property="og:image" content="https://recordly.ailoveu.art/assets/recordly-og.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Recordly - Local-first screen recorder">
-  <meta name="twitter:description" content="Create tutorial videos locally without uploading recordings.">
+  <meta name="twitter:description" content="Create tutorials, software demos, lessons and support videos locally without uploading recordings.">
   <meta name="twitter:image" content="https://recordly.ailoveu.art/assets/recordly-og.png">
   <script src="./init-theme-lang.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,6 +21,22 @@
   <link rel="stylesheet" href="./styles.css" />
   <link rel="icon" href="./assets/recordly-favicon.png" type="image/png">
   <link rel="canonical" href="https://recordly.ailoveu.art/">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Recordly",
+    "applicationCategory": "MultimediaApplication",
+    "operatingSystem": "Windows",
+    "description": "Recordly is a local-first screen recorder for tutorials, lessons, software demos, support videos and product walkthroughs.",
+    "offers": [
+      { "@type": "Offer", "name": "Recordly Free", "price": "0", "priceCurrency": "USD" },
+      { "@type": "Offer", "name": "Recordly Pro", "price": "5", "priceCurrency": "USD" }
+    ],
+    "url": "https://recordly.ailoveu.art/"
+  }
+  </script>
+
 </head>
 <body>
   <div class="noise" aria-hidden="true"></div>
@@ -30,16 +46,15 @@
     <a class="brand" href="#top" aria-label="Recordly">
       <span class="brand-mark">R</span>
       <span class="brand-name">Recordly</span>
-      <span class="privacy-pill" data-i18n="brand_badge">Local-first</span>
+      <!-- span class="privacy-pill" data-i18n="brand_badge">תמיד פרטי</span -->
     </a>
 
-    <nav class="nav" aria-label="Main navigation">
+    <nav class="nav" id="nav-links" aria-label="Main navigation">
       <a href="./about.html" data-i18n="about_text">אודות</a>
-      <!-- <a href="#problem" data-i18n="nav_problem">למה זה שונה</a> -->
       <a href="#features" data-i18n="nav_features">יכולות</a>
-      <!-- <a href="#proof" data-i18n="nav_proof">הוכחה</a> -->
       <a href="./pricing-plans.html" data-i18n="nav_price">תוכניות</a>
       <a href="#faq" data-i18n="nav_faq">שאלות</a>
+      <a href="./contact.html" data-i18n="nav_contact">יצירת קשר</a>
     </nav>
 
     <div class="top-actions">
@@ -111,6 +126,16 @@
       <span data-i18n="strip_5">Team tutorials</span>
     </section>
 
+    <section class="section product-definition reveal" id="what-is-recordly">
+      <div class="definition-card">
+        <span class="tiny" data-i18n="definition_label">מה זה Recordly?</span>
+        <h2 data-i18n="definition_title">מקליט מסך Local-first ליצירת מדריכים, שיעורים ודמו מוצר.</h2>
+        <p data-i18n="definition_text_1">Recordly היא אפליקציית דסקטופ ל-Windows שעוזרת למורים, יוצרים, מפתחים וצוותי מוצר להקליט מסך, מיקרופון, אודיו מערכת ומצלמה בתהליך קצר וברור.</p>
+        <p data-i18n="definition_text_2">במקום להפוך כל סרטון לפרויקט ענן כבד, Recordly מתמקדת במה שרוב היוצרים צריכים באמת: להתחיל מהר, להסביר ברור, לשמור את הקבצים מקומית ולייצא סרטון שאפשר לשלוח לתלמידים, לקוחות, צוות או קהילה.</p>
+      </div>
+    </section>
+
+
     <section class="section split problem" id="problem">
       <div class="section-title reveal">
         <span class="tiny" data-i18n="problem_label">הבעיה</span>
@@ -172,6 +197,21 @@
           <h3 data-i18n="feature_6_title">פלטפורמות זמינות</h3>
           <p data-i18n="feature_6_text">כרגע ווינדוס, בקרוב גרסת מק\אפל</p>
         </article>
+
+      </div>
+
+      <div class="workflow-story reveal delay-6">
+        <div>
+          <span class="tiny" data-i18n="workflow_label">זרימת עבודה</span>
+          <h3 data-i18n="workflow_title">נבנה למדריכים, לא לכאבי ראש של הפקת וידאו.</h3>
+          <p data-i18n="workflow_text">Recordly שומרת את התהליך קצר: בוחרים מה להקליט, מתחילים, מתקנים את הרגעים המיותרים ומייצאים. פחות תפריטים, פחות בלבול, ויותר זמן ללמד, להסביר וליצור.</p>
+        </div>
+        <ul class="workflow-list">
+          <li data-i18n="workflow_step_1">בחרו מסך, מיקרופון, אודיו מערכת ומצלמה</li>
+          <li data-i18n="workflow_step_2">הקליטו הסבר ברור בלי להעלות תוכן לענן</li>
+          <li data-i18n="workflow_step_3">חתכו שקטים וטעויות קטנות לפני שיתוף</li>
+          <li data-i18n="workflow_step_4">ייצאו קובץ נקי לשיעור, לקוח, צוות או קהילה</li>
+        </ul>
       </div>
     </section>
 
@@ -188,6 +228,17 @@
           <span class="ok">✓ recording locally</span>
           <span class="ok">✓ no upload detected</span>
         </div>
+      </div>
+    </section>
+
+    <section class="section local-first-deep reveal">
+      <div class="section-title center">
+        <span class="tiny" data-i18n="local_deep_label">למה Local-first חשוב?</span>
+        <h2 data-i18n="local_deep_title">לא כל הקלטה צריכה להתחיל בענן.</h2>
+      </div>
+      <div class="deep-copy-card">
+        <p data-i18n="local_deep_text_1">הרבה מקליטי מסך בנויים סביב העלאה אוטומטית, ספריית צוותים ושיתוף קישורים. זה יכול להיות שימושי, אבל זה לא תמיד מה שאתם רוצים כשמדובר בשיעורים פרטיים, קוד, מערכות פנימיות, לקוחות או רעיונות שעדיין לא מוכנים לפרסום.</p>
+        <p data-i18n="local_deep_text_2">Recordly מתחילה מקומית: ההקלטה והעריכה מתבצעות במחשב שלכם. אתם מחליטים מה לשמור, מה לייצא, איפה לאחסן ומתי לשתף. זו גישה מהירה יותר, פרטית יותר ופשוטה יותר עבור הרבה סרטוני הדרכה ודמו.</p>
       </div>
     </section>
 
@@ -229,6 +280,19 @@
         <article class="audience-card reveal"><span>🎓</span><h3 data-i18n="aud_1_title">מורים ומרצים</h3><p data-i18n="aud_1_text">שיעורים מוקלטים, פתרון תרגילים, תגבור והכנה למבחנים.</p></article>
         <article class="audience-card reveal delay-1"><span>🧑‍💻</span><h3 data-i18n="aud_2_title">מפתחים וצוותי מוצר</h3><p data-i18n="aud_2_text">דמו, דיווח באג, walkthrough ותיעוד תהליכים פנימיים.</p></article>
         <article class="audience-card reveal delay-2"><span>🎬</span><h3 data-i18n="aud_3_title">יוצרים וקורסים</h3><p data-i18n="aud_3_text">מדריכים, סרטוני מוצר, שיעורי אונליין ותוכן לקהילה.</p></article>
+      </div>
+    </section>
+
+    <section class="section use-cases-deep reveal">
+      <div class="section-title center">
+        <span class="tiny" data-i18n="usecases_label">שימושים נפוצים</span>
+        <h2 data-i18n="usecases_title">Recordly נבנתה לכל מי שצריך להסביר משהו על המסך.</h2>
+      </div>
+      <div class="usecase-grid">
+        <article><h3 data-i18n="usecase_teachers_title">מרצים, מורים ומדריכי קורסים</h3><p data-i18n="usecase_teachers_text">הקליטו שיעורים קצרים, פתרונות לתרגילים, הסברי קורס, תגובות לשאלות תלמידים והדרכות פנימיות בלי לפתוח מערכת וידאו כבדה.</p></article>
+        <article><h3 data-i18n="usecase_devs_title">מפתחים וצוותי מוצר</h3><p data-i18n="usecase_devs_text">צרו דיווחי באגים עם הקשר מלא, דמו לגרסה חדשה, הסבר Flow, סקירת פיצ׳ר או הדרכת משתמשים שמראה בדיוק מה קורה על המסך.</p></article>
+        <article><h3 data-i18n="usecase_marketers_title">יוצרים, משווקים ועסקים קטנים</h3><p data-i18n="usecase_marketers_text">הפיקו סרטוני מוצר, הדרכות קצרות, תוכן לרשתות, סרטוני מכירה פשוטים ותוכן לקהילה בלי להסתבך עם תוכנות עריכה גדולות.</p></article>
+        <article><h3 data-i18n="usecase_ai_title">יוצרי תוכן ומרצי AI</h3><p data-i18n="usecase_ai_text">הקליטו הדגמות Prompt Engineering, הסברים על כלי AI, תהליכי עבודה ויזואליים ושיעורים קצרים שהקהל יכול להבין וליישם מיד.</p></article>
       </div>
     </section>
 
@@ -287,6 +351,10 @@
         <details class="reveal"><summary data-i18n="faq_7_q">תומך בסאונד מערכת?</summary><p data-i18n="faq_7_a">כן לחלוטין, כולל כל סטרימר סאונד שמחובד לאודיו</p></details>
         <details class="reveal"><summary data-i18n="faq_8_q">תומך במיקרופון ומצלמה?</summary><p data-i18n="faq_8_a">כן וניתן לבחירה על ידי המשתמש\ת</p></details>
         <details class="reveal"><summary data-i18n="faq_9_q">תומך MP4?</summary><p data-i18n="faq_9_a">כן</p></details>
+
+        <details class="reveal"><summary data-i18n="faq_10_q">האם Recordly מתאימה למדריכי תוכנה?</summary><p data-i18n="faq_10_a">כן. Recordly נבנתה בדיוק לסרטוני מסך ברורים: דמו מוצר, מדריכי תוכנה, תיעוד באגים, Onboarding, סקירת פיצ׳רים והסברים טכניים.</p></details>
+        <details class="reveal"><summary data-i18n="faq_11_q">האם Free היא רק גרסת ניסיון?</summary><p data-i18n="faq_11_a">לא. Free היא תוכנית שימוש אמיתית להקלטות מזדמנות. Pro מיועדת למי שמקליט באופן קבוע ורוצה פחות מגבלות על כמות ואורך ההקלטות.</p></details>
+        <details class="reveal"><summary data-i18n="faq_12_q">מה Pro פותחת בפועל?</summary><p data-i18n="faq_12_a">Pro לא משנה את האפליקציה עצמה. היא פותחת יותר חופש שימוש: יותר הקלטות, הקלטות ארוכות יותר וזרימת עבודה שמתאימה להוראה, תוכן ועבודת מוצר קבועה.</p></details>
       </div>
     </section>
 

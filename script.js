@@ -4,12 +4,13 @@
   const translations = {
     he: {
       brand_badge: "תמיד מקומי",
-      nav_problem: "למה זה שונה",
+      // nav_problem: "למה זה שונה",
       nav_features: "יכולות",
-      nav_proof: "הוכחה",
+      // nav_proof: "הוכחה",
       nav_price: "תוכניות",
       nav_faq: "שאלות",
       nav_download: "הורדה חינם",
+      nav_contact: "יצירת קשר",
       hero_kicker: "מוד פרטיות",
       hero_title: "המקליט שלא מרגל אחרי השיעור שלך.",
       hero_lead: "Recordly עוזרת למורים, יוצרים ומפתחים להקליט מסך, מצלמה ואודיו, לערוך מהר ולייצא סרטון נקי - כשההקלטות נשארות על המחשב שלך, לא בענן שלנו.",
@@ -201,12 +202,18 @@
       about_why_title: "למה רקורדלי קיים?",
       about_why_p1: "הרבה מקליטי מסך מנסים להיות הכל בבת אחת: פלטפורמת ענן, עורך וידאו, ספריית צוותים, מערכת שיתוף, כלי אנליטיקה ומכונת שיווק. זה מתאים לחלק מהמשתמשים, אבל לא לכל מי שפשוט רוצה להקליט הסבר ברור עכשיו.",
       about_why_p2: "רקורדלי נבנה סביב רעיון פשוט יותר: לפתוח את האפליקציה, לבחור מה להקליט, ללחוץ Record, ולצאת עם וידאו ברור שאפשר להשתמש בו מיד.",
-      about_card_local_title: "Local-first כברירת מחדל",
+      about_card_local_title: "תמיד לוקאלי ופרטי שלך",
       about_card_local_text: "ההקלטות שלך נשארות על המחשב שלך. רקורדלי לא צריך להעלות את המסך, המיקרופון או המצלמה שלך לענן כדי לעבוד.",
       about_card_fast_title: "זרימת עבודה קצרה",
       about_card_fast_text: "רקורדלי מתמקד בתהליך הקלטה נקי: בחירת מקורות, התחלת הקלטה, סיום וייצוא. פחות מסכים, פחות חיכוך.",
       about_card_creator_title: "נבנה ליוצרים ומלמדים",
       about_card_creator_text: "מדריכים, שיעורים, סרטוני מוצר, הסברים טכניים והדגמות תוכנה צריכים להיות קלים להפקה. שם רקורדלי זורח.",
+      about_principle_1_title: "ליצור בקלות",
+      about_principle_1_text: "כל החלטה במוצר נמדדת לפי שאלה פשוטה: האם היא עוזרת לכם להגיע מהר יותר מסיבה טובה להקלטה לסרטון מוכן?",
+      about_principle_2_title: "יותר שליטה",
+      about_principle_2_text: "רקורדלי מעדיפה שליטה מקומית על פני תלות בענן. הקלטות, קבצים ותהליכי עבודה צריכים להישאר בידיים שלכם.",
+      about_principle_3_title: "וידיאו מקצועי בלי להסתבך",
+      about_principle_3_text: "המטרה היא לא להפוך כל משתמש לעורך וידאו. המטרה היא לעזור לכל מי שמסביר משהו להיראות ולהישמע ברור יותר.",
       about_for_title: "למי זה מתאים?",
       about_for_teachers_title: "מרצים ומורים",
       about_for_teachers_text: "להקלטת שיעורים, הסברים קצרים, פתרון תרגילים, הדרכות פנימיות וחומרי קורסים דיגיטליים.",
@@ -281,15 +288,17 @@
     },
     en: {
       brand_badge: "Local-first",
-      nav_problem: "Why different",
+      // nav_problem: "Why different",
       nav_features: "Features",
-      nav_proof: "Proof",
+      // nav_proof: "Proof",
       nav_price: "Pricing",
       nav_faq: "FAQ",
       nav_download: "Download Free",
+      nav_contact: "Contact",
       hero_kicker: "Privacy Mode: ON",
       hero_title: "The recorder that doesn’t spy on your lesson.",
-      hero_lead: "Recordly helps teachers, creators, and developers record screen, camera, and audio, edit fast, and export clean tutorial videos - while recordings stay on your computer, not in our cloud.",
+      // hero_lead: "Recordly helps teachers, creators, and developers record screen, camera, and audio, edit fast, and export clean tutorial videos - while recordings stay on your computer, not in our cloud.",
+      hero_lead: "Recordly is a Windows desktop app for recording screen, camera, microphone and system audio, so you can create tutorials, lessons, product demos and support videos without uploading recordings to the cloud.",
       hero_secondary: "See why it’s private",
       proof_local: "100% local editing",
       proof_upload: "0 recording uploads",
@@ -314,15 +323,20 @@
       solution_label: "The solution",
       solution_title: "Record. Fix. Send. No drama.",
       feature_1_title: "Screen + Camera + Audio + Voice",
-      feature_1_text: "A complete tutorial recording with presenter bubble, clear audio, and sharp screen capture.",
+      // feature_1_text: "A complete tutorial recording with presenter bubble, clear audio, and sharp screen capture.",
+      feature_1_text: "Record a full tutorial with a sharp screen, camera presenter bubble, microphone and system audio - so viewers understand both what happens and who is explaining it.",
       feature_2_title: "Fast trimming",
-      feature_2_text: "Remove silences, mistakes, and awkward starts without learning a full video editor.",
+      // feature_2_text: "Remove silences, mistakes, and awkward starts without learning a full video editor.",
+      feature_2_text: "Cut unnecessary moments, silences, awkward starts and small mistakes without turning every video into an editing project.",
       feature_3_title: "Smart highlights",
-      feature_3_text: "Mark important moments so viewers instantly know where to look.",
+      // feature_3_text: "Mark important moments so viewers instantly know where to look.",
+      feature_3_text: "Highlight important moments so viewers know where to look, even when the screen is full of buttons, code or complex UI.",
       feature_4_title: "Privacy by default",
-      feature_4_text: "Recordings stay local. We only know your plan and monthly recording count.",
+      // feature_4_text: "Recordings stay local. We only know your plan and monthly recording count.",
+      feature_4_text: "Recordings stay local. Recordly does not need your video content in order to work.",
       feature_5_title: "Clean export for sharing",
-      feature_5_text: "A polished video you can send to students, clients, teams, or your community.",
+      // feature_5_text: "A polished video you can send to students, clients, teams, or your community.",
+      feature_5_text: "Export a clean video you can send to students, clients, teammates, a course platform or your community.",      
       feature_6_title: "Available platforms",
       feature_6_text: "Currently only Windos version, Mac version coming soon!",
       proof_label: "Privacy proof",
@@ -372,9 +386,11 @@
       faq_label: "FAQ",
       faq_title: "The right concerns, answered directly.",
       faq_1_q: "Are my videos uploaded to a server?",
-      faq_1_a: "No. Recording content stays local only and is not sent to our servers.",
+      // faq_1_a: "No. Recording content stays local only and is not sent to our servers.",
+      faq_1_a: "No. Recordly is local-first: recording content stays on your computer. You can choose to share or upload files later, but the recording itself is never sent to us.",
       faq_2_q: "What information do you store?",
-      faq_2_a: "Only your payment plan and monthly recording count, so we can operate the Free limit and Pro access.",
+      // faq_2_a: "Only your payment plan and monthly recording count, so we can operate the Free limit and Pro access.",
+      faq_2_a: "For Free/Pro activation we keep minimal account data such as your plan and monthly recording count. Video, microphone, camera and screen content stay with you.",
       faq_3_q: "Can I cancel Pro?",
       faq_3_a: "Yes. You can cancel anytime, and access remains active until the end of the current billing period.",
       faq_4_q: "Is it only for teachers?",
@@ -384,11 +400,11 @@
       faq_6_q: "Does Recordly work offline?",
       faq_6_a: "Yes. Recording and editing work locally, so you can turn Wi-Fi off and test it.",
       faq_7_q: "Does it support system audio?",
-      faq_7_a: "Yes.",
+      faq_7_a: "Yes. Recordly is designed for full explanations with system audio from a browser, player, app or software tool, together with microphone and camera when needed.",
       faq_8_q: "Does it support microphone and camera?",
-      faq_8_a: "Yes.",
+      faq_8_a: "Yes. You can choose microphone and camera to create tutorial videos with a human presence, clear voice and better visual context.",
       faq_9_q: "Does it export MP4?",
-      faq_9_a: "Yes.",
+      faq_9_a: "Yes. The goal is to export a clean video file that is easy to share, store or upload to the platform you choose.",
       final_label: "Record once. Explain forever.",
       final_title: "Your screen already explains it. Now make it look professional.",
       legal_updated: "Last updated: April 2026",
@@ -484,6 +500,12 @@
       about_card_fast_text: "Recordly focuses on a clean recording flow: choose sources, start recording, finish, and export. Fewer screens, less friction.",
       about_card_creator_title: "Built for creators and teachers",
       about_card_creator_text: "Tutorials, lessons, product videos, technical explanations, and software demos should be easy to produce. That is where Recordly shines.",
+      about_principle_1_title: "Less friction",
+      about_principle_1_text: "Every product decision is measured by one question: does it help you get from a good reason to record to a finished video faster?",
+      about_principle_2_title: "More control",
+      about_principle_2_text: "Recordly prefers local control over cloud dependency. Recordings, files and workflows should stay in your hands.",
+      about_principle_3_title: "Professional result without overload",
+      about_principle_3_text: "The goal is not to turn every user into a video editor. The goal is to help anyone who explains something look and sound clearer.",
       about_for_title: "Who is it for?",
       about_for_teachers_title: "Teachers and lecturers",
       about_for_teachers_text: "For recording lessons, quick explanations, exercise walkthroughs, internal training, and digital course material.",
@@ -592,17 +614,20 @@
     const normalizedTheme = theme === "dark" ? "dark" : "light";
     document.documentElement.setAttribute("data-theme", normalizedTheme);
     storage.set("recordly-theme", normalizedTheme);
-    if (themeIcon) themeIcon.textContent = normalizedTheme === "dark" ? "☾" : "☀";
+    if (themeIcon) themeIcon.textContent = normalizedTheme === "dark" ? "☀" : "☾";
   }
 
   function setLanguage(lang) {
     const normalizedLang = lang === "en" ? "en" : "he";
+    const normalizedDir = lang === "en" ? "ltr" : "rtl";
     const dictionary = translations[normalizedLang] || translations.he || {};
 
     document.documentElement.setAttribute("lang", normalizedLang);
-    document.documentElement.setAttribute("dir", normalizedLang === "he" ? "rtl" : "ltr");
+    document.documentElement.setAttribute("dir", normalizedDir);
     document.documentElement.setAttribute("data-lang", normalizedLang);
     storage.set("recordly-lang", normalizedLang);
+    const navLinks = document.getElementById("nav-links");
+    navLinks.setAttribute("dir", normalizedDir);
 
     document.querySelectorAll("[data-i18n]").forEach((node) => {
       const key = node.getAttribute("data-i18n");
@@ -937,21 +962,19 @@
   setupContactForm();
   
 
-function setupDebugReferrer() {
-  const referrerElement = document.getElementById("debug-referrer");
-  if (!referrerElement) { return; }
+  function setupDebugReferrer() {
+    const referrerElement = document.getElementById("debug-referrer");
+    if (!referrerElement) { return; }
+    const referrer = document.referrer && document.referrer.trim();
+    referrerElement.textContent = referrer
+      ? `Referrer: ${referrer}`
+      : "Referrer: direct / unknown";
+  }
 
-  const referrer = document.referrer && document.referrer.trim();
-  referrerElement.textContent = referrer
-    ? `Referrer: ${referrer}`
-    : "Referrer: direct / unknown";
-}
-
-setupWindowsInstallerDownloadCtas();
-setupDebugReferrer();
-setupCtaTracking();
-
-  // contact page code for resend and cloudflare worker
+  setupWindowsInstallerDownloadCtas();
+  setupDebugReferrer();
+  setupCtaTracking();
+// contact page code for resend and cloudflare worker
 //    const CONTACT_ENDPOINT = "https://recordly.ailoveu.art/contact";
 //    const contactForm = document.getElementById("recordly-contact-form");
 //    const contactStatus = document.getElementById("contact-status");
