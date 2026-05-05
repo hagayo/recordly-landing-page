@@ -626,7 +626,7 @@
     document.documentElement.setAttribute("dir", normalizedDir);
     document.documentElement.setAttribute("data-lang", normalizedLang);
     storage.set("recordly-lang", normalizedLang);
-    const navLinks = document.getElementById("nav-links");
+    const navLinks = document.getElementById("navLinks");
     navLinks.setAttribute("dir", normalizedDir);
 
     document.querySelectorAll("[data-i18n]").forEach((node) => {
