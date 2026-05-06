@@ -97,8 +97,8 @@
       pro_cta: "לתוכנית פרו",
       pricing_same_app: "אותה אפליקציה בדיוק. Pro פשוט פותח מגבלות זמן וכמות.",
       pricing_note: "החזר שנתי מחושב לפי החודשים שנוצלו, כפי שמפורט במדיניות ההחזרים.",
-      faq_label: "שאלות",
-      faq_title: "החששות הנכונים, בלי תשובות מתחמקות.",
+      faq_label: "שאלות נפוצות",
+      faq_title: "כל מה שרציתם לדעת",
       faq_1_q: "הסרטונים שלי עולים לשרת?",
       faq_1_a: "לא. תוכן ההקלטות נשמר מקומית בלבד ולא נשלח לשרתים שלנו.",
       faq_2_q: "איזה מידע אתם כן שומרים?",
@@ -1072,10 +1072,11 @@
 
   setupPointerLight();
   setupRevealAnimations();
-  setupTiltCards();
   setupMagneticButtons();
+  setupTiltCards();
+  setupWindowsInstallerDownloadCtas();  
+  setupCtaTracking();
   setupContactForm();
-  
 
   function setupDebugReferrer() {
     const referrerElement = document.getElementById("debug-referrer");
@@ -1085,10 +1086,8 @@
       ? `Referrer: ${referrer}`
       : "Referrer: direct / unknown";
   }
-
-  setupWindowsInstallerDownloadCtas();
   setupDebugReferrer();
-  setupCtaTracking();
+
 // contact page code for resend and cloudflare worker
 //    const CONTACT_ENDPOINT = "https://recordly.ailoveu.art/contact";
 //    const contactForm = document.getElementById("recordly-contact-form");
