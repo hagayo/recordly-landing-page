@@ -35,8 +35,8 @@
     </a>
 
     <nav class="nav" id="navLinks" aria-label="Main navigation">
-      <a href="./about.html" data-i18n="about_text">אודות</a>
-      <!-- a href="./index.html#about" data-i18n="nav_about">עלינו</a -->
+      <a href="./index.html" data-i18n="nav_back">חזרה</a>
+      <a href="./about.html" data-i18n="nav_about">אודות</a>
       <a href="./index.html#features" data-i18n="nav_features">יכולות</a>
       <a href="./pricing-plans.html" data-i18n="nav_price">תוכניות</a>
       <a href="./index.html#faq" data-i18n="nav_faq">שאלות</a>
@@ -51,27 +51,26 @@
       <button class="theme-toggle" type="button" data-theme-toggle aria-label="Toggle theme">
         <span aria-hidden="true">☀</span>
       </button>
-      <a class="top-cta magnetic" href="./download.html" data-i18n="nav_download">הורדה חינם</a>
-      <a href="./index.html" class="top-cta ghost">חזרה לאתר</a>
+      <a class="top-cta magnetic" href="./download.html" data-i18n="nav_download">הורדה</a>
     </div>
   </header>
 
   <main class="legal-main">
     <div class="legal-hero">
-      <h1>צור קשר</h1>
+      <h1 data-i18n="nav_contact">יצירת קשר</h1>
       <p class="legal-subtitle" data-i18n="legal_subtitle_contact">אנחנו כאן כדי לעזור. שלח לנו שאלות, משוב, בקשות החזר או דיווחי באגים.</p>
       <p class="legal-updated" data-i18n="legal_updated">עודכן לאחרונה: אפריל 2026</p>
     </div>
 
     <div class="legal-card">
       <div class="legal-content">
-        <p><strong>תקציר:</strong> השתמש בטופס שלהלן כדי לפנות אלינו בנושאים כמו החזרים, תוכניות מנוי, אבטחה, משוב משתמשים או באגים. 
-        אנו מחויבים להגיב במהירות האפשרית.</p>
+        <p data-i18n="contact_response_note"><strong>אנחנו מתחייבים להגיב במהירות האפשרית לכל פנייה</strong></p>
+        
     <!-- <section id="contact" class="contact-section"> -->
         <div class="contact-form">
+ 		<!-- <form id="contact-form" action="mailto:contact@recordly.ailoveu.art" method="POST" enctype="text/plain" data-contact-form> -->
   		  <form id="contact-form" data-contact-form novalidate>
- 		  <!-- <form id="contact-form" action="mailto:contact@recordly.ailoveu.art" method="POST" enctype="text/plain" data-contact-form> -->
-          <!-- <form id="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST"> -->
+
             <div class="form-group">
               <label for="name" data-i18n="contact_name">שם מלא</label>
               <input type="text" id="name" name="name" autocomplete="name" maxlength="100" required>
@@ -109,7 +108,7 @@
             </div>
 
             <div class="hp-field" aria-hidden="true">
-              <label for="company">Company</label>
+              <label for="company" data-i18n="contact_company">חברה</label>
               <input type="text" id="company" name="company" tabindex="-1" autocomplete="off">
             </div>
 
@@ -120,11 +119,10 @@
             <button id="contact-submit" type="submit" class="btn primary submit-btn" data-i18n="contact_submit">שלח הודעה</button>
             <p id="contact-status" class="contact-status" role="status" aria-live="polite"></p>
             <noscript>
-              <p class="contact-status is-error">יש להפעיל JavaScript כדי לשלוח את הטופס. אפשר לשלוח מייל ישירות ל-h2o@ailoveu.art. / JavaScript is required to send this form.</p>
+              <p class="contact-status is-error" id="direct_contact_note">יש להפעיל JavaScript כדי לשלוח את הטופס. אפשר לשלוח מייל ישירות ל-h2o@ailoveu.art. / JavaScript is required to send this form.</p>
             </noscript>
           </form>
         </div>
-        <p class="direct-contact">או שלח לנו ישירות: <a href="mailto:h2o@ailoveu.art">h2o@ailoveu.art</a></p>
       </div>
     </div>
     <!-- </section> -->
@@ -132,7 +130,7 @@
 
   <!-- Footer -->
   <footer class="footer">
-    <div>© 2026 Recordly. <span data-i18n="footer_copyright">All rights reserved.</span></div>
+    <div>© 2026 Recordly. <span data-i18n="footer_copyright">כל הזכויות שמורות.</span></div>
     <div>
       <a href="./legal/privacy-policy.html" data-i18n="footer_privacy">מדיניות פרטיות</a>
       <a href="./legal/terms-of-service.html" data-i18n="footer_terms">תנאי שימוש</a>

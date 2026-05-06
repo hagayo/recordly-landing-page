@@ -75,6 +75,7 @@ button.js-windows-installer-download-cta { cursor: pointer; text-align: center; 
 h1, h2, h3, p { margin: 0; }
 ul { list-style-type: square; }
 
+#direct_contact_note { display: none; }
 .noise {
   pointer-events: none;
   position: fixed;
