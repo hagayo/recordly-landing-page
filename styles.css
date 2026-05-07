@@ -135,7 +135,7 @@ ul { list-style-type: square; }
   box-shadow: 0 8px 20px rgba(0,0,0,0.035);
 }
 .language-toggle, .theme-toggle { width: 42px; height: 42px; cursor: pointer; }
-.top-cta { padding: 13px 18px; background: var(--ink); color: var(--bg); }
+.top-cta { padding: 10px 12px; background: var(--ink); color: var(--bg); }
 
 main { position: relative; z-index: 1; }
 .section-shell, .section { max-width: var(--max); margin: 0 auto; padding: 40px; }

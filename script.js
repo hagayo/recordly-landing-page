@@ -837,6 +837,12 @@
 
       try {
         const formData = new FormData(form);
+        const company = cleanFormValue(formData.get("company"));
+        if (company && company.trim() !== "") {
+          // return fakeSuccess();
+          setContactStatus(status, contactMessage("success"), "success");
+          return;
+        }
         const turnstileToken = getTurnstileToken();
         if (!turnstileToken) throw new Error(contactMessage("missingVerification"));
 
@@ -848,7 +854,6 @@
           email: cleanFormValue(formData.get("email")),
           subject: cleanFormValue(formData.get("subject")) || "Recordly contact request",
           message: rawMessage,
-          company: cleanFormValue(formData.get("company")),
           turnstileToken,
         };
 
