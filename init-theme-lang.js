@@ -10,5 +10,4 @@
   document.documentElement.setAttribute("lang", initialLang);
   document.documentElement.setAttribute("dir", initialLang === "he" ? "rtl" : "ltr");
   document.documentElement.setAttribute("data-lang", initialLang);
-  document.getElementById("navLinks").setAttribute("dir", normalizedDir);
 })();

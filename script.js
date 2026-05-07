@@ -64,10 +64,11 @@
       compare_recordly_1: "הקלטות נשמרות אצלך",
       compare_recordly_2: "עובד בגישה מקומית ומאובטחת",
       compare_recordly_3: "קל להסביר, לערוך ולשלוח",
-      compare_full_cta: "לראות השוואה מלאה",
+      compare_full_cta: "טבלת השוואה",
       compare_guide_cta: "מה חשוב לבדוק במקליט מסך",
       best_recorders_cta: "3 מקליטי המסך הטובים ב-2026",
       local_first_article_cta: "מה זה מוד פרטיות?",
+      recorder_guide_cta: "מדריך",
       audience_label: "למי זה מתאים",
       audience_title: "כל מי שמסביר משהו על המסך.",
       aud_1_title: "מורים ומרצים",
@@ -183,7 +184,6 @@
       thank_you_how_to_cta: "לעבור למדריך ההתחלה",
       not_found_title: "העמוד לא נמצא",
       not_found_subtitle: "כנראה שהקישור השתנה, הועבר או פשוט יצא להפסקת קפה.",
-      not_found_back_home: "חזרה לדף הבית",
       not_found_contact: "לפנות לתמיכה",
       footer_cookies: "מדיניות עוגיות",
       footer_contact: "צור קשר",
@@ -411,10 +411,11 @@
       compare_recordly_1: "Recordings stay with you",
       compare_recordly_2: "Built with a local-first approach",
       compare_recordly_3: "Easy to explain, edit, and send",
-      compare_full_cta: "See full comparison",
+      compare_full_cta: "Full comparison table",
       compare_guide_cta: "What to look for in a recorder",
       best_recorders_cta: "3 best screen recorders in 2026",
-      local_first_article_cta: "Wיhat is Local-first?",
+      local_first_article_cta: "What is Local-first?",
+      recorder_guide_cta: "Guide",
       audience_label: "Who it’s for",
       audience_title: "Anyone who explains something on screen.",
       aud_1_title: "Teachers and lecturers",
@@ -532,7 +533,6 @@
       thank_you_how_to_cta: "Open the getting started guide",
       not_found_title: "Page not found",
       not_found_subtitle: "The link may have moved, changed, or taken a small coffee break.",
-      not_found_back_home: "Back to homepage",
       not_found_contact: "Contact support",
       footer_cookies: "Cookie Policy",
       footer_contact: "Contact",
@@ -818,7 +818,8 @@
     });
   }
 
-  const CONTACT_ENDPOINT = "https://recordly.ailoveu.art/api/contact";
+  const CONTACT_ENDPOINT = "/api/contact";
+  // const CONTACT_ENDPOINT = "https://recordly.ailoveu.art/api/contact";
 
   function setupContactForm() {
     // const endpoint = "https://recordly.ailoveu.art/contact";
@@ -967,7 +968,7 @@
         sending: "שולח את ההודעה...",
         sendingButton: "שולח...",
         submitButton: "שלח הודעה",
-        success: "ההודעה נשלחה בהצלחה. תודה!",
+        success: "קיבלנו את הפנייה שלך ונטפל בה בהקדם האפשרי.",
         failed: "לא הצלחנו לשלוח את ההודעה. נסה שוב בעוד רגע, או שלח לנו מייל ישירות ל-h2o@ailoveu.art.",
         serviceUnavailable: "טופס יצירת הקשר אינו זמין כרגע. נסה שוב בעוד רגע, או שלח לנו מייל ישירות ל-h2o@ailoveu.art.",
         missingVerification: "יש להשלים את אימות האבטחה.",
@@ -983,7 +984,7 @@
         sending: "Sending your message...",
         sendingButton: "Sending...",
         submitButton: "Send Message",
-        success: "Message sent successfully. Thank you!",
+        success: "We received your request and will handle it as soon as possible!",
         failed: "Could not send your message. Please try again in a moment, or email us directly at h2o@ailoveu.art.",
         serviceUnavailable: "The contact form is temporarily unavailable. Please try again in a moment, or email us directly at h2o@ailoveu.art.",
         missingVerification: "Please complete the security verification.",

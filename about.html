@@ -40,7 +40,7 @@
 </head>
 <body>
   <div class="page-shell">
-    <header class="topbar site-header">
+  <header class="topbar site-header">
     <a class="brand" href="./index.html#top" aria-label="Recordly">
       <span class="brand-mark">R</span>
       <span class="brand-name">Recordly</span>
@@ -49,21 +49,24 @@
 
     <nav class="nav" id="navLinks" aria-label="Main navigation">
       <a href="./index.html" data-i18n="nav_back">חזרה</a>
-      <!-- a href="./about.html" data-i18n="nav_about" disabled>אודות</a -->
       <a href="./index.html#features" data-i18n="nav_features">יכולות</a>
-      <a href="./recorders-comparison-table.html" data-i18n="nav_compare">השוואה</a>
-      <a href="./screen-recorder-guide.html" data-i18n="nav_guide">מדריך בחירה</a>
+      <a href="./articles/recorders-comparison-table.html" data-i18n="nav_compare">השוואה</a>
+      <a href="./articles/screen-recorder-guide.html" data-i18n="nav_guide">מדריך בחירה</a>
       <a href="./pricing-plans.html" data-i18n="nav_price">תוכניות</a>
       <a href="./index.html#faq" data-i18n="nav_faq">שאלות</a>
       <a href="./contact.html" data-i18n="nav_contact">יצירת קשר</a>
     </nav>
 
-        <div class="top-actions">
-          <button class="language-toggle" type="button" data-language-toggle>EN</button>
-          <button class="theme-toggle" type="button" data-theme-toggle aria-label="Toggle theme">☾</button>
-          <a class="top-cta magnetic" href="./download.html" data-i18n="nav_download">הורדה חינם</a>
-        </div>
-    </header>
+    <div class="top-actions">
+      <button class="language-toggle" type="button" data-lang-toggle aria-label="Switch language" title="Switch language">
+        <span data-lang-short>EN</span>
+      </button>
+      <button class="theme-toggle" type="button" data-theme-toggle aria-label="Toggle theme">
+        <span aria-hidden="true">☀</span>
+      </button>
+      <a class="top-cta magnetic" href="./download.html" data-i18n="nav_download">הורדה</a>
+    </div>
+  </header>       
 
     <main class="legal-main about-main">
       <section class="legal-hero reveal">
@@ -196,7 +199,6 @@
         <a class="btn ghost magnetic" href="./articles/recorders-comparison-table.html" data-i18n="compare_full_cta">לראות השוואה מלאה</a>
         <a class="btn ghost magnetic" href="./articles/local-first-screen-recorder.html" data-i18n="local_first_article_cta">מה זה מוד פרטיות?</a>
         <a class="btn ghost magnetic" href="./articles/screen-recorder-guide.html" data-i18n="recorder_guide_cta">מדריך</a>
-        <!-- <a class="btn secondary magnetic" href="./contact.html" data-i18n="contact_cta">יצירת קשר</a> -->
       </div>
     </main>
 
