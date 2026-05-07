@@ -12,67 +12,22 @@
   <link rel="icon" href="../assets/recordly-favicon.png" type="image/png">
   <style>
     :root { --article-max-width: 850px; }
-    .article-body {
-      max-width: var(--article-max-width);
-      margin: 140px auto 80px;
-      padding: 0 24px;
-    }
-    .article-header {
-      margin-bottom: 60px;
-      border-bottom: 1px solid var(--border-color);
-      padding-bottom: 40px;
-    }
+    .article-body { max-width: var(--article-max-width); margin: 140px auto 80px; padding: 0 24px; }
+    .article-header { margin-bottom: 60px; border-bottom: 1px solid var(--border-color); padding-bottom: 40px; }
     .article-header h1 {
       font-size: clamp(2.8rem, 6vw, 4rem);
-      line-height: 1.1;
-      font-weight: 900;
-      letter-spacing: -0.03em;
-      margin-bottom: 24px;
-      color: var(--text-main);
+      line-height: 1.1; font-weight: 900; letter-spacing: -0.03em; margin-bottom: 24px; color: var(--text-main);
     }
-    .article-meta {
-      font-size: 0.95rem;
-      color: var(--text-soft);
-      display: flex;
-      gap: 20px;
-      align-items: center;
-    }
+    .article-meta { font-size: 0.95rem; color: var(--text-soft); display: flex; gap: 20px; align-items: center; }
     .content-section { margin-bottom: 30px; }
-    .article-content p {
-      font-size: 1.2rem;
-      line-height: 1.85;
-      margin-bottom: 28px;
-      color: var(--text-main);
-      opacity: 0.9;
-    }
-    .article-content h2 {
-      font-size: 2rem;
-      font-weight: 800;
-      margin: 60px 0 24px;
-      color: var(--primary);
-      letter-spacing: -0.01em;
-    }
-    .article-content h3 {
-      font-size: 1.5rem;
-      font-weight: 700;
-      margin: 32px 0 16px;
-    }
-    .comparison-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 24px;
-      margin: 40px 0;
-    }
+    .article-content p { font-size: 1.2rem; line-height: 1.85; margin-bottom: 28px; color: var(--text-main); opacity: 0.9; }
+    .article-content h2 { font-size: 2rem; font-weight: 800; margin: 60px 0 24px; color: var(--primary); letter-spacing: -0.01em; }
+    .article-content h3 { font-size: 1.5rem; font-weight: 700; margin: 32px 0 16px; }
+    .comparison-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin: 40px 0; }
     @media (max-width: 768px) {
       .comparison-grid { grid-template-columns: 1fr; }
     }
-    .card-feature {
-      background: var(--card-bg);
-      border: 1px solid var(--border-color);
-      padding: 32px;
-      border-radius: 20px;
-      transition: transform 0.3s ease;
-    }
+    .card-feature { background: var(--card-bg); border: 1px solid var(--border-color); padding: 32px; border-radius: 20px; transition: transform 0.3s ease; }
     .card-feature:hover { transform: translateY(-5px); }
     .quote-box {
       background: linear-gradient(135deg, rgba(var(--primary-rgb), 0.1), rgba(var(--accent-rgb), 0.1));
@@ -82,16 +37,25 @@
       margin: 48px 0;
       font-style: italic;
     }
-    .sidebar-note {
-      background: #fff9f0;
-      border: 1px dashed #e6a23c;
-      padding: 20px;
-      border-radius: 12px;
-      font-size: 1rem;
-      margin: 20px 0;
-    }
+    .sidebar-note { background: #fff9f0; border: 1px dashed #e6a23c; padding: 20px; border-radius: 12px; font-size: 1rem; margin: 20px 0; }
     [data-theme="dark"] .sidebar-note { background: #2a1d05; }
   </style>
+  <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "What makes Recordly the best screen-recorder app for teachers, course lecturers, and product-demo videos, May 2026",
+        "description": "Special features and privacy that only Recordly are giving you, or why users love us. May 2026.",
+        "author": { "@type": "Person", "name": "Hagay Onn" },
+        "publisher": { 
+          "@type": "Organization", "name": "Recordly",
+          "logo": { "@type": "ImageObject", "url": "https://recordly.ailoveu.art/assets/recordly-og.png" }
+        },
+        "datePublished": "2026-05-07",
+        "dateModified": "2026-05-07",
+        "mainEntityOfPage": "https://recordly.ailoveu.art/articles/why-recordly-v3.html"
+    }
+  </script>
 </head>
 <body>
   <div class="noise"></div>
